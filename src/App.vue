@@ -1,0 +1,26 @@
+<script setup>
+import HeaderMain from '@/layout/header/HeaderMain.vue'
+import { ref } from 'vue'
+import { useRoute } from 'vue-router'
+import { watchEffect } from 'vue'
+
+const route = useRoute()
+
+watchEffect(() => {
+  document.title = route.meta.title || 'Двери Да Окна Здесь'
+  const description = route.meta.description
+  const metaDescription = document.querySelector('meta[name="description"]')
+  if (metaDescription) {
+    metaDescription.setAttribute('content', description || 'Default description')
+  }
+})
+
+const search = ref('')
+</script>
+
+<template>
+  <HeaderMain @search="(value) => (search = value)" />
+  <RouterView :search="search" />
+</template>
+
+<style lang="sass" scoped></style>
