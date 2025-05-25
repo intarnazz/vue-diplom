@@ -1,27 +1,37 @@
 <script setup>
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import { RouterLink } from 'vue-router'
-import SvgHome from '@/components/svg/SvgHome.vue'
-
+// import SvgHome from '@/components/svg/SvgHome.vue'
 </script>
 
 <template>
   <header class="header box-shadow">
-    <LayoutWrapper class="box-x header__wrapper gap2">
-      <div class="box-y">
-        <div class="box-x">
-          <img src="@/assets/icons/КСМ.svg" alt="КСМ">
+    <LayoutWrapper class="box-y header__wrapper gap2">
+      <div class="box-y gap2">
+        <div class="box-x gap">
+          <div class="box-x flex">
+            <RouterLink class="box-x" :to="{ name: 'home' }"> Наши офисы </RouterLink>
+            <div class="flex"></div>
+          </div>
+          <img src="@/assets/icons/КСМ.svg" alt="КСМ" />
+          <div class="box-x gap flex">
+            <div class="flex"></div>
+            <RouterLink class="box-x button" :to="{ name: 'home' }"> Войти </RouterLink>
+            <RouterLink class="box-x button" :to="{ name: 'home' }"> Регистрация </RouterLink>
+          </div>
+        </div>
+        <div class="box-x gap">
+          <div class="flex"></div>
+          <div class="box-x gap">
+            <RouterLink class="box-x" :to="{ name: 'home' }"> Главная </RouterLink>
+            <RouterLink class="box-x" :to="{ name: 'home' }"> Портфолио </RouterLink>
+            <RouterLink class="box-x" :to="{ name: 'home' }"> О нас </RouterLink>
+            <RouterLink class="box-x" :to="{ name: 'home' }"> Калькулятор </RouterLink>
+            <RouterLink class="box-x" :to="{ name: 'home' }"> Контакты </RouterLink>
+          </div>
+          <div class="flex"></div>
         </div>
       </div>
-
-
-
-      <nav class="flex box-x">
-        <RouterLink class="box-x" :to="{ name: 'home' }"> <SvgHome /> Главная </RouterLink>
-        <!-- <RouterLink :to="{ name: 'catalog' }">Каталог</RouterLink>
-        <RouterLink :to="{ name: 'contact' }">Контакты</RouterLink> -->
-      </nav>
-
     </LayoutWrapper>
   </header>
 </template>
