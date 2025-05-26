@@ -79,7 +79,6 @@ a
   font-size: .9rem
   background-color: #2f2f2f
   color: $footerColor
-  margin-top: 2rem
   padding: 4rem 0
   display: flex
   justify-content: center

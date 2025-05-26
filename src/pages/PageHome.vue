@@ -1,22 +1,16 @@
 <script setup>
-import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import FooterMain from '@/layout/footer/FooterMain.vue'
 import LayoutPage from '@/layout/LayoutPage.vue'
-// import { portfolio } from '@/api/api.js'
-
-
-
+import SectionOpener from '@/components/sections/SectionOpener.vue'
+import SectionPortfolioSlider from '@/components/sections/SectionPortfolioSlider.vue'
 </script>
 
 <template>
   <LayoutPage class="main">
-    <LayoutWrapper class="flex box-y main__wrapper">
-
-    </LayoutWrapper>
+    <SectionOpener />
+    <SectionPortfolioSlider />
   </LayoutPage>
   <FooterMain />
 </template>
 
-<style lang="sass" scoped>
-
-</style>
+<style lang="sass" scoped></style>
