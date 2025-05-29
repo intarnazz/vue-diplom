@@ -16,8 +16,8 @@ import { RouterLink } from 'vue-router'
           <img src="@/assets/icons/КСМ.svg" alt="КСМ" />
           <div class="box-x gap flex">
             <div class="flex"></div>
-            <RouterLink class="box-x button" :to="{ name: 'home' }"> Войти </RouterLink>
-            <RouterLink class="box-x button" :to="{ name: 'home' }"> Регистрация </RouterLink>
+            <RouterLink class="box-x button" :to="{ name: 'login' }"> Войти </RouterLink>
+            <RouterLink class="box-x button" :to="{ name: 'reg' }"> Регистрация </RouterLink>
           </div>
         </div>
         <div class="box-x gap">
