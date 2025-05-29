@@ -24,7 +24,6 @@ onMounted(async () => {
     swiperEl.loop = true
     swiperEl.loopedSlides = portfolio.value.length
     swiperEl.spaceBetween = 30
-
     swiperEl.addEventListener('swiperinit', () => {
       swiperEl.swiper.slideToLoop(3, 0)
     })
@@ -34,7 +33,7 @@ onMounted(async () => {
 
 <template>
   <section class="portfolio-slider box-y">
-    <div v-if="!isLoading" style="width: 98dvw; margin: auto;">
+    <div v-if="!isLoading" style="width: 110%; margin: auto">
       <swiper-container>
         <swiper-slide v-for="(value, key) in portfolio" :key="key">
           <img :src="`${API_URL}image/${value.image_id}`" alt="" />
@@ -46,7 +45,8 @@ onMounted(async () => {
 
 <style scoped lang="sass">
 .portfolio-slider
-  width: 100%
+  margin: 0 0 0 -10%
+  width: 110%
   overflow: hidden
   align-items: center
   justify-content: center

@@ -40,6 +40,7 @@ import { RouterLink } from 'vue-router'
 .header
   padding: 1rem 0
   box-shadow: 0 0 10px 0 #d4d4d4
+  height: $header
   position: relative
   z-index: 1
   display: flex
