@@ -7,7 +7,7 @@ import { watchEffect } from 'vue'
 const route = useRoute()
 
 watchEffect(() => {
-  document.title = route.meta.title || 'Двери Да Окна Здесь'
+  document.title = route.meta.title || 'КСМ'
   const description = route.meta.description
   const metaDescription = document.querySelector('meta[name="description"]')
   if (metaDescription) {
