@@ -15,6 +15,14 @@
 h1
   margin: 0
   padding: 0
+  font-size: 2.125rem
+  font-weight: bold
+h2
+  font-size: 1.5rem
+  font-weight: bold
+h3
+  font-size: 1.125rem
+  font-weight: bold
 
 html
   font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
@@ -58,6 +66,32 @@ html
 
 .hidden
   display: none
+
+.img
+  +wh
+  object-fit: cover
+
+.p
+  padding: .5rem 1rem
+.p2
+  padding: 2rem
+.p3
+  padding: 3rem
+.p4
+  padding: 4rem
+.p5
+  padding: 5rem
+
+.wh
+  +wh
+.pr
+  display: block
+  position: relative
+  +wh
+.pa
+  position: absolute
+  top: 0
+  left: 0
 
 // ::selection
 //   background: hsla(133,100%, 50%,.5)
