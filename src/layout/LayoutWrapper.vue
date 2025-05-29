@@ -36,6 +36,7 @@ const wrapperClass = computed(() => {
 
 .wrapper
   width: 1300px
+  margin: auto
 
 @media screen and (max-width: 1440px)
   .special-wrapper
