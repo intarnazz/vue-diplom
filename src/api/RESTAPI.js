@@ -41,11 +41,4 @@ export class RESTAPI {
   async sendImage(file) {
     return await this.#PostSendFile('image', file)
   }
-  async auth(body) {
-    const res = await this.#Post('authorization', body)
-    if (res.success) {
-      sessionStorage.setItem('token', res.token)
-    }
-    return res
-  }
 }

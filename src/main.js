@@ -12,3 +12,6 @@ createApp(App).use(router).mount('#app')
 // [ ] - register
 // [ ] - login
 // [ ] - profile
+// [ ] - defaut image
+// [ ] - heder if opener
+// [ ] - 422 errors

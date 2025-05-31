@@ -1,9 +1,9 @@
 <script setup></script>
 
 <template>
-  <section class="opener w">
+  <div class="opener w">
     <slot></slot>
-  </section>
+  </div>
 </template>
 
 <style lang="sass" scoped>
