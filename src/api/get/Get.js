@@ -13,7 +13,6 @@ export async function Get(url, obj = {}) {
       material: obj.material ?? '',
       search: search,
       responseId: obj.response_id ?? '1',
-      'door-type': obj.type ?? 'entrance'
     }
   })
     .then((response) => response.json())

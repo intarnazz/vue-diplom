@@ -1,8 +1,8 @@
 <script setup>
 import { portfolio as p } from '@/api/api.js'
 import { onMounted, ref, nextTick } from 'vue'
+import ComponentImg from '@/components/ComponentImg.vue'
 
-const API_URL = import.meta.env.VITE_API_URL
 const isLoading = ref(true)
 const portfolio = ref([])
 
@@ -47,7 +47,7 @@ onMounted(async () => {
     <div v-if="!isLoading" style="width: 110%; margin: auto">
       <swiper-container>
         <swiper-slide style="padding: 2rem 0" v-for="(value, key) in portfolio" :key="key">
-          <img class="portfolio-slider__img" :src="`${API_URL}image/${value.image_id}`" alt="" />
+          <ComponentImg class="portfolio-slider__img" :id="value.image_id" />
         </swiper-slide>
       </swiper-container>
     </div>
