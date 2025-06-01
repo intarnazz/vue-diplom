@@ -1,6 +1,6 @@
 <script setup>
 import ComponentOpener from '@/layout/LayoutOpener.vue'
-import FormReg from '@/layout/form/FormReg.vue'
+import FormReg from '@/components/form/FormReg.vue'
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup>
-import FormMain from '@/layout/form/FormMain.vue'
+import FormMain from '@/layout/LayoutForm.vue'
 import { ref } from 'vue'
 import { auth } from '@/api/api.js'
 import { useRouter } from 'vue-router'
@@ -19,32 +19,23 @@ async function submit() {
 
 <template>
   <FormMain @submit="submit">
-    <div class="box-x flex wh">
+    <div class="box-y gap flex wh">
+      <h2>Отправить запрос</h2>
       <div class="box-y flex">
         <div class="form__box">
-          <input
-            v-model="email"
+          <textarea
+            v-model="text"
             class="flex"
-            id="email"
-            name="email"
-            type="email"
-            placeholder="email..."
-          />
-        </div>
-        <div class="form__box">
-          <input
-            v-model="password"
-            class="flex"
-            id="password"
-            name="password"
-            type="password"
-            placeholder="password..."
+            id="text"
+            name="text"
+            type="text"
+            placeholder="text..."
           />
         </div>
       </div>
       <div class="box-y h">
         <div class="flex"></div>
-        <button type="submit" class="button">ВОЙТИ</button>
+        <button type="submit" class="button">ОТПРАВИТЬ</button>
       </div>
     </div>
   </FormMain>

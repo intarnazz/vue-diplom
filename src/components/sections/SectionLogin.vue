@@ -1,6 +1,6 @@
 <script setup>
 import ComponentOpener from '@/layout/LayoutOpener.vue'
-import FormLogin from '@/layout/form/FormLogin.vue'
+import FormLogin from '@/components/form/FormLogin.vue'
 </script>
 
 <template>

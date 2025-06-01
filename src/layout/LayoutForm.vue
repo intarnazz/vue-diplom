@@ -27,6 +27,13 @@ function submit() {
       +wh
     &:last-child
       border-bottom: 1px solid $th
+    & > textarea
+      border: 1px solid $th
+      padding: 1rem .5rem
+      border-bottom: none
+      +wh
+    &:last-child
+      border-bottom: 1px solid $th
   & button
     border-radius: 0px
     border: none
