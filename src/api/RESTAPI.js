@@ -23,8 +23,8 @@ export class RESTAPI {
   async get(id) {
     return await this.#Get(`${this.#prefix}/${id}`)
   }
-  async all() {
-    return await this.#Get(this.#prefix)
+  async all(data = {}) {
+    return await this.#Get(this.#prefix, data)
   }
   async add(data) {
     return await this.#Post(this.#prefix, data)

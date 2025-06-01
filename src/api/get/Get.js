@@ -1,4 +1,7 @@
+import { UserStorage } from '@/api/userStorage.js'
+
 const API_URL = import.meta.env.VITE_API_URL
+const userStorage = new UserStorage()
 
 export async function Get(url, obj = {}) {
   let search = ''
@@ -6,14 +9,15 @@ export async function Get(url, obj = {}) {
   return await fetch(`${API_URL}${url}`, {
     method: 'GET',
     headers: {
-      skip: obj.skip ?? 0,
-      take: obj.take ?? 6,
+      limit: obj.limit ?? 5,
+      offset: obj.offset ?? 0,
       ids: obj.ids ?? '',
       brand: obj.brand ?? '',
       material: obj.material ?? '',
       search: search,
       responseId: obj.response_id ?? '1',
-    }
+      Authorization: `Bearer ${userStorage.get()}`,
+    },
   })
     .then((response) => response.json())
     .then((json) => {

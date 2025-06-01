@@ -7,17 +7,20 @@ export const price = (i) => {
     style: 'currency',
     currency: 'RUB',
     minimumFractionDigits: 0,
-    maximumFractionDigits: 0
+    maximumFractionDigits: 0,
   })
 }
 
 export const up = () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: 'smooth',
   })
 }
 
 export const link = (str) => {
   return str.replace(/[^a-zA-Z0-9а-яА-ЯеЕёЁ]/g, '-')
 }
+
+export const date = (s) =>
+  new Date(s).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' })

@@ -13,3 +13,4 @@ createApp(App).use(router).mount('#app')
 // [ ] - heder if opener
 // [ ] - 422 errors
 // [ ] - крифая кнопка в форме
+// [ ] - api.js доступ
