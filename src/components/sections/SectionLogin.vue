@@ -1,30 +1,15 @@
 <script setup>
 import ComponentOpener from '@/layout/LayoutOpener.vue'
-import FormMain from '@/layout/form/FormMain.vue'
-import { ref } from 'vue'
-import { auth } from '@/api/api.js'
-import { useRouter } from 'vue-router'
-
-const email = ref('')
-const password = ref('')
-const router = useRouter()
-
-async function submit() {
-  const res = await auth.login({
-    email: email.value,
-    password: password.value,
-  })
-  if (res.success) router.push({ name: 'profile' })
-}
+import FormLogin from '@/layout/form/FormLogin.vue'
 </script>
 
 <template>
   <ComponentOpener>
-    <section class="reg wh box-x">
+    <section class="login wh box-x">
       <div class="wh">
-        <img class="img" src="@/assets/img/login-bg.jpg" alt="reg-bg" />
+        <img class="img" src="@/assets/img/login-bg.jpg" alt="login-bg" />
       </div>
-      <div class="reg__wrapper wh box-y gap p5">
+      <div class="login__wrapper wh box-y gap p5">
         <h2>Авторизация</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora dolores voluptatem
@@ -32,36 +17,7 @@ async function submit() {
           quaerat soluta consectetur aperiam fugiat laboriosam.
         </p>
         <div class="box-x">
-          <FormMain @submit="submit">
-            <div class="box-x flex wh">
-              <div class="box-y flex">
-                <div class="form__box">
-                  <input
-                    v-model="email"
-                    class="flex"
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="email..."
-                  />
-                </div>
-                <div class="form__box">
-                  <input
-                    v-model="password"
-                    class="flex"
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder="password..."
-                  />
-                </div>
-              </div>
-              <div class="box-y h">
-                <div class="flex"></div>
-                <button type="submit" class="button">ВОЙТИ</button>
-              </div>
-            </div>
-          </FormMain>
+          <FormLogin />
           <div class="flex"></div>
         </div>
         <div class="flex"></div>
@@ -71,7 +27,7 @@ async function submit() {
 </template>
 
 <style lang="sass" scoped>
-.reg
+.login
   & > div
     &:first-child
       flex: 9

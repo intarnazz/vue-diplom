@@ -19,26 +19,26 @@ onMounted(async () => {
 </script>
 
 <template>
-    <section v-if="!isLoding">
-      <div class="box-y">
-        <div v-for="(chat, id) in chatList" :key="id" class="box-y chat-list">
-          <div class="box-y gap5">
-            <div class="box-y gap25">
-              <div class="box-x chat-list__item">
-                <h3>
-                  {{ chat.user.email }}
-                </h3>
-                <p class="chat-list__item-data">{{ date(chat.updated_at) }}</p>
-                <p class="chat-list__item-status flex">{{ chat.status }}</p>
-              </div>
-              <p class="chat-list__item-phone">{{ chat.user.phone }}</p>
+  <section v-if="!isLoding">
+    <div class="box-y">
+      <div v-for="(chat, id) in chatList" :key="id" class="box-y chat-list">
+        <div class="box-y gap5">
+          <div class="box-y gap25">
+            <div class="box-x chat-list__item">
+              <h3>
+                {{ chat.user.email }}
+              </h3>
+              <p class="chat-list__item-data">{{ date(chat.updated_at) }}</p>
+              <p class="chat-list__item-status flex">{{ chat.status }}</p>
             </div>
-            <p class="chat-list__item-massage">{{ chat.latest_massage.content }}</p>
+            <p class="chat-list__item-phone">{{ chat.user.phone }}</p>
           </div>
+          <p class="chat-list__item-massage">{{ chat.latest_massage.content }}</p>
         </div>
       </div>
-      <div class="box-y"></div>
-    </section>
+    </div>
+    <div class="box-y"></div>
+  </section>
 </template>
 
 <style lang="sass" scoped>
