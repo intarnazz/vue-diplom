@@ -3,16 +3,18 @@ import ComponentOpener from '@/layout/LayoutOpener.vue'
 import FormMain from '@/layout/form/FormMain.vue'
 import { ref } from 'vue'
 import { auth } from '@/api/api.js'
+import { useRouter } from 'vue-router'
 
 const email = ref('')
 const password = ref('')
+const router = useRouter()
 
 async function submit() {
   const res = await auth.login({
     email: email.value,
     password: password.value,
   })
-  console.log(res)
+  if (res.success) router.push({ name: 'profile' })
 }
 </script>
 
@@ -20,7 +22,7 @@ async function submit() {
   <ComponentOpener>
     <section class="reg wh box-x">
       <div class="wh">
-        <img class="img" src="@/assets/img/reg-bg.jpg" alt="reg-bg" />
+        <img class="img" src="@/assets/img/login-bg.jpg" alt="reg-bg" />
       </div>
       <div class="reg__wrapper wh box-y gap p5">
         <h2>Авторизация</h2>

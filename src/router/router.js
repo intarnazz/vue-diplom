@@ -1,7 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { UserStorage } from '@/api/userStorage.js'
 import Home from '@/pages/PageHome.vue'
 import Login from '@/pages/PageLogin.vue'
 import Reg from '@/pages/PageReg.vue'
+import Profile from '@/pages/PageProfile.vue'
+
+const user = new UserStorage()
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,12 +25,19 @@ const router = createRouter({
       name: 'reg',
       component: Reg,
     },
-    // {
-    //   path: '/door/:id/:name',
-    //   name: 'door',
-    //   component: Door,
-    //   props: true
-    // },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: Profile,
+      props: true,
+      beforeEnter: (to, from, next) => {
+        if (user.get()) {
+          next()
+        } else {
+          next({ name: 'login' })
+        }
+      },
+    },
   ],
 })
 

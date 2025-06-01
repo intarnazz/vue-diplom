@@ -20,12 +20,13 @@ function submit() {
   &__wrapper
     display: flex
   &__box
-    border: 1px solid #CBCDD2
-    padding: 1rem .5rem
-    width: 100%
-    border-bottom: none
+    & > input
+      border: 1px solid $th
+      padding: 1rem .5rem
+      border-bottom: none
+      +wh
     &:last-child
-      border-bottom: 1px solid #CBCDD2
+      border-bottom: 1px solid $th
   & button
     border-radius: 0px
     border: none

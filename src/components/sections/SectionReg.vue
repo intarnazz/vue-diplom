@@ -3,20 +3,24 @@ import ComponentOpener from '@/layout/LayoutOpener.vue'
 import FormMain from '@/layout/form/FormMain.vue'
 import { ref } from 'vue'
 import { auth } from '@/api/api.js'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const email = ref('')
 const name = ref('')
 const phone = ref('')
 const password = ref('')
+const company = ref('')
 
 async function submit() {
   const res = await auth.reg({
     email: email.value,
     name: name.value,
     phone: phone.value,
+    company: company.value,
     password: password.value,
   })
-  console.log(res)
+  if (res.success) router.push({ name: 'profile' })
 }
 </script>
 
@@ -65,6 +69,16 @@ async function submit() {
                     name="phone"
                     type="phone"
                     placeholder="phone..."
+                  />
+                </div>
+                <div class="form__box">
+                  <input
+                    v-model="company"
+                    class="flex"
+                    id="company"
+                    name="company"
+                    type="company"
+                    placeholder="company..."
                   />
                 </div>
                 <div class="form__box">
