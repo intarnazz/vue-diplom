@@ -1,19 +1,16 @@
 <script setup>
 import FormMain from '@/layout/LayoutForm.vue'
 import { ref } from 'vue'
-import { auth } from '@/api/api.js'
-import { useRouter } from 'vue-router'
+import { massage } from '@/api/api.js'
 
-const email = ref('')
-const password = ref('')
-const router = useRouter()
+const text = ref('')
+const emit = defineEmits(['init'])
 
 async function submit() {
-  const res = await auth.login({
-    email: email.value,
-    password: password.value,
+  const res = await massage.add({
+    content: text.value,
   })
-  if (res.success) router.push({ name: 'profile' })
+  if (res.success) emit('init')
 }
 </script>
 

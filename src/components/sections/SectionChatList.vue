@@ -16,11 +16,15 @@ async function init() {
 onMounted(async () => {
   await init()
 })
+
+defineExpose({
+  init,
+})
 </script>
 
 <template>
-  <section v-if="!isLoding">
-    <div class="box-y">
+  <section>
+    <div v-if="!isLoding" class="box-y">
       <div v-for="(chat, id) in chatList" :key="id" class="box-y chat-list">
         <div class="box-y gap5">
           <div class="box-y gap25">
