@@ -24,7 +24,7 @@ import { RouterLink } from 'vue-router'
           <div class="flex"></div>
           <div class="box-x gap">
             <RouterLink class="box-x" :to="{ name: 'home' }"> Главная </RouterLink>
-            <RouterLink class="box-x" :to="{ name: 'home' }"> Портфолио </RouterLink>
+            <RouterLink class="box-x" :to="{ name: 'portfolio' }"> Портфолио </RouterLink>
             <RouterLink class="box-x" :to="{ name: 'home' }"> О нас </RouterLink>
             <RouterLink class="box-x" :to="{ name: 'home' }"> Калькулятор </RouterLink>
             <RouterLink class="box-x" :to="{ name: 'home' }"> Контакты </RouterLink>
