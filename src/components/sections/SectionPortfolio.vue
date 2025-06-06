@@ -27,8 +27,13 @@ onMounted(async () => {
         <div class="flex"></div>
       </div>
       <div v-if="!isLoding" class="portfolio__list">
-        <div v-for="(portfolio, id) in portfolioList" :key="id" class="portfolio__item">
-          <h3>{{ portfolio.image_id }}</h3>
+        <div v-for="(portfolio, id) in portfolioList" :key="id" class="portfolio__item pr">
+          <div class="pa box-y">
+            <div class="flex"></div>
+            <div class="box-x">
+              <h3>{{ portfolio.title }}</h3>
+            </div>
+          </div>
           <ComponentImg class="img" :id="portfolio.image_id" :alt="portfolio.title" />
         </div>
       </div>
@@ -41,6 +46,9 @@ onMounted(async () => {
   &__list
     display: grid
     grid-template-columns: 1fr 1fr 1fr
+    & h3
+      +bgcf
+      padding: 0 1rem
   &__title
     border-bottom: 1px solid $th
 </style>
