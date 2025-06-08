@@ -11,26 +11,26 @@ const licks = ref([
   {
     img: phone,
     name: 'Телефон',
-    text: '+7 (962) 085-82-34',
-    href: 'tel:+79620858234',
+    text: '+7 (900) 789-22-44',
+    href: 'tel:+79007892244',
   },
   {
     img: mail,
     name: 'Почта',
-    text: 'sk-mihalych@mail.ru',
-    href: 'mailto:sk-mihalych@mail.ru',
+    text: 'ksm@mail.ru',
+    href: 'ksm@mail.ru',
   },
   {
     img: vk,
     name: 'Группа в ВК',
-    text: 'Двери и окна в г. Александров',
-    href: 'https://vk.com/dveri_aleksandrov',
+    text: 'КСМ',
+    href: 'https://vk.com/ksm',
   },
   {
     img: whatsapp,
     name: 'whatsapp',
     text: 'напишите нам в WhatsApp',
-    href: 'https://wa.me/79620858234',
+    href: 'https://wa.me/79007892244',
   },
   // {
   //   img: instagram,
