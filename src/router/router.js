@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { UserStorage } from '@/api/userStorage.js'
-import Home from '@/pages/PageHome.vue'
-import Login from '@/pages/PageLogin.vue'
-import Reg from '@/pages/PageReg.vue'
-import Profile from '@/pages/PageProfile.vue'
-import Portfolio from '@/pages/PagePortfolio.vue'
+import PageHome from '@/pages/PageHome.vue'
+import PageLogin from '@/pages/PageLogin.vue'
+import PageReg from '@/pages/PageReg.vue'
+import PageProfile from '@/pages/PageProfile.vue'
+import PagePortfolio from '@/pages/PagePortfolio.vue'
+import PageContactUs from '@/pages/PageContactUs.vue'
 
 const user = new UserStorage()
 
@@ -14,27 +15,32 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Home,
+      component: PageHome,
     },
     {
       path: '/authorization',
       name: 'login',
-      component: Login,
+      component: PageLogin,
     },
     {
       path: '/registration',
       name: 'reg',
-      component: Reg,
+      component: PageReg,
     },
     {
       path: '/portfolio',
       name: 'portfolio',
-      component: Portfolio,
+      component: PagePortfolio,
+    },
+    {
+      path: '/contact-us',
+      name: 'contact-us',
+      component: PageContactUs,
     },
     {
       path: '/profile',
       name: 'profile',
-      component: Profile,
+      component: PageProfile,
       props: true,
       beforeEnter: (to, from, next) => {
         if (user.get()) {
