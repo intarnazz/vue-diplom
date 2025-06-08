@@ -1,2 +1,2 @@
 @echo off
-npm i & npm run dev
+yarn & yarn dev
