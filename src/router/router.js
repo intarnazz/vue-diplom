@@ -6,6 +6,7 @@ import PageReg from '@/pages/PageReg.vue'
 import PageProfile from '@/pages/PageProfile.vue'
 import PagePortfolio from '@/pages/PagePortfolio.vue'
 import PageContactUs from '@/pages/PageContactUs.vue'
+import PageAboutUs from '@/pages/PageAboutUs.vue'
 
 const user = new UserStorage()
 
@@ -36,6 +37,11 @@ const router = createRouter({
       path: '/contact-us',
       name: 'contact-us',
       component: PageContactUs,
+    },
+    {
+      path: '/about-us',
+      name: 'about-us',
+      component: PageAboutUs,
     },
     {
       path: '/profile',

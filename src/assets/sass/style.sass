@@ -30,8 +30,10 @@ html
   color: $text
   background-color: #fff
   font-size: 16px
+  +wh
 
-// body
+body
+  +wh
 
 #app
   min-height: 100dvh
@@ -39,6 +41,7 @@ html
   flex-direction: column
   justify-content: space-between
   width: 100%
+  +h
 
 .box-x
   display: flex
@@ -101,6 +104,8 @@ html
   top: 0
   left: 0
   +wh
+.hr
+  border-bottom: 1px solid #CBCDD2;
 
 // ::selection
 //   background: hsla(133,100%, 50%,.5)

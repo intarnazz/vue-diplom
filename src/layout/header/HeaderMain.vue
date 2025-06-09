@@ -10,7 +10,7 @@ import { RouterLink } from 'vue-router'
       <div class="box-y gap2">
         <div class="box-x gap">
           <div class="box-x flex">
-            <RouterLink class="box-x" :to="{ name: 'home' }"> Наши офисы </RouterLink>
+            <RouterLink class="box-x" :to="{ name: 'contact-us' }"> Наши офисы </RouterLink>
             <div class="flex"></div>
           </div>
           <img src="@/assets/icons/КСМ.svg" alt="КСМ" />
@@ -25,7 +25,7 @@ import { RouterLink } from 'vue-router'
           <div class="box-x gap">
             <RouterLink class="box-x" :to="{ name: 'home' }"> Главная </RouterLink>
             <RouterLink class="box-x" :to="{ name: 'portfolio' }"> Портфолио </RouterLink>
-            <RouterLink class="box-x" :to="{ name: 'home' }"> О нас </RouterLink>
+            <RouterLink class="box-x" :to="{ name: 'about-us' }"> О нас </RouterLink>
             <RouterLink class="box-x" :to="{ name: 'home' }"> Калькулятор </RouterLink>
             <RouterLink class="box-x" :to="{ name: 'contact-us' }"> Контакты </RouterLink>
           </div>
