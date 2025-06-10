@@ -8,6 +8,7 @@ import SectionPortfolio from '@/components/sections/SectionPortfolio.vue'
   <LayoutPage class="main">
     <div class=""></div>
     <SectionPortfolio />
+    <div class=""></div>
   </LayoutPage>
   <FooterMain />
 </template>

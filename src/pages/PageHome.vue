@@ -14,6 +14,7 @@ import ComponentBaner from '@/components/sections/SectionBaner.vue'
     </SectionOpener>
     <SectionPortfolioSlider />
     <SectionAboutUs />
+    <div class=""></div>
   </LayoutPage>
   <FooterMain />
 </template>

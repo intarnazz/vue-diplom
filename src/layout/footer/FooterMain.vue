@@ -11,40 +11,33 @@ const licks = ref([
     img: phone,
     name: 'Телефон',
     text: '+7 (962) 085-82-34',
-    href: 'tel:+79620858234'
+    href: 'tel:+79620858234',
   },
   {
     img: mail,
     name: 'Почта',
     text: 'sk-mihalych@mail.ru',
-    href: 'mailto:sk-mihalych@mail.ru'
+    href: 'mailto:sk-mihalych@mail.ru',
   },
   {
     img: vk,
     name: 'Группа в ВК',
     text: 'Двери и окна в г. Александров',
-    href: 'https://vk.com/dveri_aleksandrov'
+    href: 'https://vk.com/dveri_aleksandrov',
   },
   {
     img: whatsapp,
     name: 'whatsapp',
     text: 'напишите нам в WhatsApp',
-    href: 'https://wa.me/79620858234'
-  }
-  // {
-  //   img: instagram,
-  //   name: 'Instagram',
-  //   text: '@NotNot',
-  //   href: 'http://localhost:5173/contact-us'
-  // }
+    href: 'https://wa.me/79620858234',
+  },
 ])
 </script>
 
 <template>
   <footer class="footer box-shadow">
     <LayoutWrapper class="box-x footer__wrapper gap2">
-      <div class="flex">
-      </div>
+      <div class="flex"></div>
       <nav class="box-x">
         <!-- <RouterLink :to="{ name: 'catalog' }">Каталог</RouterLink>
         <RouterLink :to="{ name: 'contact' }">Контакты</RouterLink> -->

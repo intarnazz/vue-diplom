@@ -12,6 +12,7 @@ import SectionCertificates from '@/components/sections/SectionCertificates.vue'
       <SectionAboutUs />
       <SectionCertificates />
     </LayoutWrapper>
+    <div class=""></div>
   </LayoutPage>
   <div class="flex"></div>
   <FooterMain />
