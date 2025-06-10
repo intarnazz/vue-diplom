@@ -1,7 +1,9 @@
 <script setup>
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
+import { User } from '@/storage/user.js'
+import { auth } from '@/api/api.js'
 import { RouterLink } from 'vue-router'
-// import SvgHome from '@/components/svg/SvgHome.vue'
+const user = User()
 </script>
 
 <template>
@@ -16,8 +18,15 @@ import { RouterLink } from 'vue-router'
           <img src="@/assets/icons/КСМ.svg" alt="КСМ" />
           <div class="box-x gap flex">
             <div class="flex"></div>
-            <RouterLink class="box-x button" :to="{ name: 'login' }"> Войти </RouterLink>
-            <RouterLink class="box-x button" :to="{ name: 'reg' }"> Регистрация </RouterLink>
+            <template v-if="!user.get.value">
+              <RouterLink class="box-x button" :to="{ name: 'login' }"> Войти </RouterLink>
+              <RouterLink class="box-x button" :to="{ name: 'reg' }"> Регистрация </RouterLink>
+            </template>
+            <template v-else>
+              <RouterLink class="box-x button" :to="{ name: 'chat' }"> Мои чаты </RouterLink>
+              <RouterLink class="box-x button" :to="{ name: 'profile' }"> Profile </RouterLink>
+              <button @click="auth.logout" class="box-x button">Logout</button>
+            </template>
           </div>
         </div>
         <div class="box-x gap">

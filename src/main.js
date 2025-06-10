@@ -9,6 +9,14 @@ import router from '@/router/router.js'
 
 createApp(App).use(router).mount('#app')
 
+// [X] - php chatlist new-top
+// [ ] - chat page
+// [ ] - portfolio page
+// [ ] - calkulator
+// [ ] - adaptiv
+// [ ] - host
+// [ ] - diplom
+
 // [ ] - defaut image
 // [ ] - heder if opener
 // [ ] - 422 errors

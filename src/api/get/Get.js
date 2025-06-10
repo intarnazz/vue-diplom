@@ -1,7 +1,7 @@
-import { UserStorage } from '@/api/userStorage.js'
+import { User } from '@/storage/user.js'
+const user = User()
 
 const API_URL = import.meta.env.VITE_API_URL
-const userStorage = new UserStorage()
 
 export async function Get(url, obj = {}) {
   let search = ''
@@ -16,7 +16,7 @@ export async function Get(url, obj = {}) {
       material: obj.material ?? '',
       search: search,
       responseId: obj.response_id ?? '1',
-      Authorization: `Bearer ${userStorage.get()}`,
+      Authorization: `Bearer ${user.get.value}`,
     },
   })
     .then((response) => response.json())

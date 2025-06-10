@@ -1,6 +1,7 @@
-import { UserStorage } from '@/api/userStorage.js'
+import { User } from '@/storage/user.js'
+const user = User()
+
 const API_URL = import.meta.env.VITE_API_URL
-const userStorage = new UserStorage()
 
 export async function Post(url = '', body = {}) {
   return await fetch(`${API_URL}${url}`, {
@@ -8,7 +9,7 @@ export async function Post(url = '', body = {}) {
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
-      Authorization: `Bearer ${userStorage.get()}`,
+      Authorization: `Bearer ${user.get.value}`,
     },
     body: JSON.stringify(body),
   })
