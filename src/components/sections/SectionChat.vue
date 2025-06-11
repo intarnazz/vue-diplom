@@ -15,7 +15,7 @@ function isMyMessage(message) {
 async function init() {
   isLoding.value = true
   const res = await m.get(props.id, {
-    limit: '10',
+    limit: '50',
     offset: '0',
   })
   if (res.success) {
