@@ -9,12 +9,27 @@ const user = ref(true)
 async function init() {
   isLoding.value = true
   const res = await auth.user()
-  if (res.success) user.value = res.data
+  if (res.success) {
+    user.value = res.data
+    // to connect the privatechannel
+  }
   isLoding.value = false
 }
 
 onMounted(async () => {
+  console.log('e')
+  // to connect the public channel
+  window.Echo.channel('public').listen('Hello', (e) => {
+    console.log('go public')
+    //code for displaying the serve data
+    console.log(e) // the data from the server
+  })
   await init()
+  window.Echo.private('eve-channel.2').listen('PrivateEve', (e) => {
+    console.log('go private')
+    //code for displaying the serve data
+    console.log(e) // the data from the server
+  })
 })
 </script>
 
