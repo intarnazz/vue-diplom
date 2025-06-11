@@ -17,19 +17,14 @@ async function init() {
 }
 
 onMounted(async () => {
-  console.log('e')
-  // to connect the public channel
-  window.Echo.channel('public').listen('Hello', (e) => {
-    console.log('go public')
-    //code for displaying the serve data
-    console.log(e) // the data from the server
-  })
+  // console.log('e')
+  // // to connect the public channel
+  // window.Echo.channel('public').listen('Hello', (e) => {
+  //   console.log('go public')
+  //   //code for displaying the serve data
+  //   console.log(e) // the data from the server
+  // })
   await init()
-  window.Echo.private('eve-channel.2').listen('PrivateEve', (e) => {
-    console.log('go private')
-    //code for displaying the serve data
-    console.log(e) // the data from the server
-  })
 })
 </script>
 

@@ -1,6 +1,6 @@
 <script setup>
 import { message as m, auth } from '@/api/api.js'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 
 const props = defineProps(['id'])
 const messages = ref(null)
@@ -13,6 +13,7 @@ function isMyMessage(message) {
 }
 
 async function init() {
+  window.Echo.leave(`private-chat.${props.id}`)
   isLoding.value = true
   const res = await m.get(props.id, {
     limit: '50',
@@ -21,6 +22,9 @@ async function init() {
   if (res.success) {
     messages.value = res.data
     isLoding.value = false
+    window.Echo.private(`chat.${props.id}`).listen('ChatMessageSent', (e) => {
+      messages.value.push(e)
+    })
   }
 }
 
@@ -35,8 +39,12 @@ async function send() {
     content: text.value,
     chat_id: props.id,
   })
-  if (res.success) init()
+  if (res.success) {
+    text.value = ''
+    init()
+  }
 }
+watch(() => props.id, init)
 </script>
 
 <template>
