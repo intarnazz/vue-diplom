@@ -45,7 +45,8 @@ async function send() {
     <div class="chat_wrapper pr box-y wh p2 gap2">
       <div class="flex"></div>
       <div class="chat__list box-y pa" v-if="user">
-        <div v-for="(message, id) in messages" :key="id" class="box-x">
+        <div class="flex"></div>
+        <div v-for="(message, key) in messages" :key="key" class="box-x">
           <div v-if="isMyMessage(message)" class="flex"></div>
           <p :class="isMyMessage(message) ? 'chat__message_my' : ''" class="chat__message">
             {{ message.content }}
@@ -70,7 +71,7 @@ async function send() {
     position: relative
   &__list
     overflow-y: scroll
-    padding: 0 4rem
+    padding: 0 2rem
     height: 91%
   & img
     opacity: 30%
@@ -82,7 +83,7 @@ async function send() {
     word-break: break-word;
     overflow-wrap: break-word;
     white-space: normal;
-    margin: .5rem
+    margin: .5rem 0
     &_my
       background-color: #04838E
       color: #fff
