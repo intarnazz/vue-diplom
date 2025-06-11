@@ -44,11 +44,13 @@ async function send() {
     <img class="img pa" src="@/assets/img/cyg23qqdamt41.jpg" alt="reg-bg" />
     <div class="chat_wrapper pr box-y wh p2 gap2">
       <div class="flex"></div>
-      <div v-for="(message, id) in messages" :key="id" class="box-x">
-        <div v-if="isMyMessage(message)" class="flex"></div>
-        <p :class="isMyMessage(message) ? 'chat__message_my' : ''" class="chat__message">
-          {{ message.content }}
-        </p>
+      <div class="chat__list box-y pa" v-if="user">
+        <div v-for="(message, id) in messages" :key="id" class="box-x">
+          <div v-if="isMyMessage(message)" class="flex"></div>
+          <p :class="isMyMessage(message) ? 'chat__message_my' : ''" class="chat__message">
+            {{ message.content }}
+          </p>
+        </div>
       </div>
       <form @submit.prevent="send" class="chat__message-bar-wrapper box-x">
         <input v-model="text" placeholder="Сообщение..." class="chat__message-bar wh" type="text" />
@@ -64,6 +66,12 @@ async function send() {
 .chat
   font-size: 1.3rem
   background-color: #000
+  & form
+    position: relative
+  &__list
+    overflow-y: scroll
+    padding: 0 4rem
+    height: 91%
   & img
     opacity: 30%
   &__message
@@ -71,6 +79,10 @@ async function send() {
     border-radius: 20px
     background-color: #fff
     color: #000
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    margin: .5rem
     &_my
       background-color: #04838E
       color: #fff
