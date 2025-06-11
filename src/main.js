@@ -22,3 +22,4 @@ createApp(App).use(router).mount('#app')
 // [ ] - 422 errors
 // [ ] - крифая кнопка в форме
 // [ ] - api.js доступ
+// [ ] - logout component button

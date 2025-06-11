@@ -9,7 +9,7 @@ const user = ref(true)
 async function init() {
   isLoding.value = true
   const res = await auth.user()
-  if (res.success) user.value = res.user
+  if (res.success) user.value = res.data
   isLoding.value = false
 }
 

@@ -37,7 +37,7 @@ defineExpose({
             </div>
             <p class="chat-list__item-phone">{{ chat.user.phone }}</p>
           </div>
-          <p class="chat-list__item-massage">{{ chat.latest_massage.content }}</p>
+          <p v-if="chat.latest_message" class="chat-list__item-message">{{ chat.latest_message.content }}</p>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@ defineExpose({
   padding: .5rem 1rem
   border: 1px solid $th
   border-bottom: none
-  &__item-massage
+  &__item-message
     color: #888
   &__item-phone
     color: #1D9BF0

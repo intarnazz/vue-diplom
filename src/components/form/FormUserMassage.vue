@@ -1,13 +1,13 @@
 <script setup>
 import FormMain from '@/layout/LayoutForm.vue'
 import { ref } from 'vue'
-import { massage } from '@/api/api.js'
+import { message } from '@/api/api.js'
 
 const text = ref('')
 const emit = defineEmits(['init'])
 
 async function submit() {
-  const res = await massage.add({
+  const res = await message.add({
     content: text.value,
   })
   if (res.success) emit('init')
