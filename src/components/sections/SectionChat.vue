@@ -6,6 +6,7 @@ const props = defineProps(['id'])
 const messages = ref(null)
 const isLoding = ref(true)
 const user = ref(null)
+const text = ref('')
 
 function isMyMessage(message) {
   return message.user_id === user.value.id
@@ -13,7 +14,10 @@ function isMyMessage(message) {
 
 async function init() {
   isLoding.value = true
-  const res = await m.get(props.id)
+  const res = await m.get(props.id, {
+    limit: '10',
+    offset: '0',
+  })
   if (res.success) {
     messages.value = res.data
     isLoding.value = false
@@ -25,12 +29,20 @@ onMounted(async () => {
   if (res.success) user.value = res.data
   if (props.id) await init()
 })
+
+async function send() {
+  const res = await m.add({
+    content: text.value,
+    chat_id: props.id,
+  })
+  if (res.success) init()
+}
 </script>
 
 <template>
   <section class="chat pr wh">
     <img class="img pa" src="@/assets/img/cyg23qqdamt41.jpg" alt="reg-bg" />
-    <div v-if="!isLoding" class="chat_wrapper pr box-y wh p2 gap2">
+    <div class="chat_wrapper pr box-y wh p2 gap2">
       <div class="flex"></div>
       <div v-for="(message, id) in messages" :key="id" class="box-x">
         <div v-if="isMyMessage(message)" class="flex"></div>
@@ -38,9 +50,12 @@ onMounted(async () => {
           {{ message.content }}
         </p>
       </div>
-      <div class="chat__message-bar-wrapper">
-        <input placeholder="Сообщение..." class="chat__message-bar wh" type="text" />
-      </div>
+      <form @submit.prevent="send" class="chat__message-bar-wrapper box-x">
+        <input v-model="text" placeholder="Сообщение..." class="chat__message-bar wh" type="text" />
+        <button class="box-x" type="submit">
+          <img src="@/assets/icons/send.svg" alt="send" />
+        </button>
+      </form>
     </div>
   </section>
 </template>
@@ -59,9 +74,8 @@ onMounted(async () => {
     &_my
       background-color: #04838E
       color: #fff
-  &__message-bar
-    padding: .5rem 1rem
   &__message-bar-wrapper
+    padding: .5rem 1rem
     border-radius: 20px
     background-color: #fff
     border: 1px solid #888

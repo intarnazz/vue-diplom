@@ -20,8 +20,8 @@ export class RESTAPI {
     this.#PostSendFile = PostSendFile
     return this
   }
-  async get(id) {
-    return await this.#Get(`${this.#prefix}/${id}`)
+  async get(id, header = {}) {
+    return await this.#Get(`${this.#prefix}/${id}`, header)
   }
   async all(data = {}) {
     return await this.#Get(this.#prefix, data)
