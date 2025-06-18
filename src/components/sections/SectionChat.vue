@@ -1,6 +1,7 @@
 <script setup>
 import { message as m, auth } from '@/api/api.js'
 import { onMounted, ref, watch } from 'vue'
+import ComponentMessage from '@/components/ComponentMessage.vue'
 
 const props = defineProps(['id'])
 const messages = ref(null)
@@ -8,23 +9,17 @@ const isLoding = ref(true)
 const user = ref(null)
 const text = ref('')
 
-function isMyMessage(message) {
-  return message.user_id === user.value.id
-}
-
 async function init() {
   window.Echo.leave(`private-chat.${props.id}`)
   isLoding.value = true
   const res = await m.get(props.id, {
-    limit: '50',
+    limit: '100',
     offset: '0',
   })
   if (res.success) {
     messages.value = res.data
     isLoding.value = false
-    window.Echo.private(`chat.${props.id}`).listen('ChatMessageSent', (e) => {
-      messages.value.push(e)
-    })
+    window.Echo.private(`chat.${props.id}`).listen('ChatMessageSent', init)
   }
 }
 
@@ -55,10 +50,9 @@ watch(() => props.id, init)
       <div class="chat__list box-y pa" v-if="user">
         <div class="flex"></div>
         <div v-for="(message, key) in messages" :key="key" class="box-x">
-          <div v-if="isMyMessage(message)" class="flex"></div>
-          <p :class="isMyMessage(message) ? 'chat__message_my' : ''" class="chat__message">
-            {{ message.content }}
-          </p>
+          <template v-if="message.user_id">
+            <ComponentMessage :message="message" :user="user" />
+          </template>
         </div>
       </div>
       <form @submit.prevent="send" class="chat__message-bar-wrapper box-x">
@@ -83,18 +77,6 @@ watch(() => props.id, init)
     height: 91%
   & img
     opacity: 30%
-  &__message
-    padding: .5rem 1rem
-    border-radius: 20px
-    background-color: #fff
-    color: #000
-    word-break: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    margin: .5rem 0
-    &_my
-      background-color: #04838E
-      color: #fff
   &__message-bar-wrapper
     padding: .5rem 1rem
     border-radius: 20px
