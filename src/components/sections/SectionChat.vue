@@ -8,6 +8,13 @@ const messages = ref(null)
 const isLoding = ref(true)
 const user = ref(null)
 const text = ref('')
+const chat = ref()
+
+function down() {
+  chat.value.scrollTop = chat.value.scrollHeight
+  console.log(chat.value.scrollTop)
+  console.log(chat.value.scrollHeight)
+}
 
 async function init() {
   window.Echo.leave(`private-chat.${props.id}`)
@@ -20,6 +27,7 @@ async function init() {
     messages.value = res.data
     isLoding.value = false
     window.Echo.private(`chat.${props.id}`).listen('ChatMessageSent', init)
+    down()
   }
 }
 
@@ -39,7 +47,14 @@ async function send() {
     init()
   }
 }
-watch(() => props.id, init)
+watch(
+  () => props.id,
+  async () => {
+    messages.value = null
+    await init()
+    down()
+  },
+)
 </script>
 
 <template>
@@ -47,7 +62,7 @@ watch(() => props.id, init)
     <img class="img pa" src="@/assets/img/cyg23qqdamt41.jpg" alt="reg-bg" />
     <div class="chat_wrapper pr box-y wh p2 gap2">
       <div class="flex"></div>
-      <div class="chat__list box-y pa" v-if="user">
+      <div ref="chat" class="chat__list box-y pa" v-if="user">
         <div class="flex"></div>
         <div v-for="(message, key) in messages" :key="key" class="box-x">
           <template v-if="message.user_id">
