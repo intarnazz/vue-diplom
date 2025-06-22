@@ -30,7 +30,11 @@ window.Echo = new Echo({
 
 createApp(App).use(router).mount('#app')
 
-// [X] - php chatlist new-top
+// [X] - админ акаунт
+// [X] - чаты админа
+// [ ] - web-socet чаты
+// [ ] - статусы и их обновление
+
 // [ ] - chat page
 // [ ] - portfolio page
 // [ ] - calkulator

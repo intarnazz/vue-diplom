@@ -1,19 +1,24 @@
 <script setup>
 import { message as m, auth } from '@/api/api.js'
-import { onMounted, ref, watch } from 'vue'
+import { nextTick, onMounted, ref, watch } from 'vue'
 import ComponentMessage from '@/components/ComponentMessage.vue'
 
 const props = defineProps(['id'])
-const messages = ref(null)
+const messages = ref([])
 const isLoding = ref(true)
 const user = ref(null)
 const text = ref('')
 const chat = ref()
 
-function down() {
+async function down() {
+  await nextTick()
   chat.value.scrollTop = chat.value.scrollHeight
   console.log(chat.value.scrollTop)
   console.log(chat.value.scrollHeight)
+}
+
+function chatMessageSentEve(data) {
+  messages.value.push(data)
 }
 
 async function init() {
@@ -26,8 +31,7 @@ async function init() {
   if (res.success) {
     messages.value = res.data
     isLoding.value = false
-    window.Echo.private(`chat.${props.id}`).listen('ChatMessageSent', init)
-    down()
+    window.Echo.private(`chat.${props.id}`).listen('ChatMessageSent', chatMessageSentEve)
   }
 }
 
@@ -55,6 +59,8 @@ watch(
     down()
   },
 )
+
+watch(() => messages, down, { deep: true })
 </script>
 
 <template>

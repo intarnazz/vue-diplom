@@ -10,7 +10,7 @@ const chat_id = ref(0)
 
 async function init() {
   isLoding.value = true
-  const res = await ch.all({limit: 20})
+  const res = await ch.all({ limit: 20 })
   if (res.success) chatList.value = res.data
   isLoding.value = false
 }
@@ -40,7 +40,10 @@ defineExpose({
               <h3>
                 {{ chat.user.email }}
               </h3>
-              <p class="chat-list__item-data" :class="chat_id === chat.id ? 'chat-list__focus' : ''">
+              <p
+                class="chat-list__item-data"
+                :class="chat_id === chat.id ? 'chat-list__focus' : ''"
+              >
                 {{ date(chat.updated_at) }}
               </p>
               <p
@@ -54,8 +57,12 @@ defineExpose({
               {{ chat.user.phone }}
             </p>
           </div>
-          <p v-if="chat.latest_message" class="chat-list__item-message">
-            {{ chat.latest_message.content }}
+          <p
+            v-if="chat.latest_massage"
+            :class="chat_id === chat.id ? 'chat-list__focus' : ''"
+            class="chat-list__item-message"
+          >
+            {{ chat.latest_massage.content }}
           </p>
         </div>
       </div>
