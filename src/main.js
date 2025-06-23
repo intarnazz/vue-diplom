@@ -32,7 +32,8 @@ createApp(App).use(router).mount('#app')
 
 // [X] - админ акаунт
 // [X] - чаты админа
-// [ ] - web-socet чаты
+// [ ] - eve на новые чаты + метод для Chat::class
+// [X] - web-socet чаты
 // [ ] - статусы и их обновление
 
 // [ ] - chat page
