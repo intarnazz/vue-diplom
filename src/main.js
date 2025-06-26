@@ -30,6 +30,8 @@ window.Echo = new Echo({
 
 createApp(App).use(router).mount('#app')
 
+// [ ] - limit = max 35
+
 // [X] - админ акаунт
 // [X] - чаты админа
 // [ ] - eve на новые чаты + метод для Chat::class

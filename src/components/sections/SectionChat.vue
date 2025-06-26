@@ -17,10 +17,14 @@ async function down() {
 
 function chatMessageSentEve(data) {
   messages.value.push(data)
+  m.get(props.id, {
+    limit: '0',
+    offset: '0',
+  })
 }
 
 async function init() {
-  window.Echo.leave(`private-chat.${props.id}`)
+  window.Echo.leave(`chat.${props.id}`)
   isLoding.value = true
   const res = await m.get(props.id, {
     limit: '100',
@@ -46,12 +50,15 @@ async function send() {
   })
   if (res.success) {
     text.value = ''
-    init()
+    // init()
   }
 }
 watch(
   () => props.id,
-  async () => {
+  async (newId, oldId) => {
+    if (oldId) {
+      window.Echo.leave(`private-chat.${oldId}`)
+    }
     messages.value = null
     await init()
     down()

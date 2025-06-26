@@ -22,6 +22,11 @@ onMounted(async () => {
 defineExpose({
   init,
 })
+
+const chatEve = (e) =>
+  ((i) => i !== -1 && chatList.value.splice(i, 1, e))(
+    chatList.value.findIndex((i) => i.id === e.id),
+  )
 </script>
 
 <template>
@@ -29,10 +34,7 @@ defineExpose({
     <div v-if="!isLoding" class="box-y">
       <ComponentChatListItem
         @click="((chat_id = chat.id), emit('chat_id', chat.id))"
-        @chat-eve="
-          (e) =>
-            ((i) => i !== -1 && chatList.splice(i, 1, e))(chatList.findIndex((i) => i.id === e.id))
-        "
+        @chat-eve="chatEve"
         v-for="(chat, key) in chatList"
         :key="key"
         :chat="chat"
