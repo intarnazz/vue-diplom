@@ -35,7 +35,9 @@ onMounted(async () => {
           </p>
           <p
             class="chat-list__item-status flex"
-            :class="props.chat_id === props.chat.id ? 'chat-list__focus' : ''"
+            :class="`${props.chat_id === props.chat.id ? 'chat-list__focus' : ''}
+            chat-list__item-status--${props.chat.status}
+            `"
           >
             {{ props.chat.status }}
           </p>
@@ -69,9 +71,17 @@ onMounted(async () => {
   &__item-phone
     color: #1D9BF0
   &__item-status
-    background-color: #04B82B
+    background-color: #888
     color: #fff
     padding-right: 1rem
+    &--new
+      background-color: #04B82B
+      color: #fff
+      padding-right: 1rem
+    &--viewed
+      background-color: #888
+      color: #fff
+      padding-right: 1rem
   &__item-data
     color: #888
   &__item
