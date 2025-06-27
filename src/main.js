@@ -30,7 +30,7 @@ window.Echo = new Echo({
 
 createApp(App).use(router).mount('#app')
 
-// [ ] - limit = max 35
+// [X] - limit = max 35
 // [ ] - два статуса
 
 // [X] - админ акаунт
