@@ -5,7 +5,7 @@ import LayoutOpener from '@/layout/LayoutOpener.vue'
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import SectionUserInfo from '@/components/sections/SectionUserInfo.vue'
 import SectionChatList from '@/components/sections/SectionChatList.vue'
-import FormUserMassage from '@/components/form/FormUserMassage.vue'
+import FormUserMessage from '@/components/form/FormUserMessage.vue'
 import { ref } from 'vue'
 const ChatListRef = ref(null)
 
@@ -21,7 +21,7 @@ async function _init() {
       <LayoutWrapper class="box-x top">
         <SectionChatList ref="ChatListRef" />
         <div class="">
-          <FormUserMassage @init="_init" />
+          <FormUserMessage @init="_init" />
         </div>
       </LayoutWrapper>
       <div class="flex"></div>

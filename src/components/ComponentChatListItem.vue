@@ -50,11 +50,11 @@ onMounted(async () => {
         </p>
       </div>
       <p
-        v-if="props.chat.latest_massage"
+        v-if="props.chat.latest_message"
         :class="props.chat_id === props.chat.id ? 'chat-list__focus' : ''"
         class="chat-list__item-message"
       >
-        {{ props.chat.latest_massage.content }}
+        {{ props.chat.latest_message.content }}
       </p>
     </div>
   </div>

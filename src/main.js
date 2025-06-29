@@ -30,6 +30,9 @@ window.Echo = new Echo({
 
 createApp(App).use(router).mount('#app')
 
+// [ ] - viewed-message
+// [ ] - Message позор переделать
+
 // [X] - limit = max 35
 // [ ] - два статуса
 
