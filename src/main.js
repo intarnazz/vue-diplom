@@ -30,28 +30,16 @@ window.Echo = new Echo({
 
 createApp(App).use(router).mount('#app')
 
-// [ ] - viewed-message
-// [ ] - Message позор переделать
-
-// [X] - limit = max 35
-// [ ] - два статуса
-
-// [X] - админ акаунт
-// [X] - чаты админа
 // [ ] - eve на новые чаты + метод для Chat::class
-// [X] - web-socet чаты
-// [ ] - статусы и их обновление
-
-// [ ] - chat page
+// [ ] - chat компонент в чат
 // [ ] - portfolio page
 // [ ] - calkulator
-// [ ] - adaptiv
-// [ ] - host
-// [ ] - diplom
-
 // [ ] - defaut image
-// [ ] - heder if opener
 // [ ] - 422 errors
-// [ ] - крифая кнопка в форме
-// [ ] - api.js доступ
-// [ ] - logout component button
+// [ ] - кривая кнопка в форме
+// [ ] - слайдер
+// [ ] - ссылки index о нас
+// [ ] - кривая index о нас
+// [ ] - профиль ссылка на чаты через компонент
+// [ ] - ошибка аторизации
+// [ ] - adaptiv
