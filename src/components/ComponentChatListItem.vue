@@ -1,60 +1,62 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { date } from '@/utilte/utilte.js'
+import { chat as c } from '@/api/api.js'
 
-const emit = defineEmits(['chat-eve'])
 const props = defineProps(['chat', 'chat_id'])
 const isLoding = ref(true)
+const chatLocal = ref(null)
+
+const chat = computed(() => {
+  return chatLocal.value || props.chat
+})
 
 async function init() {
   isLoding.value = true
-  window.Echo.private(`chat-status.${props.chat.id}`).listen('ChatStatusChange', (e) =>
-    emit('chatEve', e),
-  )
+  const res = await c.get(props.chat.id)
+  if (res.success) chatLocal.value = res.data
   isLoding.value = false
 }
 
-onMounted(async () => {
-  await init()
+onMounted(() => {
+  window.Echo.private(`chat-status.${chat.value.id}`).listen('ChatStatusChange', () => init())
+})
+
+onUnmounted(() => {
+  window.Echo.leave(`chat-status.${chat.value.id}`)
 })
 </script>
 
 <template>
-  <div class="box-y chat-list" :class="props.chat_id === props.chat.id ? 'chat-list__focus' : ''">
+  <div class="box-y chat-list" :class="chat_id === chat.id ? 'chat-list__focus' : ''">
     <div class="box-y gap5">
       <div class="box-y gap25">
         <div class="box-x chat-list__item">
           <h3>
-            {{ props.chat.user.email }}
+            {{ chat.user.email }}
           </h3>
-          <p
-            class="chat-list__item-data"
-            :class="props.chat_id === props.chat.id ? 'chat-list__focus' : ''"
-          >
-            {{ date(props.chat.updated_at) }}
+          <p class="chat-list__item-data" :class="chat_id === chat.id ? 'chat-list__focus' : ''">
+            {{ date(chat.updated_at) }}
           </p>
           <p
             class="chat-list__item-status flex"
-            :class="`${props.chat_id === props.chat.id ? 'chat-list__focus' : ''}
-            chat-list__item-status--${props.chat.status}
+            :class="`${chat_id === chat.id ? 'chat-list__focus' : ''}
+            chat-list__item-status--${chat.viewedMessage.countNotViewed}
             `"
           >
-            {{ props.chat.status }}
+            {{ chat.viewedMessage.countNotViewed }}
           </p>
         </div>
-        <p
-          class="chat-list__item-phone"
-          :class="props.chat_id === props.chat.id ? 'chat-list__focus' : ''"
-        >
-          {{ props.chat.user.phone }}
+        <p class="chat-list__item-phone" :class="chat_id === chat.id ? 'chat-list__focus' : ''">
+          {{ chat.user.phone }}
         </p>
       </div>
       <p
-        v-if="props.chat.latest_message"
-        :class="props.chat_id === props.chat.id ? 'chat-list__focus' : ''"
+        v-if="chat.latest_message"
+        :class="chat_id === chat.id ? 'chat-list__focus' : ''"
         class="chat-list__item-message"
       >
-        {{ props.chat.latest_message.content }}
+        {{ chat.latest_message.content }}
       </p>
     </div>
   </div>
@@ -71,14 +73,10 @@ onMounted(async () => {
   &__item-phone
     color: #1D9BF0
   &__item-status
-    background-color: #888
+    background-color: #04B82B
     color: #fff
     padding-right: 1rem
-    &--new
-      background-color: #04B82B
-      color: #fff
-      padding-right: 1rem
-    &--viewed
+    &--0
       background-color: #888
       color: #fff
       padding-right: 1rem
