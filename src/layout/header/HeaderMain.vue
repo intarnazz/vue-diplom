@@ -35,7 +35,7 @@ const user = User()
             <RouterLink class="box-x" :to="{ name: 'home' }"> Главная </RouterLink>
             <RouterLink class="box-x" :to="{ name: 'portfolio' }"> Портфолио </RouterLink>
             <RouterLink class="box-x" :to="{ name: 'about-us' }"> О нас </RouterLink>
-            <RouterLink class="box-x" :to="{ name: 'home' }"> Калькулятор </RouterLink>
+            <RouterLink class="box-x" :to="{ name: 'calculator' }"> Калькулятор </RouterLink>
             <RouterLink class="box-x" :to="{ name: 'contact-us' }"> Контакты </RouterLink>
           </div>
           <div class="flex"></div>

@@ -9,6 +9,7 @@ import PageContactUs from '@/pages/PageContactUs.vue'
 import PageAboutUs from '@/pages/PageAboutUs.vue'
 import PageChat from '@/pages/PageChat.vue'
 import PagePortfolio from '@/pages/PagePortfolio.vue'
+import PageCalculator from '@/pages/PageCalculator.vue'
 const user = User()
 
 const router = createRouter({
@@ -18,6 +19,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: PageHome,
+    },
+    {
+      path: '/calculator',
+      name: 'calculator',
+      component: PageCalculator,
     },
     {
       path: '/portfolio/:id/:name',

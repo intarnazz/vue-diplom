@@ -32,7 +32,7 @@ createApp(App).use(router).mount('#app')
 
 // [X] - eve на новые чаты
 // [X] - portfolio page
-// [ ] - calkulator
+// [X] - calkulator
 // [ ] - defaut image
 // [ ] - 422 errors
 // [ ] - кривая кнопка в форме
