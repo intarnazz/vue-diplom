@@ -12,7 +12,7 @@ import img3 from '@/assets/img/iryna-tysiak-kRaH720CCRE-unsplash (1) 1.png'
       <ComponentLinkBox
         :arrow="'right'"
         :img="img1"
-        :link="'home'"
+        :link="'about-us'"
         :sub-title="'О нас →'"
         :text="'С 2010 года работаем в сфере проектирования, поставки и монтажа фасадных систем различного уровня сложности'"
         :title="'О компании'"
@@ -20,7 +20,7 @@ import img3 from '@/assets/img/iryna-tysiak-kRaH720CCRE-unsplash (1) 1.png'
       <ComponentLinkBox
         :arrow="'left'"
         :img="img2"
-        :link="'home'"
+        :link="'portfolio'"
         :title="'Портфолио'"
         :text="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elementum nibh at elementum sodales.'"
         :sub-title="'Наши проекты → '"
@@ -28,8 +28,8 @@ import img3 from '@/assets/img/iryna-tysiak-kRaH720CCRE-unsplash (1) 1.png'
       <ComponentLinkBox
         :arrow="'right'"
         :img="img3"
-        :link="'home'"
-        :title="'О компании'"
+        :link="'calculator'"
+        :title="'calculator'"
         :text="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elementum nibh at elementum sodales.'"
         :sub-title="'Примерная стоимость проекта → '"
       />
