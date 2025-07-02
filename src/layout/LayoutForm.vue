@@ -1,5 +1,6 @@
 <script setup>
 const emit = defineEmits(['submit'])
+const props = defineProps(['message', 'errors'])
 
 function submit() {
   emit('submit')
@@ -7,7 +8,11 @@ function submit() {
 </script>
 
 <template>
-  <div class="flex form__wrapper w">
+  <div class="flex box-y gap2 form__wrapper w">
+    <div v-if="props.message" class="box-y gap">
+      <h2 class="form__error">{{ message }}</h2>
+      <p class="form__error" v-for="(error, key) in props.errors" :key="key">{{ error[0] }}</p>
+    </div>
     <form @submit.prevent="submit()" class="form w">
       <slot> </slot>
     </form>
@@ -17,6 +22,8 @@ function submit() {
 <style lang="sass">
 .form
   max-width: 450px
+  &__error
+    color: #f00
   & input[type='radio']
     cursor: pointer
   &__wrapper

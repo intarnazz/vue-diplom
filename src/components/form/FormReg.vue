@@ -10,6 +10,8 @@ const name = ref('')
 const phone = ref('')
 const password = ref('')
 const company = ref('')
+const message = ref('')
+const errors = ref([])
 
 async function submit() {
   const res = await auth.reg({
@@ -20,11 +22,12 @@ async function submit() {
     password: password.value,
   })
   if (res.success) router.push({ name: 'profile' })
+  else (message.value = res.message), (errors.value = res.errors)
 }
 </script>
 
 <template>
-  <FormMain @submit="submit">
+  <FormMain @submit="submit" :message="message" :errors="errors">
     <div class="box-x flex wh">
       <div class="box-y flex">
         <div class="form__box">

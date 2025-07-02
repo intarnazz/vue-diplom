@@ -33,7 +33,6 @@ createApp(App).use(router).mount('#app')
 // [X] - eve на новые чаты
 // [X] - portfolio page
 // [X] - calkulator
-// [ ] - defaut image
 // [ ] - 422 errors
 // [ ] - кривая кнопка в форме
 // [ ] - слайдер
@@ -48,3 +47,4 @@ createApp(App).use(router).mount('#app')
 // [ ] - page up при открытии страници
 // [ ] - побольше полей для portfolio
 // [ ] - крошки
+// [ ] - defaut image

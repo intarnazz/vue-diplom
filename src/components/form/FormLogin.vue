@@ -6,6 +6,7 @@ import { useRouter } from 'vue-router'
 
 const email = ref('')
 const password = ref('')
+const message = ref('')
 const router = useRouter()
 
 async function submit() {
@@ -14,11 +15,12 @@ async function submit() {
     password: password.value,
   })
   if (res.success) router.push({ name: 'profile' })
+  else message.value = res.message
 }
 </script>
 
 <template>
-  <FormMain @submit="submit">
+  <FormMain @submit="submit" :message="message">
     <div class="box-x flex wh">
       <div class="box-y flex">
         <div class="form__box">

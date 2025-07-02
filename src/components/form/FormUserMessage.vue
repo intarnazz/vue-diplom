@@ -1,21 +1,23 @@
 <script setup>
 import FormMain from '@/layout/LayoutForm.vue'
 import { ref } from 'vue'
-import { message } from '@/api/api.js'
+import { message as m } from '@/api/api.js'
 
 const text = ref('')
 const emit = defineEmits(['init'])
+const message = ref('')
 
 async function submit() {
-  const res = await message.add({
+  const res = await m.add({
     content: text.value,
   })
   if (res.success) emit('init')
+  else message.value = res.message
 }
 </script>
 
 <template>
-  <FormMain @submit="submit">
+  <FormMain @submit="submit" :message="message">
     <div class="box-y gap flex wh">
       <h2>Отправить запрос</h2>
       <div class="box-y flex">
