@@ -6,6 +6,7 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import SectionUserInfo from '@/components/sections/SectionUserInfo.vue'
 import SectionChatList from '@/components/sections/SectionChatList.vue'
 import FormUserMessage from '@/components/form/FormUserMessage.vue'
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
@@ -13,7 +14,9 @@ import FormUserMessage from '@/components/form/FormUserMessage.vue'
     <LayoutOpener class="box-y gap2">
       <SectionUserInfo />
       <LayoutWrapper class="box-x top">
-        <SectionChatList limit="5" />
+        <RouterLink :to="{ name: 'chat' }">
+          <SectionChatList limit="5" />
+        </RouterLink>
         <div class="">
           <FormUserMessage />
         </div>

@@ -28,33 +28,33 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="box-y chat-list" :class="chat_id === chat.id ? 'chat-list__focus' : ''">
+  <div class="box-y chat" :class="chat_id === chat.id ? 'chat__focus' : ''">
     <div class="box-y gap5">
       <div class="box-y gap25">
-        <div class="box-x chat-list__item">
+        <div class="box-x chat__item">
           <h3>
             {{ chat.user.email }}
           </h3>
-          <p class="chat-list__item-data" :class="chat_id === chat.id ? 'chat-list__focus' : ''">
+          <p class="chat__item-data" :class="chat_id === chat.id ? 'chat__focus' : ''">
             {{ date(chat.updated_at) }}
           </p>
           <p
-            class="chat-list__item-status flex"
-            :class="`${chat_id === chat.id ? 'chat-list__focus' : ''}
-            chat-list__item-status--${chat.viewedMessage.countNotViewed}
+            class="chat__item-status flex"
+            :class="`${chat_id === chat.id ? 'chat__focus' : ''}
+            chat__item-status--${chat.viewedMessage.countNotViewed}
             `"
           >
             {{ chat.viewedMessage.countNotViewed }}
           </p>
         </div>
-        <p class="chat-list__item-phone" :class="chat_id === chat.id ? 'chat-list__focus' : ''">
+        <p class="chat__item-phone" :class="chat_id === chat.id ? 'chat__focus' : ''">
           {{ chat.user.phone }}
         </p>
       </div>
       <p
         v-if="chat.latest_message"
-        :class="chat_id === chat.id ? 'chat-list__focus' : ''"
-        class="chat-list__item-message"
+        :class="chat_id === chat.id ? 'chat__focus' : ''"
+        class="chat__item-message"
       >
         {{ chat.latest_message.content }}
       </p>
@@ -63,7 +63,7 @@ onUnmounted(() => {
 </template>
 
 <style lang="sass" scoped>
-.chat-list
+.chat
   padding: .5rem 1rem
   border: 1px solid $th
   border-bottom: none
