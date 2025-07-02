@@ -7,13 +7,13 @@ const props = defineProps(['link', 'title', 'subTitle', 'text', 'img', 'arrow'])
 
 <template>
   <RouterLink class="link-box wh pr" :to="{ name: props.link }">
-    <img class="img pr" :src="props.img" alt="bg" />
+    <img class="img pa" :src="props.img" alt="bg" />
     <div
-      class="link-box__wrapper box-x wh pa"
+      class="link-box__wrapper box-x wh"
       :style="`flex-direction:${props.arrow === 'left' ? 'row-reverse' : 'row'};`"
     >
       <div
-        class="link-box__content box-x flex"
+        class="link-box__content box-x as flex"
         :style="`flex-direction:${props.arrow === 'left' ? 'row-reverse' : 'row'};`"
       >
         <div class="box-y gap2 center p5">
@@ -37,11 +37,9 @@ const props = defineProps(['link', 'title', 'subTitle', 'text', 'img', 'arrow'])
 <style scoped lang="sass">
 .link-box
   &__arrow-x
-    +h
     border-right: 1px solid #fff
     border-left: 1px solid #fff
   &__content
-    +h
     background-color: #000
     color: #fff
     opacity: 80%
