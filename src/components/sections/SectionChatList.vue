@@ -1,13 +1,18 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { chat as ch, auth } from '@/api/api.js'
 import ComponentChatListItem from '@/components/ComponentChatListItem.vue'
 
 const emit = defineEmits(['chat_id'])
+const props = defineProps(['limit'])
 const isLoding = ref(true)
 const chatList = ref(null)
 const chat_id = ref(0)
 const user = ref(null)
+
+const limit = computed(() => {
+  return props.limit || 50
+})
 
 async function _init_user() {
   const res = await auth.user()
@@ -15,7 +20,7 @@ async function _init_user() {
 }
 
 async function _init_chatList() {
-  const res = await ch.all({ limit: 20 })
+  const res = await ch.all({ limit: limit.value })
   if (res.success) chatList.value = res.data
 }
 
@@ -41,7 +46,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section>
+  <section class="chat-list">
     <div v-if="!isLoding" class="box-y">
       <ComponentChatListItem
         @click="((chat_id = chat.id), emit('chat_id', chat.id))"
@@ -55,4 +60,7 @@ onUnmounted(() => {
   </section>
 </template>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+.chat-list
+  overflow: scroll
+</style>

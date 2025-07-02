@@ -13,7 +13,7 @@ import FormUserMessage from '@/components/form/FormUserMessage.vue'
     <LayoutOpener class="box-y gap2">
       <SectionUserInfo />
       <LayoutWrapper class="box-x top">
-        <SectionChatList />
+        <SectionChatList limit="5" />
         <div class="">
           <FormUserMessage />
         </div>
