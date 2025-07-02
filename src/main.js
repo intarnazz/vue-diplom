@@ -33,9 +33,8 @@ createApp(App).use(router).mount('#app')
 // [X] - eve на новые чаты
 // [X] - portfolio page
 // [X] - calkulator
-// [ ] - 422 errors
-// [ ] - кривая кнопка в форме
-// [ ] - слайдер
+// [X] - 422 errors
+// [X] - слайдер
 // [ ] - ссылки index о нас
 // [ ] - кривая index о нас
 // [ ] - профиль ссылка на чаты через компонент

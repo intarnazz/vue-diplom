@@ -44,7 +44,7 @@ onMounted(async () => {
 
 <template>
   <section class="portfolio-slider box-y pr">
-    <div v-if="!isLoading" style="width: 110%; margin: auto">
+    <div v-if="!isLoading" style="width: 110%; margin: 0 auto">
       <swiper-container>
         <swiper-slide style="padding: 2rem 0" v-for="(value, key) in portfolio" :key="key">
           <ComponentImg class="portfolio-slider__img" :id="value.image_id" />
@@ -67,6 +67,9 @@ onMounted(async () => {
 <style scoped lang="sass">
 .swiper-button
   pointer-events: auto
+  transition: .2s
+  &:active
+    transform: scale(1.1)
 .swiper-buttons
   width: 42%
   &__wrapper
@@ -87,6 +90,7 @@ swiper-slide.swiper-slide-active
       transition: .2s
 
 .portfolio-slider
+  max-height: 350px
   margin: 0 0 0 -10%
   width: 110%
   overflow: hidden
