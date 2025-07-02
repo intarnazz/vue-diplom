@@ -31,8 +31,7 @@ window.Echo = new Echo({
 createApp(App).use(router).mount('#app')
 
 // [X] - eve на новые чаты
-// [ ] - chat компонент в чат
-// [ ] - portfolio page
+// [X] - portfolio page
 // [ ] - calkulator
 // [ ] - defaut image
 // [ ] - 422 errors
@@ -45,3 +44,7 @@ createApp(App).use(router).mount('#app')
 // [ ] - adaptiv
 
 // [ ] - рагинация chat list
+// [ ] - чаты с уведомлнием вверху
+// [ ] - page up при открытии страници
+// [ ] - побольше полей для portfolio
+// [ ] - крошки

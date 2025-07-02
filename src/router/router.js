@@ -4,10 +4,11 @@ import PageHome from '@/pages/PageHome.vue'
 import PageLogin from '@/pages/PageLogin.vue'
 import PageReg from '@/pages/PageReg.vue'
 import PageProfile from '@/pages/PageProfile.vue'
-import PagePortfolio from '@/pages/PagePortfolio.vue'
+import PagePortfolioList from '@/pages/PagePortfolioList.vue'
 import PageContactUs from '@/pages/PageContactUs.vue'
 import PageAboutUs from '@/pages/PageAboutUs.vue'
 import PageChat from '@/pages/PageChat.vue'
+import PagePortfolio from '@/pages/PagePortfolio.vue'
 const user = User()
 
 const router = createRouter({
@@ -17,6 +18,12 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: PageHome,
+    },
+    {
+      path: '/portfolio/:id/:name',
+      name: 'portfolio-id',
+      props: true,
+      component: PagePortfolio,
     },
     {
       path: '/authorization',
@@ -31,7 +38,7 @@ const router = createRouter({
     {
       path: '/portfolio',
       name: 'portfolio',
-      component: PagePortfolio,
+      component: PagePortfolioList,
     },
     {
       path: '/contact-us',
