@@ -8,5 +8,5 @@
 
 <style lang="sass" scoped>
 .opener
-  height: calc( 100dvh - $header )
+  min-height: calc( 100dvh - $header )
 </style>

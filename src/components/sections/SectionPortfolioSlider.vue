@@ -90,7 +90,6 @@ swiper-slide.swiper-slide-active
       transition: .2s
 
 .portfolio-slider
-  max-height: 350px
   margin: 0 0 0 -10%
   width: 110%
   overflow: hidden
