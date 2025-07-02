@@ -29,6 +29,7 @@ function submit() {
   &__wrapper
     display: flex
   &__box
+    height: 3.25rem
     & > input
       border: 1px solid $th
       padding: 1rem .5rem
@@ -49,6 +50,7 @@ function submit() {
     &:last-child
       border-bottom: 1px solid $th
   & button
+    height: 3.25rem
     border-radius: 0px
     border: none
     color: #fff
