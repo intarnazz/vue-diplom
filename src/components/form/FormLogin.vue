@@ -21,7 +21,7 @@ async function submit() {
 
 <template>
   <FormMain @submit="submit" :message="message">
-    <div class="box-x flex wh">
+    <div class="box-x down flex wh">
       <div class="box-y flex">
         <div class="form__box">
           <input
