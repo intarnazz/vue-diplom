@@ -30,7 +30,7 @@ window.Echo = new Echo({
 
 createApp(App).use(router).mount('#app')
 
-// [ ] - eve на новые чаты + метод для Chat::class
+// [X] - eve на новые чаты
 // [ ] - chat компонент в чат
 // [ ] - portfolio page
 // [ ] - calkulator
@@ -43,3 +43,5 @@ createApp(App).use(router).mount('#app')
 // [ ] - профиль ссылка на чаты через компонент
 // [ ] - ошибка аторизации
 // [ ] - adaptiv
+
+// [ ] - рагинация chat list

@@ -6,12 +6,6 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import SectionUserInfo from '@/components/sections/SectionUserInfo.vue'
 import SectionChatList from '@/components/sections/SectionChatList.vue'
 import FormUserMessage from '@/components/form/FormUserMessage.vue'
-import { ref } from 'vue'
-const ChatListRef = ref(null)
-
-async function _init() {
-  await ChatListRef.value.init()
-}
 </script>
 
 <template>
@@ -19,9 +13,9 @@ async function _init() {
     <LayoutOpener class="box-y gap2">
       <SectionUserInfo />
       <LayoutWrapper class="box-x top">
-        <SectionChatList ref="ChatListRef" />
+        <SectionChatList />
         <div class="">
-          <FormUserMessage @init="_init" />
+          <FormUserMessage />
         </div>
       </LayoutWrapper>
       <div class="flex"></div>
