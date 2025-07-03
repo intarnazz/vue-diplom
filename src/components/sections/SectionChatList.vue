@@ -45,10 +45,7 @@ async function _init_chatList() {
       (totalCount.value = res.pagingInfo.totalCount)
 }
 
-async function init(e) {
-  console.log(e)
-
-  console.log(!canLoding.value)
+async function init() {
   if (!canLoding.value) return
   isLoding.value = true
   await _init_chatList()
@@ -58,9 +55,8 @@ async function init(e) {
 onMounted(async () => {
   await _init_user()
   await init()
-  window.Echo.private(`user.${user.value.id}.new-chat-create`).listen(
-    'NewChatCreate',
-    (e) => (chatList.value.push(e), chat_init(e.id)),
+  window.Echo.private(`user.${user.value.id}.new-chat-create`).listen('NewChatCreate', (e) =>
+    new_chat_init(e),
   )
 })
 
@@ -68,10 +64,20 @@ onUnmounted(() => {
   window.Echo.leave(`user.${user.value.id}.new-chat-create`)
 })
 
-async function chat_init(id) {
-  const index = chatList.value.findIndex((i) => i.id === id)
-  const res = await ch.get(id)
-  if (res.success) chatList.value[index] = { ...res.data }
+async function new_chat_init(e) {
+  const res = await ch.get(e.id)
+  console.log(res);
+  if (res.success) {
+    chatList.value.push({ ...res.data })
+  }
+}
+
+async function chat_init(e) {
+  const index = chatList.value.findIndex((i) => i.id === e.id)
+  const res = await ch.get(e.id)
+  if (res.success) {
+    chatList.value[index] = { ...res.data }
+  }
 }
 </script>
 
@@ -80,7 +86,7 @@ async function chat_init(id) {
     <div class="box-y">
       <ComponentChatListItem
         @click="((chat_id = chat.id), emit('chat_id', chat.id))"
-        @eve-chat="() => chat_init(chat.id)"
+        @eve-chat="(e) => chat_init(e)"
         v-for="(chat, key) in chatListSort"
         :key="chat.id"
         :chat="chat"

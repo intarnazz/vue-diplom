@@ -10,8 +10,8 @@ const chat = computed(() => {
 })
 
 onMounted(() => {
-  window.Echo.private(`chat-status.${chat.value.id}`).listen('ChatStatusChange', () =>
-    emit('eve-chat'),
+  window.Echo.private(`chat-status.${chat.value.id}`).listen('ChatStatusChange', (e) =>
+    emit('eve-chat', e),
   )
 })
 
