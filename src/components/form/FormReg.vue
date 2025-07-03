@@ -28,8 +28,8 @@ async function submit() {
 
 <template>
   <FormMain @submit="submit" :message="message" :errors="errors">
-    <div class="box-x flex wh">
-      <div class="box-y flex">
+    <div class="box-x media down flex wh">
+      <div class="box-y wh flex">
         <div class="form__box">
           <input
             v-model="email"

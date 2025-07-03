@@ -6,9 +6,9 @@ import FormCalculator from '@/components/form/FormCalculator.vue'
 <template>
   <section class="claculator">
     <LayoutWrapper class="box-x" v-if="!isLoding">
-      <div class="flex"></div>
+      <div class="flex media"></div>
       <FormCalculator />
-      <div class="flex"></div>
+      <div class="flex media"></div>
     </LayoutWrapper>
   </section>
 </template>

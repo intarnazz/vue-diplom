@@ -21,8 +21,8 @@ async function submit() {
 
 <template>
   <FormMain @submit="submit" :message="message">
-    <div class="box-x down flex wh">
-      <div class="box-y flex">
+    <div class="box-x media down flex wh">
+      <div class="box-y wh flex">
         <div class="form__box">
           <input
             v-model="email"

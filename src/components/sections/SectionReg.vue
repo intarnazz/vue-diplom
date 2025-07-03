@@ -6,10 +6,10 @@ import FormReg from '@/components/form/FormReg.vue'
 <template>
   <ComponentOpener>
     <section class="reg wh box-x">
-      <div class="wh">
+      <div class="wh flex9 flex media">
         <img class="img" src="@/assets/img/reg-bg.jpg" alt="reg-bg" />
       </div>
-      <div class="reg__wrapper wh box-y gap p5">
+      <div class="reg__wrapper wh box-y gap p5 flex16 flex">
         <h2>Регистрация</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora dolores voluptatem
@@ -18,7 +18,7 @@ import FormReg from '@/components/form/FormReg.vue'
         </p>
         <div class="box-x">
           <FormReg />
-          <div class="flex"></div>
+          <div class="flex media"></div>
         </div>
         <div class="flex"></div>
       </div>
@@ -26,11 +26,4 @@ import FormReg from '@/components/form/FormReg.vue'
   </ComponentOpener>
 </template>
 
-<style lang="sass" scoped>
-.reg
-  & > div
-    &:first-child
-      flex: 9
-    &:last-child
-      flex: 16
-</style>
+<style lang="sass" scoped></style>

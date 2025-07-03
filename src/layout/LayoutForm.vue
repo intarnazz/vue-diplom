@@ -22,6 +22,8 @@ function submit() {
 <style lang="sass">
 .form
   max-width: 450px
+  width: 450px
+  margin: auto
   &__error
     color: #f00
   & input[type='radio']
@@ -57,4 +59,10 @@ function submit() {
     font-weight: 400
     background: #02838D
     padding: 1rem
+
+@media screen and (max-width: 480px)
+  .form
+    max-width: none
+    width: 100%
+    margin: auto
 </style>

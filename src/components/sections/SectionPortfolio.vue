@@ -23,11 +23,11 @@ onMounted(async () => {
 <template>
   <section class="portfolio">
     <LayoutWrapper v-if="!isLoding">
-      <div class="box-x top gap2">
-        <div class="h flex9">
+      <div class="box-x media top gap2">
+        <div class="h flex9 flex media">
           <ComponentImg class="img" :id="portfolio.image_id" />
         </div>
-        <div class="flex16 box-x">
+        <div class="flex16 flex media box-x">
           <div class="flex"></div>
           <div class="box-x gap">
             <div class="box-y gap">

@@ -13,10 +13,16 @@ const chat_id = ref(0)
     <SectionOpener style="overflow: hidden" class="box-x top wh">
       <SectionChatList
         @chat_id="(e) => (chat_id = e)"
+        :class="chat_id !== 0 ? 'cansel media' : ''"
         class="wh"
         style="flex: 1; box-shadow: 0 0 15px -5px #000"
       />
-      <SectionChat :id="chat_id" style="flex: 3" />
+      <SectionChat
+        :class="chat_id === 0 ? 'cansel media' : ''"
+        @cansel="() => (chat_id = 0)"
+        :id="chat_id"
+        style="flex: 3"
+      />
     </SectionOpener>
   </LayoutPage>
   <FooterMain />

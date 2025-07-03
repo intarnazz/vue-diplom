@@ -29,7 +29,7 @@ const props = defineProps(['link', 'title', 'subTitle', 'text', 'img', 'arrow'])
           <div class="flex"></div>
         </div>
       </div>
-      <div class="flex"></div>
+      <div class="flex media__flex"></div>
     </div>
   </RouterLink>
 </template>

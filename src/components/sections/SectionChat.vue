@@ -4,6 +4,7 @@ import { nextTick, onMounted, ref, watch } from 'vue'
 import ComponentMessage from '@/components/ComponentMessage.vue'
 
 const props = defineProps(['id'])
+const emit = defineEmits(['cansel'])
 const messages = ref([])
 const isLoding = ref(true)
 const user = ref(null)
@@ -24,6 +25,7 @@ function chatMessageSentEve(data) {
 }
 
 async function init() {
+  if (!props.id) return
   window.Echo.leave(`chat.${props.id}`)
   isLoding.value = true
   const res = await m.get(props.id, {
@@ -40,7 +42,7 @@ async function init() {
 onMounted(async () => {
   const res = await auth.user()
   if (res.success) user.value = res.data
-  if (props.id) await init()
+  await init()
 })
 
 async function send() {
@@ -94,6 +96,7 @@ watch(() => messages, down, { deep: true })
         </form>
       </div>
     </div>
+    <button @click="emit('cansel')" class="button pa media">Нзад</button>
   </section>
 </template>
 

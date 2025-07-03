@@ -19,7 +19,7 @@ onMounted(async () => {
 
   const swiperEl = document.querySelector('swiper-container')
   if (swiperEl) {
-    swiperEl.slidesPerView = 3
+    swiperEl.slidesPerView = window.innerWidth < 666 ? 1 : 3
     swiperEl.centeredSlides = true
     swiperEl.loop = true
     swiperEl.loopedSlides = portfolio.value.length
@@ -27,7 +27,6 @@ onMounted(async () => {
     swiperEl.addEventListener('swiperinit', () => {
       swiperEl.swiper.slideToLoop(3, 0)
     })
-
     const nextBtn = document.querySelector('.swiper-button-next')
     const prevBtn = document.querySelector('.swiper-button-prev')
 
@@ -37,6 +36,10 @@ onMounted(async () => {
 
     prevBtn?.addEventListener('click', () => {
       swiperEl.swiper.slidePrev()
+    })
+    window.addEventListener('resize', () => {
+      swiperEl.slidesPerView = window.innerWidth < 666 ? 1 : 3
+      swiperEl.swiper.update() // Обновить Swiper
     })
   }
 })
@@ -99,4 +102,10 @@ swiper-slide.swiper-slide-active
     width: 100%
     height: 300px
     object-fit: cover
+
+@media screen and (max-width: 666px)
+  .swiper-buttons
+    width: 80%
+    &__wrapper
+      width: 110%
 </style>

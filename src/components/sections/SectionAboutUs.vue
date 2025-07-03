@@ -3,7 +3,7 @@
 <template>
   <section class="about-us wh box-y gap2">
     <div class=""></div>
-    <div class="box-x w gap2">
+    <div class="box-x media w gap2">
       <div class="box-y gap flex">
         <h2>
           <span style="display: block"> <span style="color: #f69d04">К</span>омплексные </span>
@@ -22,13 +22,13 @@
         </p>
       </div>
       <div class="pr flex">
-        <img class="pa img" src="@/assets/img/IMG_9879.jpg 3.png" alt="IMG_9879" />
+        <img class="pa media img" src="@/assets/img/IMG_9879.jpg 3.png" alt="IMG_9879" />
       </div>
     </div>
 
-    <div class="box-x w gap2">
+    <div class="box-x box-x-r media w gap2">
       <div class="pr flex">
-        <img class="pa img" src="@/assets/img/IMG_9879.jpg 3.png" alt="IMG_9879" />
+        <img class="pa media img" src="@/assets/img/IMG_9879.jpg 3.png" alt="IMG_9879" />
       </div>
       <div class="box-y gap flex">
         <h2>Lorem ipsum dolor sit amet</h2>
@@ -47,4 +47,8 @@
   </section>
 </template>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+@media screen and (max-width: 330px)
+  .box-x-r
+    flex-direction: column-reverse
+</style>
