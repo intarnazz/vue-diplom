@@ -2,6 +2,7 @@
 import { portfolio as p } from '@/api/api.js'
 import { onMounted, ref, nextTick } from 'vue'
 import ComponentImg from '@/components/ComponentImg.vue'
+import { RouterLink } from 'vue-router'
 
 const isLoading = ref(true)
 const portfolio = ref([])
@@ -50,7 +51,9 @@ onMounted(async () => {
     <div v-if="!isLoading" style="width: 110%; margin: 0 auto">
       <swiper-container>
         <swiper-slide style="padding: 2rem 0" v-for="(value, key) in portfolio" :key="key">
-          <ComponentImg class="portfolio-slider__img" :id="value.image_id" />
+          <RouterLink :to="{ name: 'portfolio-id', params: { id: value.id, name: value.title } }">
+            <ComponentImg class="portfolio-slider__img" :id="value.image_id" />
+          </RouterLink>
         </swiper-slide>
       </swiper-container>
     </div>
