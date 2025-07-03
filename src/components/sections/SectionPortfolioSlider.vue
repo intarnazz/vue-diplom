@@ -1,11 +1,16 @@
 <script setup>
 import { portfolio as p } from '@/api/api.js'
-import { onMounted, ref, nextTick } from 'vue'
+import { onMounted, ref, nextTick, onUnmounted } from 'vue'
 import ComponentImg from '@/components/ComponentImg.vue'
 import { RouterLink } from 'vue-router'
 
 const isLoading = ref(true)
 const portfolio = ref([])
+
+const resizeHandler = ref(null)
+const nextClickHandler = ref(null)
+const prevClickHandler = ref(null)
+const swiperInitHandler = ref(null)
 
 async function init() {
   isLoading.value = true
@@ -19,29 +24,60 @@ onMounted(async () => {
   await nextTick()
 
   const swiperEl = document.querySelector('swiper-container')
+
   if (swiperEl) {
     swiperEl.slidesPerView = window.innerWidth < 666 ? 1 : 3
     swiperEl.centeredSlides = true
     swiperEl.loop = true
     swiperEl.loopedSlides = portfolio.value.length
     swiperEl.spaceBetween = 60
-    swiperEl.addEventListener('swiperinit', () => {
+
+    swiperInitHandler.value = () => {
       swiperEl.swiper.slideToLoop(3, 0)
-    })
+    }
+    swiperEl.addEventListener('swiperinit', swiperInitHandler.value)
+
     const nextBtn = document.querySelector('.swiper-button-next')
     const prevBtn = document.querySelector('.swiper-button-prev')
 
-    nextBtn?.addEventListener('click', () => {
+    nextClickHandler.value = () => {
       swiperEl.swiper.slideNext()
-    })
-
-    prevBtn?.addEventListener('click', () => {
+    }
+    prevClickHandler.value = () => {
       swiperEl.swiper.slidePrev()
-    })
-    window.addEventListener('resize', () => {
+    }
+
+    nextBtn?.addEventListener('click', nextClickHandler.value)
+    prevBtn?.addEventListener('click', prevClickHandler.value)
+
+    resizeHandler.value = () => {
       swiperEl.slidesPerView = window.innerWidth < 666 ? 1 : 3
-      swiperEl.swiper.update() // Обновить Swiper
-    })
+      swiperEl.swiper.update()
+    }
+
+    window.addEventListener('resize', resizeHandler.value)
+  }
+})
+
+onUnmounted(() => {
+  const swiperEl = document.querySelector('swiper-container')
+  const nextBtn = document.querySelector('.swiper-button-next')
+  const prevBtn = document.querySelector('.swiper-button-prev')
+
+  if (swiperEl && swiperInitHandler.value) {
+    swiperEl.removeEventListener('swiperinit', swiperInitHandler.value)
+  }
+
+  if (nextBtn && nextClickHandler.value) {
+    nextBtn.removeEventListener('click', nextClickHandler.value)
+  }
+
+  if (prevBtn && prevClickHandler.value) {
+    prevBtn.removeEventListener('click', prevClickHandler.value)
+  }
+
+  if (resizeHandler.value) {
+    window.removeEventListener('resize', resizeHandler.value)
   }
 })
 </script>
