@@ -18,6 +18,9 @@ const user = User()
           <img src="@/assets/icons/КСМ.svg" alt="КСМ" />
           <div class="box-x gap flex">
             <div class="flex"></div>
+            <RouterLink class="box-x" :to="{ name: 'messageMe' }">
+              Напишите нам сообщение
+            </RouterLink>
             <template v-if="!user.get.value">
               <RouterLink class="box-x button" :to="{ name: 'login' }"> Войти </RouterLink>
               <RouterLink class="box-x button" :to="{ name: 'reg' }"> Регистрация </RouterLink>

@@ -10,6 +10,7 @@ import PageAboutUs from '@/pages/PageAboutUs.vue'
 import PageChat from '@/pages/PageChat.vue'
 import PagePortfolio from '@/pages/PagePortfolio.vue'
 import PageCalculator from '@/pages/PageCalculator.vue'
+import PageMessageMe from '@/pages/PageMessageMe.vue'
 const user = User()
 
 const router = createRouter({
@@ -19,6 +20,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: PageHome,
+    },
+    {
+      path: '/message-me',
+      name: 'messageMe',
+      component: PageMessageMe,
     },
     {
       path: '/calculator',

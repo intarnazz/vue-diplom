@@ -17,14 +17,14 @@ async function submit() {
 </script>
 
 <template>
-  <FormMain @submit="submit" :message="message">
+  <FormMain class="flex form-user-message wh" @submit="submit" :message="message">
     <div class="box-y gap flex wh">
       <h2>Отправить запрос</h2>
       <div class="box-y flex">
-        <div class="form__box">
+        <div class="form__box flex">
           <textarea
             v-model="text"
-            class="flex"
+            class="flex wh"
             id="text"
             name="text"
             type="text"
@@ -32,12 +32,19 @@ async function submit() {
           />
         </div>
       </div>
-      <div class="box-y h">
-        <div class="flex"></div>
+      <div class="box-y">
         <button type="submit" class="button">ОТПРАВИТЬ</button>
       </div>
     </div>
   </FormMain>
 </template>
 
-<style lang="sass" scoped></style>
+<style lang="sass">
+textarea
+  resize: none
+
+.form-user-message
+  & form
+    max-width: none
+    +wh
+</style>

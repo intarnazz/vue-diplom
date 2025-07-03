@@ -23,7 +23,7 @@ function submit() {
 .form
   max-width: 450px
   width: 450px
-  margin: auto
+  // margin: auto
   &__error
     color: #f00
   & input[type='radio']
