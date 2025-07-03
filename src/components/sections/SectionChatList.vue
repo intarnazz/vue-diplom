@@ -15,13 +15,12 @@ const offset = ref(0)
 const totalCount = ref(null)
 
 const chatListSort = computed(() =>
-  !!chatList.value.length
+  chatList.value.length
     ? [...chatList.value].sort(
-        (a, b) => +b.viewedMessage.countNotViewed - +a.viewedMessage.countNotViewed,
+        (a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime(),
       )
     : [],
 )
-
 const canLoding = computed(
   () => totalCount.value === null || chatList.value.length < totalCount.value,
 )
@@ -46,7 +45,10 @@ async function _init_chatList() {
       (totalCount.value = res.pagingInfo.totalCount)
 }
 
-async function init() {
+async function init(e) {
+  console.log(e)
+
+  console.log(!canLoding.value)
   if (!canLoding.value) return
   isLoding.value = true
   await _init_chatList()
@@ -56,7 +58,10 @@ async function init() {
 onMounted(async () => {
   await _init_user()
   await init()
-  window.Echo.private(`user.${user.value.id}.new-chat-create`).listen('NewChatCreate', () => init())
+  window.Echo.private(`user.${user.value.id}.new-chat-create`).listen(
+    'NewChatCreate',
+    (e) => (chatList.value.push(e), chat_init(e.id)),
+  )
 })
 
 onUnmounted(() => {
