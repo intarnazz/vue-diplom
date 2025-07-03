@@ -39,6 +39,21 @@ onMounted(async () => {
                 <h3>Описание</h3>
                 <p>{{ portfolio.description }}</p>
               </div>
+
+              <div class="box-x gap top" v-if="portfolio.client">
+                <h3>Клиент</h3>
+                <p class="flex">{{ portfolio.client }}</p>
+              </div>
+
+              <div class="box-x gap top" v-if="portfolio.completed_at">
+                <h3>Завершено</h3>
+                <p class="flex">{{ new Date(portfolio.completed_at).toLocaleDateString() }}</p>
+              </div>
+
+              <div class="box-x gap top" v-if="portfolio.notes">
+                <h3>Заметки</h3>
+                <p class="flex">{{ portfolio.notes }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -47,4 +62,7 @@ onMounted(async () => {
   </section>
 </template>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+h3
+  min-width: 7rem
+</style>

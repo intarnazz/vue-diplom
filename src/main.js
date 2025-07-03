@@ -42,7 +42,7 @@ createApp(App).use(router).mount('#app')
 // [X] - adaptiv
 
 // [X] - рагинация chat list
-// [ ] - page up при открытии страници
+// [X] - page up при открытии страници
 // [ ] - побольше полей для portfolio
 // [ ] - ссылки в slider
 // [ ] - гостевой запрос
