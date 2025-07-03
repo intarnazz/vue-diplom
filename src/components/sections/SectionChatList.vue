@@ -14,6 +14,14 @@ const limitLocal = ref(10)
 const offset = ref(0)
 const totalCount = ref(null)
 
+const chatListSort = computed(() =>
+  !!chatList.value.length
+    ? [...chatList.value].sort(
+        (a, b) => +b.viewedMessage.countNotViewed - +a.viewedMessage.countNotViewed,
+      )
+    : [],
+)
+
 const canLoding = computed(
   () => totalCount.value === null || chatList.value.length < totalCount.value,
 )
@@ -54,6 +62,12 @@ onMounted(async () => {
 onUnmounted(() => {
   window.Echo.leave(`user.${user.value.id}.new-chat-create`)
 })
+
+async function chat_init(id) {
+  const index = chatList.value.findIndex((i) => i.id === id)
+  const res = await ch.get(id)
+  if (res.success) chatList.value[index] = { ...res.data }
+}
 </script>
 
 <template>
@@ -61,8 +75,9 @@ onUnmounted(() => {
     <div class="box-y">
       <ComponentChatListItem
         @click="((chat_id = chat.id), emit('chat_id', chat.id))"
-        v-for="(chat, key) in chatList"
-        :key="key"
+        @eve-chat="() => chat_init(chat.id)"
+        v-for="(chat, key) in chatListSort"
+        :key="chat.id"
         :chat="chat"
         :chat_id="chat_id"
       />

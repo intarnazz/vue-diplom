@@ -1,25 +1,18 @@
 <script setup>
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted } from 'vue'
 import { date } from '@/utilte/utilte.js'
-import { chat as c } from '@/api/api.js'
 
 const props = defineProps(['chat', 'chat_id'])
-const isLoding = ref(true)
-const chatLocal = ref(null)
+const emit = defineEmits(['eve-chat'])
 
 const chat = computed(() => {
-  return chatLocal.value || props.chat
+  return props.chat
 })
 
-async function init() {
-  isLoding.value = true
-  const res = await c.get(props.chat.id)
-  if (res.success) chatLocal.value = res.data
-  isLoding.value = false
-}
-
 onMounted(() => {
-  window.Echo.private(`chat-status.${chat.value.id}`).listen('ChatStatusChange', () => init())
+  window.Echo.private(`chat-status.${chat.value.id}`).listen('ChatStatusChange', () =>
+    emit('eve-chat'),
+  )
 })
 
 onUnmounted(() => {
