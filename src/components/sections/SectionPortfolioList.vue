@@ -119,4 +119,12 @@ onUnmounted(() => {
       padding: 0 1rem
   &__title
     border-bottom: 1px solid $th
+@media screen and (max-width: 650px)
+  .portfolio
+    &__list
+      grid-template-columns: 1fr 1fr
+@media screen and (max-width: 350px)
+  .portfolio
+    &__list
+      grid-template-columns: 1fr
 </style>

@@ -49,3 +49,8 @@ createApp(App).use(router).mount('#app')
 // [X] - adaptiv
 // [X] - portfolio pagin
 // [X] - загрузка
+
+// [ ] - logo
+// [ ] - footer
+// [ ] - SEO
+// [ ] - admin
