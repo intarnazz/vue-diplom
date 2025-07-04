@@ -42,7 +42,7 @@ const formattedPrice = computed(() => price.value.toLocaleString('ru-RU'))
 </script>
 
 <template>
-  <FormMain v-if="!isLoding" @submit="submit">
+  <FormMain v-if="!isLoding" @submit="submit" :loding="false">
     <div class="box-y gap2 wh">
       <div class="box-y">
         <!-- Тип фасадного покрытия -->

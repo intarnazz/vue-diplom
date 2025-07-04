@@ -1,6 +1,7 @@
 <script setup>
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import SvgMenu from '@/components/svg/SvgMenu.vue'
+import ComponentLogo from '@/components/ComponentLogo.vue'
 import { User } from '@/storage/user.js'
 import { auth } from '@/api/api.js'
 import { RouterLink, useRouter } from 'vue-router'
@@ -35,7 +36,7 @@ onUnmounted(() => {
             <RouterLink class="box-x" :to="{ name: 'contact-us' }"> Наши офисы </RouterLink>
             <div class="flex"></div>
           </div>
-          <img src="@/assets/icons/КСМ.svg" alt="КСМ" />
+          <ComponentLogo />
           <div class="box-x gap flex">
             <div class="flex"></div>
             <RouterLink class="box-x" :to="{ name: 'messageMe' }">
@@ -143,7 +144,7 @@ onUnmounted(() => {
       background-color: #000000
     & .box-x
       flex-direction: column
-      align-self: flex-start
+      align-items: flex-start
 
 @media screen and (max-width: 820px)
   .header

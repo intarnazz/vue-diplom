@@ -1,10 +1,12 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 const emit = defineEmits(['submit'])
-const props = defineProps(['message', 'errors', 'success'])
+const props = defineProps(['message', 'errors', 'success', 'loding'])
 const isOk = ref(false)
 const isLoding = ref(false)
+
+const loding = computed(() => props.loding ?? true)
 
 function submit() {
   isLoding.value = true
@@ -23,7 +25,7 @@ watch(
       <h2 v-if="props.message && !isOk" class="form__error p" :class="{ success: success }">
         {{ message }}
       </h2>
-      <h2 v-else-if="isLoding && !isOk" class="form__error p isLoding">isLoding...</h2>
+      <h2 v-else-if="isLoding && !isOk && loding" class="form__error p isLoding">isLoding...</h2>
       <template v-if="props.message && !isOk">
         <p class="form__error" v-for="(error, key) in props.errors" :key="key">{{ error[0] }}</p>
       </template>

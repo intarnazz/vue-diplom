@@ -50,7 +50,7 @@ createApp(App).use(router).mount('#app')
 // [X] - portfolio pagin
 // [X] - загрузка
 
-// [ ] - logo
-// [ ] - footer
+// [X] - logo
+// [x] - footer
 // [ ] - SEO
 // [ ] - admin

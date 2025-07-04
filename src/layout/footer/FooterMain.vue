@@ -1,59 +1,23 @@
 <script setup>
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
-import { ref } from 'vue'
-import phone from '@/assets/icons/link/phone.svg'
-import mail from '@/assets/icons/link/mail.svg'
-import vk from '@/assets/icons/link/VK.svg'
-import whatsapp from '@/assets/icons/link/whatsapp.svg'
-
-const licks = ref([
-  {
-    img: phone,
-    name: 'Телефон',
-    text: '+7 (962) 085-82-34',
-    href: 'tel:+79620858234',
-  },
-  {
-    img: mail,
-    name: 'Почта',
-    text: 'sk-mihalych@mail.ru',
-    href: 'mailto:sk-mihalych@mail.ru',
-  },
-  {
-    img: vk,
-    name: 'Группа в ВК',
-    text: 'Двери и окна в г. Александров',
-    href: 'https://vk.com/dveri_aleksandrov',
-  },
-  {
-    img: whatsapp,
-    name: 'whatsapp',
-    text: 'напишите нам в WhatsApp',
-    href: 'https://wa.me/79620858234',
-  },
-])
+import ComponentLogo from '@/components/ComponentLogo.vue'
 </script>
 
 <template>
-  <footer class="footer box-shadow">
-    <LayoutWrapper class="box-x footer__wrapper gap2">
-      <div class="flex"></div>
-      <nav class="box-x">
-        <!-- <RouterLink :to="{ name: 'catalog' }">Каталог</RouterLink>
-        <RouterLink :to="{ name: 'contact' }">Контакты</RouterLink> -->
-      </nav>
-      <div class="box-x footer__web-wrapper flex">
-        <ul class="box-y gap">
-          <li v-for="(lick, key) in licks" :key="key">
-            <a class="box-x gap contact__item" :href="lick.href" target="_blank">
-              <div class="box-x gap">
-                <p>{{ lick.name }}</p>
-                <p>{{ lick.text }}</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
+  <footer class="footer">
+    <LayoutWrapper class="box-y gap">
+      <ComponentLogo fill="#fff" />
+      <RouterLink :to="{ name: 'contact-us' }"> Наши офисы </RouterLink>
+      <RouterLink :to="{ name: 'messageMe' }"> Напишите нам сообщение </RouterLink>
+      <RouterLink :to="{ name: 'login' }"> Войти </RouterLink>
+      <RouterLink :to="{ name: 'reg' }"> Регистрация </RouterLink>
+      <RouterLink :to="{ name: 'chat' }"> Мои чаты </RouterLink>
+      <RouterLink :to="{ name: 'profile' }"> Profile </RouterLink>
+      <RouterLink :to="{ name: 'home' }"> Главная </RouterLink>
+      <RouterLink :to="{ name: 'portfolio' }"> Портфолио </RouterLink>
+      <RouterLink :to="{ name: 'about-us' }"> О нас </RouterLink>
+      <RouterLink :to="{ name: 'calculator' }"> Калькулятор </RouterLink>
+      <RouterLink :to="{ name: 'contact-us' }"> Контакты </RouterLink>
     </LayoutWrapper>
   </footer>
 </template>
