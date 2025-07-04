@@ -4,8 +4,10 @@ import { ref, watch } from 'vue'
 const emit = defineEmits(['submit'])
 const props = defineProps(['message', 'errors', 'success'])
 const isOk = ref(false)
+const isLoding = ref(false)
 
 function submit() {
+  isLoding.value = true
   emit('submit')
 }
 
@@ -17,12 +19,16 @@ watch(
 
 <template>
   <div class="flex box-y gap2 form__wrapper w">
-    <div v-if="props.message && !isOk" class="box-y gap">
-      <h2 class="form__error p" :class="{ success: success }">
+    <div class="box-y gap">
+      <h2 v-if="props.message && !isOk" class="form__error p" :class="{ success: success }">
         {{ message }}
       </h2>
-      <p class="form__error" v-for="(error, key) in props.errors" :key="key">{{ error[0] }}</p>
-      <div class="box-x">
+      <h2 v-else-if="isLoding && !isOk" class="form__error p isLoding">isLoding...</h2>
+      <template v-if="props.message && !isOk">
+        <p class="form__error" v-for="(error, key) in props.errors" :key="key">{{ error[0] }}</p>
+      </template>
+
+      <div v-if="props.message && !isOk" class="box-x">
         <button @click="() => (isOk = true)" class="button">Ok</button>
       </div>
     </div>
@@ -87,6 +93,11 @@ watch(
 .success
   color: $successColor
   background-color: $successBg
+
+.isLoding
+  color: $isLodingColor
+  background-color: $isLodingBg
+
 
 @media screen and (max-width: 510px)
   .form
