@@ -7,29 +7,33 @@ import { useRouter } from 'vue-router'
 const email = ref('')
 const password = ref('')
 const message = ref('')
+const errors = ref('')
 const router = useRouter()
 
 async function submit() {
+  message.value = null
+  errors.value = null
   const res = await auth.login({
     email: email.value,
     password: password.value,
   })
   if (res.success) router.push({ name: 'profile' })
-  else message.value = res.message
+  else (message.value = res.message), (errors.value = res.errors)
 }
 </script>
 
 <template>
-  <FormMain @submit="submit" :message="message">
+  <FormMain @submit="submit" :message="message" :errors="errors">
     <div class="box-x media down flex wh">
       <div class="box-y wh flex">
         <div class="form__box">
           <input
             v-model="email"
             class="flex"
+            :class="{ 'bg-error': errors?.email }"
             id="email"
             name="email"
-            type="email"
+            type="text"
             placeholder="email..."
           />
         </div>
@@ -37,6 +41,7 @@ async function submit() {
           <input
             v-model="password"
             class="flex"
+            :class="{ 'bg-error': errors?.password }"
             id="password"
             name="password"
             type="password"

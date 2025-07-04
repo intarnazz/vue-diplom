@@ -1,5 +1,5 @@
 <script setup>
-import FormUserMessage from '@/components/form/FormUserMessage.vue'
+import FormGuestQuery from '@/components/form/FormGuestQuery.vue'
 </script>
 
 <template>
@@ -14,7 +14,7 @@ import FormUserMessage from '@/components/form/FormUserMessage.vue'
         expedita! Provident odio possimus unde labore hic nisi optio nesciunt alias! Est accusamus
         quaerat soluta consectetur aperiam fugiat laboriosam.
       </p>
-      <FormUserMessage class="flex" />
+      <FormGuestQuery class="flex" />
     </div>
   </section>
 </template>

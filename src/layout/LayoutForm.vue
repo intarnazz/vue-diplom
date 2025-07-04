@@ -1,25 +1,47 @@
 <script setup>
+import { ref, watch } from 'vue'
+
 const emit = defineEmits(['submit'])
-const props = defineProps(['message', 'errors'])
+const props = defineProps(['message', 'errors', 'success'])
+const isOk = ref(false)
 
 function submit() {
   emit('submit')
 }
+
+watch(
+  () => props.message,
+  () => (isOk.value = false),
+)
 </script>
 
 <template>
   <div class="flex box-y gap2 form__wrapper w">
-    <div v-if="props.message" class="box-y gap">
-      <h2 class="form__error">{{ message }}</h2>
+    <div v-if="props.message && !isOk" class="box-y gap">
+      <h2 class="form__error p" :class="{ success: success }">
+        {{ message }}
+      </h2>
       <p class="form__error" v-for="(error, key) in props.errors" :key="key">{{ error[0] }}</p>
+      <div class="box-x">
+        <button @click="() => (isOk = true)" class="button">Ok</button>
+      </div>
     </div>
-    <form @submit.prevent="submit()" class="form w">
+    <form
+      @submit.prevent="() => submit()"
+      class="form w"
+      :class="{ error: props.message && !isOk }"
+    >
       <slot> </slot>
     </form>
   </div>
 </template>
 
 <style lang="sass">
+.error
+  .bg-error
+    background-color: #ffdbdb
+    color: #000
+
 .form
   max-width: 450px
   width: 450px
@@ -59,6 +81,12 @@ function submit() {
     font-weight: 400
     background: #02838D
     padding: 1rem
+    &:hover
+      background-color: #02838D
+
+.success
+  color: $successColor
+  background-color: $successBg
 
 @media screen and (max-width: 480px)
   .form

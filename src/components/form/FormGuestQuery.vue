@@ -1,7 +1,7 @@
 <script setup>
 import FormMain from '@/layout/LayoutForm.vue'
 import { ref } from 'vue'
-import { message as m } from '@/api/api.js'
+import { guest_query } from '@/api/api.js'
 
 const emit = defineEmits(['init'])
 const success = ref(false)
@@ -18,7 +18,7 @@ const content = ref('')
 async function submit() {
   message.value = null
   errors.value = null
-  const res = await m.add({
+  const res = await guest_query.add({
     name: name.value,
     email: email.value,
     phone: phone.value,
@@ -44,6 +44,61 @@ async function submit() {
     <div class="box-y gap flex wh">
       <h2>Отправить запрос</h2>
       <div class="box-y flex">
+        <div class="form__box">
+          <input
+            v-model="name"
+            class="flex"
+            :class="{ 'bg-error': errors?.name }"
+            id="name"
+            name="name"
+            type="text"
+            placeholder="name..."
+          />
+        </div>
+        <div class="form__box">
+          <input
+            v-model="email"
+            class="flex"
+            :class="{ 'bg-error': errors?.email }"
+            id="email"
+            name="email"
+            type="email"
+            placeholder="email..."
+          />
+        </div>
+        <div class="form__box">
+          <input
+            v-model="phone"
+            class="flex"
+            :class="{ 'bg-error': errors?.phone }"
+            id="phone"
+            name="phone"
+            type="text"
+            placeholder="phone..."
+          />
+        </div>
+        <div class="form__box">
+          <input
+            v-model="company"
+            class="flex"
+            :class="{ 'bg-error': errors?.company }"
+            id="company"
+            name="company"
+            type="text"
+            placeholder="company..."
+          />
+        </div>
+        <div class="form__box">
+          <input
+            v-model="description"
+            class="flex"
+            :class="{ 'bg-error': errors?.description }"
+            id="description"
+            name="description"
+            type="text"
+            placeholder="description..."
+          />
+        </div>
         <div class="form__box flex">
           <textarea
             v-model="content"

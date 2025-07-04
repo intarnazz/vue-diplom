@@ -14,6 +14,8 @@ const message = ref('')
 const errors = ref([])
 
 async function submit() {
+  message.value = null
+  errors.value = null
   const res = await auth.reg({
     email: email.value,
     name: name.value,
@@ -34,6 +36,7 @@ async function submit() {
           <input
             v-model="email"
             class="flex"
+            :class="{ 'bg-error': errors?.email }"
             id="email"
             name="email"
             type="email"
@@ -44,6 +47,7 @@ async function submit() {
           <input
             v-model="name"
             class="flex"
+            :class="{ 'bg-error': errors?.name }"
             id="name"
             name="name"
             type="name"
@@ -54,6 +58,7 @@ async function submit() {
           <input
             v-model="phone"
             class="flex"
+            :class="{ 'bg-error': errors?.phone }"
             id="phone"
             name="phone"
             type="phone"
@@ -64,6 +69,7 @@ async function submit() {
           <input
             v-model="company"
             class="flex"
+            :class="{ 'bg-error': errors?.company }"
             id="company"
             name="company"
             type="company"
@@ -74,6 +80,7 @@ async function submit() {
           <input
             v-model="password"
             class="flex"
+            :class="{ 'bg-error': errors?.password }"
             id="password"
             name="password"
             type="password"
