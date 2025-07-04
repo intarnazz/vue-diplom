@@ -36,8 +36,16 @@ async function init() {
     limit: limit.value,
     offset: offset.value,
   })
-  if (res.success)
-    portfolioList.value.push(...res.data), (totalCount.value = res.pagingInfo.totalCount)
+  if (res.success) {
+    res.data.forEach((e) => {
+      let index
+      index = portfolioList.value.findIndex((i) => i.id === e.id)
+      if (index === -1) portfolioList.value.push(e)
+    })
+
+    totalCount.value = res.pagingInfo.totalCount
+  }
+
   isLoding.value = false
   // Переинициализировать observer после подгрузки
   nextTick(() => {
