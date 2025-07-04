@@ -66,7 +66,7 @@ onUnmounted(() => {
 
 async function new_chat_init(e) {
   const res = await ch.get(e.id)
-  console.log(res);
+  console.log(res)
   if (res.success) {
     chatList.value.push({ ...res.data })
   }

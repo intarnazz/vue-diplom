@@ -28,9 +28,4 @@ const chat_id = ref(0)
   <FooterMain />
 </template>
 
-<style lang="sass" scoped>
-@media screen and (max-width: 910px)
-  .gap2
-    gap: 0
-    margin-bottom: 2rem
-</style>
+<style lang="sass" scoped></style>

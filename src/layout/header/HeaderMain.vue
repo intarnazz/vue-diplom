@@ -110,7 +110,7 @@ onUnmounted(() => {
     padding-left: 4rem
     +wh
     padding: 0
-    transition: .5s
+    transition: 0s
     display: flex
     flex-direction: row
     justify-content: flex-start
@@ -118,8 +118,10 @@ onUnmounted(() => {
       background-color: #00000088
       z-index: 99
       & .header
+        transition: .5s
         &__wrapper
           margin-left: 0
+          transition: .2s
     & .gap
       gap: 2rem
     & .gap2
@@ -129,8 +131,7 @@ onUnmounted(() => {
       +h
       width: auto
       padding: 1rem 1rem 1rem 5rem
-      transition: .2s
-      margin-left: -200px
+      margin-left: -400px
     & a
       color: #fff
       background-color: #000000

@@ -8,7 +8,7 @@ import ComponentOpener from '@/layout/LayoutOpener.vue'
 <template>
   <LayoutPage class="main">
     <ComponentOpener class="box-y gap2">
-      <div class=""></div>
+      <div class="media__none"></div>
       <SectionCalculator />
       <div class="flex"></div>
     </ComponentOpener>
@@ -17,8 +17,4 @@ import ComponentOpener from '@/layout/LayoutOpener.vue'
 </template>
 
 <style lang="sass" scoped>
-@media screen and (max-width: 910px)
-  .gap2
-    gap: 0
-    margin-bottom: 2rem
 </style>

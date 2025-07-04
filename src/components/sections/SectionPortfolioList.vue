@@ -1,17 +1,33 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { portfolio as p } from '@/api/api.js'
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import ComponentImg from '@/components/ComponentImg.vue'
 import { RouterLink } from 'vue-router'
 
+const props = defineProps(['limit'])
 const isLoding = ref(true)
-const portfolioList = ref(null)
+const portfolioList = ref([])
+
+const limitLocal = ref(1)
+const totalCount = ref(null)
+
+const offset = computed(() => portfolioList.value.length)
+
+const limit = computed(() => props.limit || limitLocal.value)
+
+const canLoding = computed(() => totalCount.value === null || offset.value < totalCount.value)
 
 async function init() {
+  if (!canLoding.value) return
   isLoding.value = true
-  const res = await p.all({ limit: 18 })
-  if (res.success) portfolioList.value = res.data
+  const res = await p.all({
+    limit: limit.value,
+    offset: offset.value,
+  })
+  if (res.success)
+    portfolioList.value.push(...res.data), (totalCount.value = res.pagingInfo.totalCount)
+
   isLoding.value = false
 }
 

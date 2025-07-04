@@ -31,7 +31,7 @@ onMounted(async () => {
 <template>
   <LayoutWrapper>
     <section v-if="!isLoding" class="user-info box-y gap2">
-      <div class=""></div>
+      <div class="media__none"></div>
       <div class="box-x top">
         <h1>{{ user.name }}</h1>
         <div class="box-y">
