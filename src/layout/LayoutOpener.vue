@@ -9,5 +9,9 @@
 <style lang="sass" scoped>
 .opener
   min-height: calc( 100dvh - $header )
-  max-height: calc( 100dvh - $header )
+  // height: calc( 100dvh - $header )
+@media screen and (max-width: 910px)
+  .opener
+    min-height: calc( 100dvh - $menu )
+    // height: calc( 100dvh - $menu )
 </style>

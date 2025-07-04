@@ -88,7 +88,7 @@ watch(
   color: $successColor
   background-color: $successBg
 
-@media screen and (max-width: 480px)
+@media screen and (max-width: 510px)
   .form
     max-width: none
     width: 100%

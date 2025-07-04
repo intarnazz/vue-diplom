@@ -24,7 +24,7 @@ onMounted(async () => {
   <section class="portfolio">
     <LayoutWrapper v-if="!isLoding">
       <div class="box-x media top gap2">
-        <div class="h flex9 flex media">
+        <div class="h wh flex9 flex media">
           <ComponentImg class="img" :id="portfolio.image_id" />
         </div>
         <div class="flex16 flex media box-x">

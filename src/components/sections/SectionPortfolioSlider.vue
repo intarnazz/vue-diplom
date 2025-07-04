@@ -123,7 +123,7 @@ onUnmounted(() => {
     width: 8rem
     height: 8rem
     padding: 0rem
-    background-color: #000
+    background-color: $buttonBg
 swiper-slide.swiper-slide-active
   position: relative
   z-index: 1

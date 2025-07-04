@@ -10,7 +10,7 @@ const props = defineProps(['id'])
 <template>
   <LayoutPage class="main">
     <ComponentOpener class="box-y gap2">
-      <div class=""></div>
+      <div></div>
       <SectionPortfolio :id="props.id" />
       <div class="flex"></div>
     </ComponentOpener>
@@ -18,4 +18,9 @@ const props = defineProps(['id'])
   <FooterMain />
 </template>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+@media screen and (max-width: 910px)
+  .gap2
+    gap: 0
+    margin-bottom: 2rem
+</style>
