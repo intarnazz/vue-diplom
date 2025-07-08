@@ -1,44 +1,49 @@
+import { Get } from './get/Get.js'
+import { Post } from './post/Post.js'
+import { PostSendFile } from './post/PostSendFile.js'
+
 export class RESTAPI {
   #prefix
   #Get
   #Post
   #PostSendFile
+
   constructor(prefix) {
     this.#prefix = prefix
-  }
-  static async create(prefix) {
-    const instance = new RESTAPI(prefix)
-    await instance.init()
-    return instance
-  }
-  async init() {
-    const { Get } = await import('./get/Get.js')
-    const { Post } = await import('./post/Post.js')
-    const { PostSendFile } = await import('./post/PostSendFile.js')
     this.#Get = Get
     this.#Post = Post
     this.#PostSendFile = PostSendFile
-    return this
   }
-  async get(id, header = {}) {
-    return await this.#Get(`${this.#prefix}/${id}`, header)
+
+  static create(prefix) {
+    return new RESTAPI(prefix)
   }
-  async all(data = {}) {
-    return await this.#Get(this.#prefix, data)
+
+  get(id, header = {}) {
+    return this.#Get(`${this.#prefix}/${id}`, header)
   }
-  async add(data) {
-    return await this.#Post(this.#prefix, data)
+
+  all(data = {}) {
+    return this.#Get(this.#prefix, data)
   }
-  async #Push(url, method, data) {
-    return await this.#Post(`${url}/${data.id}`, { _method: method, ...data })
+
+  add(data) {
+    return this.#Post(this.#prefix, data)
   }
-  async patch(data) {
-    return await this.#Push(this.#prefix, 'PATCH', data)
+
+  #Push(url, method, data) {
+    return this.#Post(`${url}/${data.id}`, { _method: method, ...data })
   }
-  async delete(data) {
-    return await this.#Push(this.#prefix, 'DELETE', data)
+
+  patch(data) {
+    return this.#Push(this.#prefix, 'PATCH', data)
   }
-  async sendImage(file) {
-    return await this.#PostSendFile('image', file)
+
+  delete(data) {
+    return this.#Push(this.#prefix, 'DELETE', data)
+  }
+
+  sendImage(file) {
+    return this.#PostSendFile('image', file)
   }
 }

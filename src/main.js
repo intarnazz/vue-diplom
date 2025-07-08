@@ -29,28 +29,3 @@ window.Echo = new Echo({
 })
 
 createApp(App).use(router).mount('#app')
-
-// [X] - eve на новые чаты
-// [X] - portfolio page
-// [X] - calkulator
-// [X] - 422 errors
-// [X] - слайдер
-// [X] - ссылки index о нас
-// [X] - кривая index о нас
-// [X] - профиль ссылка на чаты через компонент
-// [X] - ошибка аторизации
-// [X] - adaptiv
-// [X] - рагинация chat list
-// [X] - page up при открытии страници
-// [X] - побольше полей для portfolio
-// [X] - ссылки в slider
-// [X] - гостевой запрос
-// [X] - чаты с уведомлнием вверху (на бек)
-// [X] - adaptiv
-// [X] - portfolio pagin
-// [X] - загрузка
-
-// [X] - logo
-// [x] - footer
-// [ ] - SEO
-// [ ] - admin

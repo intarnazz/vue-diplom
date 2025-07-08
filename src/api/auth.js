@@ -1,18 +1,19 @@
+import { Post } from './post/Post.js'
 import { User } from '@/storage/user.js'
+
 const user = User()
 
 export class Auth {
   #Post
-  static async create() {
-    const instance = new Auth()
-    await instance.init()
-    return instance
-  }
-  async init() {
-    const { Post } = await import('./post/Post.js')
+
+  constructor() {
     this.#Post = Post
-    return this
   }
+
+  static create() {
+    return new Auth()
+  }
+
   async reg(body) {
     const res = await this.#Post('registration', body)
     if (res.success) {
@@ -20,6 +21,7 @@ export class Auth {
     }
     return res
   }
+
   async login(body) {
     const res = await this.#Post('authorization', body)
     if (res.success) {
@@ -27,14 +29,16 @@ export class Auth {
     }
     return res
   }
+
   async logout() {
     const res = await this.#Post('logout')
     user.unset()
     location.reload()
     return res
   }
-  async user() {
-    const res = await this.#Post('profile')
+
+  user() {
+    const res = this.#Post('profile')
     if (!res.success && res.message === 'Unauthenticated.') {
       this.logout()
     }

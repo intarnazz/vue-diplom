@@ -1,9 +1,9 @@
 <script setup>
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import ComponentLinkBox from '@/components/ComponentLinkBox.vue'
-import img1 from '@/assets/img/serge-fedorov-YiZel7UYgsg-unsplash 2.png'
-import img2 from '@/assets/img/bui-hoang-long-jBUQ7KOHXZ0-unsplash 1.png'
-import img3 from '@/assets/img/iryna-tysiak-kRaH720CCRE-unsplash (1) 1.png'
+import img1 from '@/assets/img/serge-fedorov-YiZel7UYgsg-unsplash 2.webp'
+import img2 from '@/assets/img/bui-hoang-long-jBUQ7KOHXZ0-unsplash 1.webp'
+import img3 from '@/assets/img/iryna-tysiak-kRaH720CCRE-unsplash (1) 1.webp'
 </script>
 
 <template>

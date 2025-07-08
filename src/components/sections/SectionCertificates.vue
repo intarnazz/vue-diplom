@@ -8,7 +8,7 @@
     </div>
     <div class="box-y gap">
       <div class=""></div>
-      <img class="img" src="@/assets/img/Certificates.png" alt="Certificates" />
+      <img class="img" src="@/assets/img/Certificates.webp" alt="Certificates" />
     </div>
   </section>
 </template>

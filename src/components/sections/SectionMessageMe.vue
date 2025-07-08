@@ -5,7 +5,7 @@ import FormGuestQuery from '@/components/form/FormGuestQuery.vue'
 <template>
   <section class="login wh box-x">
     <div class="wh flex9 flex media">
-      <img class="img" src="@/assets/img/prateek-katyal-bQIgHc6AHUI-unsplash.jpg" alt="login-bg" />
+      <img class="img" src="@/assets/img/prateek-katyal-bQIgHc6AHUI-unsplash.webp" alt="login-bg" />
     </div>
     <div class="login__wrapper wh box-y gap p5 flex16 flex">
       <h2>Message Me</h2>

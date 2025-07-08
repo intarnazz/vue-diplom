@@ -2,7 +2,7 @@
 
 <template>
   <section class="baner wh pr">
-    <img class="img" src="@/assets/img/_Fjord_Plaza_.jpg 1.png" alt="_Fjord_Plaza_" />
+    <img class="img" src="@/assets/img/_Fjord_Plaza_.jpg 1.webp" alt="_Fjord_Plaza_" />
     <div class="baner__linear pa wh"></div>
     <div class="baner__content pa wh box-y p2">
       <div class="flex"></div>

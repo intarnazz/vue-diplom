@@ -22,13 +22,13 @@
         </p>
       </div>
       <div class="pr flex">
-        <img class="pa media img" src="@/assets/img/IMG_9879.jpg 3.png" alt="IMG_9879" />
+        <img class="pa media img" src="@/assets/img/IMG_9879.jpg 3.webp" alt="IMG_9879" />
       </div>
     </div>
 
     <div class="box-x box-x-r media w gap2">
       <div class="pr flex">
-        <img class="pa media img" src="@/assets/img/IMG_9879.jpg 3.png" alt="IMG_9879" />
+        <img class="pa media img" src="@/assets/img/IMG_9879.jpg 3.webp" alt="IMG_9879" />
       </div>
       <div class="box-y gap flex">
         <h2>Lorem ipsum dolor sit amet</h2>

@@ -72,7 +72,7 @@ watch(() => messages, down, { deep: true })
 
 <template>
   <section class="chat pr wh">
-    <img class="img pa" src="@/assets/img/cyg23qqdamt41.jpg" alt="reg-bg" />
+    <img class="img pa" src="@/assets/img/cyg23qqdamt41.webp" alt="reg-bg" />
     <div class="chat_wrapper pr box-y wh p2 gap2">
       <div class="flex"></div>
       <div ref="chat" class="chat__list wh box-y pa" v-if="user">

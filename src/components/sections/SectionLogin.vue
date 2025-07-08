@@ -7,7 +7,7 @@ import FormLogin from '@/components/form/FormLogin.vue'
   <ComponentOpener>
     <section class="login wh box-x">
       <div class="wh flex9 flex media">
-        <img class="img" src="@/assets/img/login-bg.jpg" alt="login-bg" />
+        <img class="img" src="@/assets/img/login-bg.webp" alt="login-bg" />
       </div>
       <div class="login__wrapper wh box-y gap p5 flex16 flex">
         <h2>Авторизация</h2>
