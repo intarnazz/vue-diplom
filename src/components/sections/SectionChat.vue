@@ -52,7 +52,6 @@ async function send() {
   })
   if (res.success) {
     text.value = ''
-    // init()
   }
 }
 watch(
