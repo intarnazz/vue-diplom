@@ -28,16 +28,16 @@ import { RouterLink } from 'vue-router'
 <style lang="sass" scoped>
 .slide
   opacity: 0
-  animation: fade 9s infinite
+  animation: fade 18s infinite
 
 .slide:nth-child(1)
   animation-delay: 0s
 
 .slide:nth-child(2)
-  animation-delay: 3s
+  animation-delay: 6s
 
 .slide:nth-child(3)
-  animation-delay: 6s
+  animation-delay: 12s
 
 @keyframes fade
   0%
