@@ -8,7 +8,7 @@ import ComponentLogo from '@/components/ComponentLogo.vue'
     <LayoutWrapper class="box-y gap">
       <ComponentLogo fill="#fff" />
       <RouterLink :to="{ name: 'contact-us' }"> Наши офисы </RouterLink>
-      <RouterLink :to="{ name: 'messageMe' }"> Напишите нам сообщение </RouterLink>
+      <RouterLink :to="{ name: 'message-me' }"> Напишите нам сообщение </RouterLink>
       <RouterLink :to="{ name: 'login' }"> Войти </RouterLink>
       <RouterLink :to="{ name: 'reg' }"> Регистрация </RouterLink>
       <RouterLink :to="{ name: 'chat' }"> Мои чаты </RouterLink>

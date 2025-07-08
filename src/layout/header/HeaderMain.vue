@@ -39,7 +39,7 @@ onUnmounted(() => {
           <ComponentLogo />
           <div class="box-x gap flex">
             <div class="flex"></div>
-            <RouterLink class="box-x" :to="{ name: 'messageMe' }">
+            <RouterLink class="box-x" :to="{ name: 'message-me' }">
               Напишите нам сообщение
             </RouterLink>
             <template v-if="!user.get.value">
@@ -84,6 +84,7 @@ onUnmounted(() => {
   justify-content: center
   align-items: center
   width: 100%
+  display: none
   &__wrapper
      transition: 0s
   & nav

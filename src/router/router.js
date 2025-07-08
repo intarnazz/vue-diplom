@@ -23,7 +23,7 @@ const router = createRouter({
     },
     {
       path: '/message-me',
-      name: 'messageMe',
+      name: 'message-me',
       component: PageMessageMe,
     },
     {
