@@ -9,7 +9,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main v-if="!loding" class="main box-y flex gap2">
+  <main v-if="!loding" class="main box-y flex">
     <slot> </slot>
   </main>
 </template>

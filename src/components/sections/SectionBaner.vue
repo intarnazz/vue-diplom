@@ -5,8 +5,8 @@ import { RouterLink } from 'vue-router'
 <template>
   <section class="baner wh pr">
     <img class="img slide pa" src="@/assets/img/_Fjord_Plaza_.jpg 1.webp" alt="_Fjord_Plaza_" />
-    <img class="img slide pa" src="@/assets/img/IMG_9879.jpg 3.webp" alt="IMG_9879.jpg 3" />
-    <img class="img slide pa" src="@/assets/img/reg-bg.webp" alt="_Fjord_Plaza_" />
+    <!-- <img class="img slide pa" src="@/assets/img/IMG_9879.jpg 3.webp" alt="IMG_9879.jpg 3" /> -->
+    <!-- <img class="img slide pa" src="@/assets/img/reg-bg.webp" alt="_Fjord_Plaza_" /> -->
     <div class="baner__linear pa wh"></div>
     <div class="baner__content pa wh box-y p2">
       <div class="box-y flex">
@@ -26,35 +26,37 @@ import { RouterLink } from 'vue-router'
 </template>
 
 <style lang="sass" scoped>
-.slide
-  opacity: 0
-  animation: fade 18s infinite
+// .slide
+//   opacity: 0
+//   animation: fade 18s infinite
 
-.slide:nth-child(1)
-  animation-delay: 0s
+// .slide:nth-child(1)
+//   animation-delay: 0s
 
-.slide:nth-child(2)
-  animation-delay: 6s
+// .slide:nth-child(2)
+//   animation-delay: 6s
 
-.slide:nth-child(3)
-  animation-delay: 12s
+// .slide:nth-child(3)
+//   animation-delay: 12s
 
-@keyframes fade
-  0%
-    opacity: 0
-  11%
-    opacity: 1
-  33%
-    opacity: 1
-  44%
-    opacity: 0
-  100%
-    opacity: 0
+// @keyframes fade
+//   0%
+//     opacity: 0
+//   11%
+//     opacity: 1
+//   33%
+//     opacity: 1
+//   44%
+//     opacity: 0
+//   100%
+//     opacity: 0
 
 .baner
+  z-index: 1
   min-height: 100dvh
   height: 100dvh
   border-bottom: 13px solid #04838E;
+  box-shadow: 0 0 50px 0 #000
   &__logo
     width: 382px
   &__content

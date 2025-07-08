@@ -1,20 +1,21 @@
 <script setup>
 import FooterMain from '@/layout/footer/FooterMain.vue'
 import LayoutPage from '@/layout/LayoutPage.vue'
-import SectionOpener from '@/layout/LayoutOpener.vue'
-import SectionPortfolioSlider from '@/components/sections/SectionPortfolioSlider.vue'
-import SectionAboutUs from '@/components/sections/index/SectionAboutUs.vue'
-import ComponentBaner from '@/components/sections/SectionBaner.vue'
+// import SectionOpener from '@/layout/LayoutOpener.vue'
+// import SectionPortfolioSlider from '@/components/sections/SectionPortfolioSlider.vue'
+// import SectionAboutUs from '@/components/sections/index/SectionAboutUs.vue'
+import SectionBaner from '@/components/sections/SectionBaner.vue'
+import SectionCalculator from '@/components/sections/index/SectionCalculator.vue'
 </script>
 
 <template>
   <LayoutPage class="main">
-    <SectionOpener>
-      <ComponentBaner />
-    </SectionOpener>
+    <!-- <SectionOpener> -->
+    <SectionBaner />
+    <!-- </SectionOpener> -->
+    <SectionCalculator />
     <!-- <SectionPortfolioSlider /> -->
     <!-- <SectionAboutUs /> -->
-    <div class=""></div>
   </LayoutPage>
   <FooterMain />
 </template>
