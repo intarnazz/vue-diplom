@@ -1,5 +1,4 @@
 <script setup>
-import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import SvgMenu from '@/components/svg/SvgMenu.vue'
 import ComponentLogo from '@/components/ComponentLogo.vue'
 import { User } from '@/storage/user.js'
@@ -28,44 +27,29 @@ onUnmounted(() => {
   <button @click="() => (menu = true)" class="menu menu__button">
     <SvgMenu />
   </button>
-  <header class="header box-shadow" :class="{ menu: menu }">
-    <LayoutWrapper class="box-y header__wrapper gap2">
-      <div class="box-y gap2">
-        <div class="box-x gap">
-          <div class="box-x flex">
-            <RouterLink class="box-x" :to="{ name: 'contact-us' }"> Наши офисы </RouterLink>
-            <div class="flex"></div>
-          </div>
-          <ComponentLogo />
-          <div class="box-x gap flex">
-            <div class="flex"></div>
-            <RouterLink class="box-x" :to="{ name: 'message-me' }">
-              Напишите нам сообщение
-            </RouterLink>
-            <template v-if="!user.get.value">
-              <RouterLink class="box-x button" :to="{ name: 'login' }"> Войти </RouterLink>
-              <RouterLink class="box-x button" :to="{ name: 'reg' }"> Регистрация </RouterLink>
-            </template>
-            <template v-else>
-              <RouterLink class="box-x button" :to="{ name: 'chat' }"> Мои чаты </RouterLink>
-              <RouterLink class="box-x button" :to="{ name: 'profile' }"> Profile </RouterLink>
-              <button @click="auth.logout" class="box-x button">Logout</button>
-            </template>
-          </div>
-        </div>
-        <div class="box-x gap">
-          <div class="flex"></div>
-          <div class="box-x gap">
-            <RouterLink class="box-x" :to="{ name: 'home' }"> Главная </RouterLink>
-            <RouterLink class="box-x" :to="{ name: 'portfolio' }"> Портфолио </RouterLink>
-            <RouterLink class="box-x" :to="{ name: 'about-us' }"> О нас </RouterLink>
-            <RouterLink class="box-x" :to="{ name: 'calculator' }"> Калькулятор </RouterLink>
-            <RouterLink class="box-x" :to="{ name: 'contact-us' }"> Контакты </RouterLink>
-          </div>
-          <div class="flex"></div>
-        </div>
+  <header class="header box-shadow wh" :class="{ menu: menu }">
+    <div class="box-x wh gap">
+      <ComponentLogo />
+      <div class="box-x gap2 flex">
+        <div class="flex"></div>
+        <RouterLink class="box-x" :to="{ name: 'home' }"> Главная </RouterLink>
+        <RouterLink class="box-x" :to="{ name: 'portfolio' }"> Портфолио </RouterLink>
+        <RouterLink class="box-x" :to="{ name: 'about-us' }"> О нас </RouterLink>
+        <RouterLink class="box-x" :to="{ name: 'calculator' }"> Калькулятор </RouterLink>
+        <RouterLink class="box-x" :to="{ name: 'contact-us' }"> Контакты </RouterLink>
+        <RouterLink class="box-x" :to="{ name: 'message-me' }"> Напишите нам сообщение </RouterLink>
+        |
+        <template v-if="!user.get.value">
+          <RouterLink class="box-x" :to="{ name: 'login' }"> Войти </RouterLink>
+          <RouterLink class="box-x" :to="{ name: 'reg' }"> Регистрация </RouterLink>
+        </template>
+        <template v-else>
+          <RouterLink class="box-x button1" :to="{ name: 'chat' }"> Мои чаты </RouterLink>
+          <RouterLink class="box-x button" :to="{ name: 'profile' }"> Profile </RouterLink>
+          <button @click="auth.logout" class="box-x button">Logout</button>
+        </template>
       </div>
-    </LayoutWrapper>
+    </div>
     <button @click="() => (menu = false)" class="menu menu__button_cansel flex wh"></button>
   </header>
 </template>
@@ -74,17 +58,18 @@ onUnmounted(() => {
 .menu
   display: none
 .header
-  padding: 1rem 0
-  box-shadow: 0 0 10px 0 #d4d4d4
-  max-height: $header
-  min-height: $header
-  position: relative
-  z-index: 1
+  background-color: #fff
+  padding: .5rem 2rem
+  box-shadow: 0 0 10px 0 #000
+  // max-height: $header
+  // min-height: $header
+  position: sticky
+  top: 0
+  z-index: 99
   display: flex
   justify-content: center
   align-items: center
   width: 100%
-  display: none
   &__wrapper
      transition: 0s
   & nav

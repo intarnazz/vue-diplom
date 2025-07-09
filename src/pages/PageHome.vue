@@ -22,4 +22,7 @@ import SectionOutLink from '@/components/sections/index/SectionOutLink.vue'
   <FooterMain />
 </template>
 
-<style lang="sass" scoped></style>
+<style lang="sass">
+.main
+  margin-top: -$header
+</style>
