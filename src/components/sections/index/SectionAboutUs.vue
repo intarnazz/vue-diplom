@@ -4,48 +4,65 @@
   <section class="about-us w cf">
     <div class="box-x about-us__item pr w">
       <div class="flex pr h">
-        <img class="img pa" src="@/assets/img/about-us image.png" alt="about-us image" />
+        <img
+          class="img img__top pa"
+          src="@/assets/img/krakenimages-376KN_ISplE-unsplash.jpg"
+          alt="Производство фасадов"
+        />
       </div>
       <div class="flex pr h">
-        <img class="img pa" src="@/assets/img/about-us bg.png" alt="about-us bg" />
+        <img class="img pa" src="@/assets/img/about-us bg.png" alt="Фон" />
         <div class="box-y pr about-us__item-info gap">
-          <h2>LIFE-CHANGING MOMENTS</h2>
+          <h2>Надёжность с 2010 года</h2>
           <hr />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere ipsum magna, sed
-            consectetur dui condimentum id. Donec eget vehicula elit. Aenean id orci eu lorem
+            Мы предлагаем комплексные решения для фасадов — от концепции до монтажа. Работаем по
+            всей России, оснащены современным производственным оборудованием, и гарантируем контроль
+            качества на каждом этапе.
           </p>
         </div>
       </div>
     </div>
+
     <div class="box-x about-us__item pr w left">
       <div class="flex pr h">
-        <img class="img pa" src="@/assets/img/about-us image.png" alt="about-us image" />
+        <img
+          class="img pa"
+          src="@/assets/img/nwar-igbariah-AteFNIFVGdo-unsplash.jpg"
+          alt="Команда монтажников"
+        />
       </div>
       <div class="flex pr h">
-        <img class="img pa" src="@/assets/img/about-us bg.png" alt="about-us bg" />
+        <img class="img pa" src="@/assets/img/about-us bg.png" alt="Фон" />
         <div class="box-y pr about-us__item-info gap">
-          <h2>LIFE-CHANGING MOMENTS</h2>
+          <h2>Проектирование и монтаж</h2>
           <hr />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere ipsum magna, sed
-            consectetur dui condimentum id. Donec eget vehicula elit. Aenean id orci eu lorem
+            Мы разрабатываем рабочие проекты, подготавливаем спецификации и осуществляем монтаж
+            фасадных систем. Опытные инженеры и сертифицированные бригады обеспечивают точность и
+            надёжность.
           </p>
         </div>
       </div>
     </div>
+
     <div class="box-x about-us__item pr w">
       <div class="flex pr h">
-        <img class="img pa" src="@/assets/img/about-us image.png" alt="about-us image" />
+        <img
+          class="img pa"
+          src="@/assets/img/ant-rozetsky-SLIFI67jv5k-unsplash.jpg"
+          alt="Фасадные материалы"
+        />
       </div>
       <div class="flex pr h">
-        <img class="img pa" src="@/assets/img/about-us bg.png" alt="about-us bg" />
+        <img class="img pa" src="@/assets/img/about-us bg.png" alt="Фон" />
         <div class="box-y pr about-us__item-info gap">
-          <h2>LIFE-CHANGING MOMENTS</h2>
+          <h2>Собственное производство</h2>
           <hr />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere ipsum magna, sed
-            consectetur dui condimentum id. Donec eget vehicula elit. Aenean id orci eu lorem
+            Мы используем современное оборудование (обновлено в 2022 году) для изготовления фасадных
+            конструкций. Это позволяет нам контролировать сроки, снижать издержки и гарантировать
+            высокое качество.
           </p>
         </div>
       </div>

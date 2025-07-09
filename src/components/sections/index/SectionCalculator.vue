@@ -5,18 +5,20 @@ import { RouterLink } from 'vue-router'
 
 <template>
   <section class="calculator box-y pr cf gap2">
-    <img class="img pa wh" src="@/assets/img/claculator bg.jpg" alt="claculator bg" />
+    <img class="img pa wh" src="@/assets/img/claculator bg.jpg" alt="Калькулятор фона" />
     <LayoutWrapper class="box-x gap2 pr calculator__wrapper">
       <div class="box-y gap flex">
-        <h2>УЗНАЙТЕ СТОИМОСТЬ ПРОЕКТА В ПАРУ КЛИКОВ</h2>
+        <h2>Рассчитайте стоимость фасадного проекта за 2 минуты</h2>
         <p>
-          Посчитам предварительную стоимость прооекта в удобном калькуляторе для вас. Можно
-          отправить результаты на почту!
+          Наш онлайн-калькулятор поможет быстро и удобно получить предварительную стоимость работ и
+          материалов. Вы можете отправить расчёт себе на почту или сразу обсудить его с менеджером.
         </p>
       </div>
       <div class="flex box-x">
         <div class="flex"></div>
-        <RouterLink :to="{ name: 'calculator' }" class="button"> КАЛЬКУЛЯТОР </RouterLink>
+        <RouterLink :to="{ name: 'calculator' }" class="button">
+          Перейти к калькулятору
+        </RouterLink>
       </div>
     </LayoutWrapper>
   </section>

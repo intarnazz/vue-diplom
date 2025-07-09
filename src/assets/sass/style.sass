@@ -97,6 +97,8 @@ body
 .img
   +wh
   object-fit: cover
+  &__top
+    object-position: top
 
 .p
   padding: .5rem 1rem
@@ -187,6 +189,12 @@ nav
 select
   cursor: pointer
 
+.a
+  color: #8F0454
+  text-decoration: underline
+  & a
+    color: #8F0454
+    text-decoration: underline
 .button
   font-family: "Roboto", sans-serif
   font-optical-sizing: auto
@@ -207,7 +215,7 @@ select
     width: auto
     height: auto
   &:hover
-    margin: 10px 0 -2px 0
+    margin: 0 0 -2px 0
     box-shadow: 0 0px 20px 0 #04838E
   &_off
     &:hover

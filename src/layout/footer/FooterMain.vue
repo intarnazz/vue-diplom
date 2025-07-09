@@ -40,6 +40,9 @@ a
   display: flex
   justify-content: center
   align-items: center
+  &__grid
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr
   &__wrapper
     align-items: flex-start
   & nav
