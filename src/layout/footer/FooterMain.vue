@@ -4,7 +4,7 @@ import ComponentLogo from '@/components/ComponentLogo.vue'
 </script>
 
 <template>
-  <footer class="footer">
+  <footer class="footer box-y gap2">
     <LayoutWrapper class="box-y gap">
       <ComponentLogo fill="#fff" />
       <RouterLink :to="{ name: 'contact-us' }"> Наши офисы </RouterLink>
@@ -19,6 +19,45 @@ import ComponentLogo from '@/components/ComponentLogo.vue'
       <RouterLink :to="{ name: 'calculator' }"> Калькулятор </RouterLink>
       <RouterLink :to="{ name: 'contact-us' }"> Контакты </RouterLink>
     </LayoutWrapper>
+
+    <div class="footer__grid">
+      <div class="pr wh">
+        <img class="w" src="@/assets/img/client logo/Frame_34-1.png.webp" alt="" />
+      </div>
+      <div class="pr wh">
+        <img class="w" src="@/assets/img/client logo/Frame_34.png.webp" alt="" />
+      </div>
+      <div class="pr wh">
+        <img class="w" src="@/assets/img/client logo/Frame_35-1.png 1.png" alt="" />
+      </div>
+      <div class="pr wh">
+        <img class="w" src="@/assets/img/client logo/Frame_35.png.webp" alt="" />
+      </div>
+      <div class="pr wh">
+        <img class="w" src="@/assets/img/client logo/Frame_36-1.png.webp" alt="" />
+      </div>
+      <div class="pr wh">
+        <img class="w" src="@/assets/img/client logo/Frame_36.png.webp" alt="" />
+      </div>
+      <div class="pr wh">
+        <img class="w" src="@/assets/img/client logo/Frame_37-1.png 1.png" alt="" />
+      </div>
+      <div class="pr wh">
+        <img class="w" src="@/assets/img/client logo/Frame_37.png.webp" alt="" />
+      </div>
+      <div class="pr wh">
+        <img class="w" src="@/assets/img/client logo/Frame_38-1.png.webp" alt="" />
+      </div>
+      <div class="pr wh">
+        <img class="w" src="@/assets/img/client logo/Frame_38.png.webp" alt="" />
+      </div>
+      <div class="pr wh">
+        <img class="w" src="@/assets/img/client logo/Frame_39-1.png.webp" alt="" />
+      </div>
+      <div class="pr wh">
+        <img class="w" src="@/assets/img/client logo/Frame_39.png.webp" alt="" />
+      </div>
+    </div>
   </footer>
 </template>
 
