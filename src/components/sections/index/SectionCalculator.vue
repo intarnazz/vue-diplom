@@ -5,7 +5,12 @@ import { RouterLink } from 'vue-router'
 
 <template>
   <section class="calculator box-y pr cf gap2">
-    <img class="img pa wh" src="@/assets/img/claculator bg.jpg" alt="Калькулятор фона" />
+    <img
+      class="img pa wh"
+      src="@/assets/img/claculator bg.webp"
+      alt="Калькулятор фона"
+      loading="lazy"
+    />
     <LayoutWrapper class="box-x gap2 pr calculator__wrapper">
       <div class="box-y gap flex">
         <h2>Рассчитайте стоимость фасадного проекта за 2 минуты</h2>

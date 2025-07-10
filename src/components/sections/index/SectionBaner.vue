@@ -7,6 +7,7 @@ import { RouterLink } from 'vue-router'
     <img class="img slide pa" src="@/assets/img/_Fjord_Plaza_.jpg 1.webp" alt="_Fjord_Plaza_" />
     <img class="img slide pa" src="@/assets/img/IMG_9879.jpg 3.webp" alt="IMG_9879.jpg 3" />
     <img class="img slide pa" src="@/assets/img/reg-bg.webp" alt="_Fjord_Plaza_" />
+
     <div class="baner__linear pa wh"></div>
     <div class="baner__content pa wh box-y p2">
       <div class="box-y flex">

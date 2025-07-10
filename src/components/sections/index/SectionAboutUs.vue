@@ -6,12 +6,12 @@
       <div class="flex pr h">
         <img
           class="img img__top pa"
-          src="@/assets/img/krakenimages-376KN_ISplE-unsplash.jpg"
+          src="@/assets/img/krakenimages-376KN_ISplE-unsplash.webp"
           alt="Производство фасадов"
         />
       </div>
       <div class="flex pr h">
-        <img class="img pa" src="@/assets/img/about-us bg.png" alt="Фон" />
+        <img class="img pa" src="@/assets/img/about-us bg.webp" alt="Фон" />
         <div class="box-y pr about-us__item-info gap">
           <h2>Надёжность с 2010 года</h2>
           <hr />
@@ -28,12 +28,12 @@
       <div class="flex pr h">
         <img
           class="img pa"
-          src="@/assets/img/nwar-igbariah-AteFNIFVGdo-unsplash.jpg"
+          src="@/assets/img/nwar-igbariah-AteFNIFVGdo-unsplash.webp"
           alt="Команда монтажников"
         />
       </div>
       <div class="flex pr h">
-        <img class="img pa" src="@/assets/img/about-us bg.png" alt="Фон" />
+        <img class="img pa" src="@/assets/img/about-us bg.webp" alt="Фон" />
         <div class="box-y pr about-us__item-info gap">
           <h2>Проектирование и монтаж</h2>
           <hr />
@@ -50,12 +50,12 @@
       <div class="flex pr h">
         <img
           class="img pa"
-          src="@/assets/img/ant-rozetsky-SLIFI67jv5k-unsplash.jpg"
+          src="@/assets/img/ant-rozetsky-SLIFI67jv5k-unsplash.webp"
           alt="Фасадные материалы"
         />
       </div>
       <div class="flex pr h">
-        <img class="img pa" src="@/assets/img/about-us bg.png" alt="Фон" />
+        <img class="img pa" src="@/assets/img/about-us bg.webp" alt="Фон" />
         <div class="box-y pr about-us__item-info gap">
           <h2>Собственное производство</h2>
           <hr />

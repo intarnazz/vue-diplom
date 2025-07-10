@@ -29,7 +29,7 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 
       <img
         class="img"
-        src="@/assets/img/steve-dimatteo-gObie1HkQV4-unsplash.jpg"
+        src="@/assets/img/steve-dimatteo-gObie1HkQV4-unsplash.webp"
         alt="Фасадный объект"
       />
 
