@@ -3,23 +3,41 @@ import SvgMenu from '@/components/svg/SvgMenu.vue'
 import ComponentLogo from '@/components/ComponentLogo.vue'
 import { User } from '@/storage/user.js'
 import { auth } from '@/api/api.js'
-import { RouterLink, useRouter } from 'vue-router'
-import { onMounted, onUnmounted, ref } from 'vue'
+import { RouterLink, useRoute, useRouter } from 'vue-router'
+import { onMounted, onUnmounted, ref, computed } from 'vue'
 
 const user = User()
 const menu = ref(false)
+
+const route = useRoute()
 const router = useRouter()
 
+// Следим за текущим scroll
+const scrollY = ref(0)
+
+const updateScroll = () => {
+  scrollY.value = window.scrollY || 0
+}
+
+// ✅ computed на основе scrollY и route.name
+const isTransparent = computed(() => {
+  return route.name === 'home' && scrollY.value <= 10
+})
+
+// Закрываем меню при переходах
 const closeMenuOnRouteChange = () => {
   menu.value = false
+  requestAnimationFrame(updateScroll)
 }
 
 onMounted(() => {
+  updateScroll()
+  window.addEventListener('scroll', updateScroll)
   router.afterEach(closeMenuOnRouteChange)
 })
 
 onUnmounted(() => {
-  router.afterEach(() => {})
+  window.removeEventListener('scroll', updateScroll)
 })
 </script>
 
@@ -27,7 +45,7 @@ onUnmounted(() => {
   <button @click="() => (menu = true)" class="menu menu__button">
     <SvgMenu />
   </button>
-  <header class="header box-shadow wh" :class="{ menu: menu }">
+  <header class="header box-shadow wh" :class="{ transparent: isTransparent, menu: menu }">
     <div class="box-x wh gap">
       <ComponentLogo />
       <div class="box-x gap2 flex">
@@ -55,6 +73,14 @@ onUnmounted(() => {
 </template>
 
 <style lang="sass" scoped>
+.header
+  transition: opacity 0.3s ease, background-color 0.3s ease
+  opacity: 1
+  pointer-events: auto
+  margin-bottom: 51px
+  &.transparent
+    opacity: 0
+    pointer-events: none
 .menu
   display: none
 .header
