@@ -12,14 +12,12 @@ const menu = ref(false)
 const route = useRoute()
 const router = useRouter()
 
-// Следим за текущим scroll
 const scrollY = ref(0)
 
 const updateScroll = () => {
   scrollY.value = window.scrollY || 0
 }
 
-// ✅ computed на основе scrollY и route.name
 const isTransparent = computed(() => {
   return route.name === 'home' && scrollY.value <= 10
 })
