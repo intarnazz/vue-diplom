@@ -55,8 +55,8 @@ import { RouterLink } from 'vue-router'
 .baner
   background-color: #000
   z-index: 1
-  min-height: 100dvh
   height: 100dvh
+  max-height: 1080px
   border-bottom: 13px solid #04838E;
   box-shadow: 0 0 50px 0 #000
   &__logo

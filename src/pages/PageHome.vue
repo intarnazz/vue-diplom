@@ -8,7 +8,7 @@ import SectionOutLink from '@/components/sections/index/SectionOutLink.vue'
 </script>
 
 <template>
-  <LayoutPage class="main">
+  <LayoutPage class="main home">
     <SectionBaner />
     <SectionCalculator />
     <SectionAboutUs />
