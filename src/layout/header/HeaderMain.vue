@@ -49,24 +49,30 @@ onUnmounted(() => {
   >
     <div class="box-x wh gap">
       <ComponentLogo />
-      <div class="box-x gap2 flex">
-        <div class="flex"></div>
-        <RouterLink class="box-x" :to="{ name: 'home' }"> Главная </RouterLink>
-        <RouterLink class="box-x" :to="{ name: 'portfolio' }"> Портфолио </RouterLink>
-        <RouterLink class="box-x" :to="{ name: 'about-us' }"> О нас </RouterLink>
-        <RouterLink class="box-x" :to="{ name: 'calculator' }"> Калькулятор </RouterLink>
-        <RouterLink class="box-x" :to="{ name: 'contact-us' }"> Контакты </RouterLink>
-        <RouterLink class="box-x" :to="{ name: 'message-me' }"> Напишите нам сообщение </RouterLink>
+      <div class="flex"></div>
+      <div class="box-x">
+        <div class="header__bg-module box-x gap2">
+          <RouterLink class="box-x" :to="{ name: 'home' }"> Главная </RouterLink>
+          <RouterLink class="box-x" :to="{ name: 'portfolio' }"> Портфолио </RouterLink>
+          <RouterLink class="box-x" :to="{ name: 'about-us' }"> О нас </RouterLink>
+          <RouterLink class="box-x" :to="{ name: 'calculator' }"> Калькулятор </RouterLink>
+          <RouterLink class="box-x" :to="{ name: 'contact-us' }"> Контакты </RouterLink>
+          <RouterLink class="box-x" :to="{ name: 'message-me' }">
+            Напишите нам сообщение
+          </RouterLink>
+        </div>
         |
-        <template v-if="!user.get.value">
-          <RouterLink class="box-x" :to="{ name: 'login' }"> Войти </RouterLink>
-          <RouterLink class="box-x" :to="{ name: 'reg' }"> Регистрация </RouterLink>
-        </template>
-        <template v-else>
-          <RouterLink class="box-x button1" :to="{ name: 'chat' }"> Мои чаты </RouterLink>
-          <RouterLink class="box-x button" :to="{ name: 'profile' }"> Profile </RouterLink>
-          <button @click="auth.logout" class="box-x button">Logout</button>
-        </template>
+        <div class="header__bg-module box-x gap2">
+          <template v-if="!user.get.value">
+            <RouterLink class="box-x" :to="{ name: 'login' }"> Войти </RouterLink>
+            <RouterLink class="box-x" :to="{ name: 'reg' }"> Зарегестрироваться </RouterLink>
+          </template>
+          <template v-else>
+            <RouterLink class="box-x button1" :to="{ name: 'chat' }"> Мои чаты </RouterLink>
+            <RouterLink class="box-x button" :to="{ name: 'profile' }"> Profile </RouterLink>
+            <button @click="auth.logout" class="box-x button">Logout</button>
+          </template>
+        </div>
       </div>
     </div>
     <button @click="() => (menu = false)" class="menu menu__button_cansel flex wh"></button>
@@ -81,13 +87,19 @@ onUnmounted(() => {
   &_home-page
     margin-top: -$header
   &.transparent
-    opacity: 0
-    pointer-events: none
+    background-color: #00000000
+    // pointer-events: none
+    box-shadow: 0 0 0 0 #000
+  &__bg-module
+    background-color: #fff
+    border-radius: 20px
+    opacity: 1 !important
+    padding: .5rem 2rem
 .menu
   display: none
 .header
+  padding: 1rem 2rem
   background-color: #fff
-  padding: .5rem 2rem
   box-shadow: 0 0 10px 0 #000
   // max-height: $header
   // min-height: $header
