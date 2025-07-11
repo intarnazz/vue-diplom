@@ -7,11 +7,13 @@
 </template>
 
 <style lang="sass" scoped>
+$headerCalc: calc( 100dvh - $header )
+$menuCalc: calc( 100dvh - $menu )
 .opener
-  min-height: calc( 100dvh )
-  height: calc( 100dvh )
+  min-height: $headerCalc
+  height: $headerCalc
 @media screen and (max-width: 910px)
   .opener
-    min-height: calc( 100dvh )
-    height: calc( 100dvh )
+    min-height: $menuCalc
+    height: $menuCalc
 </style>

@@ -15,6 +15,8 @@ onMounted(() => {
 </template>
 
 <style lang="sass" scoped>
+// .main
+//   margin-top: $header
 .main
   justify-content: flex-start
   align-items: center

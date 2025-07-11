@@ -43,7 +43,10 @@ onUnmounted(() => {
   <button @click="() => (menu = true)" class="menu menu__button">
     <SvgMenu />
   </button>
-  <header class="header box-shadow wh" :class="{ transparent: isTransparent, menu: menu }">
+  <header
+    class="header box-shadow wh"
+    :class="{ transparent: isTransparent, menu: menu, 'header_home-page': route.name === 'home' }"
+  >
     <div class="box-x wh gap">
       <ComponentLogo />
       <div class="box-x gap2 flex">
@@ -75,7 +78,8 @@ onUnmounted(() => {
   transition: opacity 0.3s ease, background-color 0.3s ease
   opacity: 1
   pointer-events: auto
-  margin-bottom: 51px
+  &_home-page
+    margin-top: -$header
   &.transparent
     opacity: 0
     pointer-events: none
