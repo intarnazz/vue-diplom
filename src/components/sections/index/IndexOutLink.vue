@@ -26,13 +26,11 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
           </p>
         </div>
       </div>
-
       <img
         class="img"
         src="@/assets/img/steve-dimatteo-gObie1HkQV4-unsplash.webp"
         alt="Фасадный объект"
       />
-
       <div class="box-y flex gap">
         <h2 class="a">
           <RouterLink to="/contact-us">Связаться с нами</RouterLink>

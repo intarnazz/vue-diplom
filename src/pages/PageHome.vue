@@ -1,10 +1,10 @@
 <script setup>
 import FooterMain from '@/layout/footer/FooterMain.vue'
 import LayoutPage from '@/layout/LayoutPage.vue'
-import SectionAboutUs from '@/components/sections/index/SectionAboutUs.vue'
-import SectionBaner from '@/components/sections/index/SectionBaner.vue'
-import SectionCalculator from '@/components/sections/index/SectionCalculator.vue'
-import SectionOutLink from '@/components/sections/index/SectionOutLink.vue'
+import SectionAboutUs from '@/components/sections/index/IndexAboutUs.vue'
+import SectionBaner from '@/components/sections/index/IndexBaner.vue'
+import SectionCalculator from '@/components/sections/index/IndexCalculator.vue'
+import SectionOutLink from '@/components/sections/index/IndexOutLink.vue'
 </script>
 
 <template>
