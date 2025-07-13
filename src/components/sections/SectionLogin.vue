@@ -10,6 +10,7 @@ import FormLogin from '@/components/form/FormLogin.vue'
         <img class="img" src="@/assets/img/login-bg.webp" alt="login-bg" />
       </div>
       <div class="login__wrapper wh box-y gap p5 flex16 flex">
+      <div class="header-spase"></div>
         <h2>Авторизация</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora dolores voluptatem

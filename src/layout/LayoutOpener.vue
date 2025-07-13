@@ -7,7 +7,7 @@
 </template>
 
 <style lang="sass" scoped>
-$headerCalc: calc( 100dvh - $header )
+$headerCalc: calc( 100dvh )
 $menuCalc: calc( 100dvh - $menu )
 .opener
   min-height: $headerCalc

@@ -8,6 +8,7 @@ import ComponentOpener from '@/layout/LayoutOpener.vue'
 <template>
   <LayoutPage class="main">
     <ComponentOpener class="box-y gap2">
+      <div class="header-spase"></div>
       <div class="media__none"></div>
       <SectionPortfolioList />
       <div class=""></div>

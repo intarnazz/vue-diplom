@@ -8,6 +8,7 @@ import SectionCertificates from '@/components/sections/SectionCertificates.vue'
 
 <template>
   <LayoutPage class="main">
+      <div class="header-spase"></div>
     <LayoutWrapper class="box-y gap2">
       <SectionAboutUs />
       <SectionCertificates />
