@@ -1,16 +1,17 @@
 <script setup>
 import FooterMain from '@/layout/footer/FooterMain.vue'
 import LayoutPage from '@/layout/LayoutPage.vue'
-import SectionPortfolioList from '@/components/sections/SectionPortfolioList.vue'
+import SectionDock from '@/components/sections/SectionDock.vue'
 </script>
 
 <template>
   <LayoutPage class="main">
-      <div class="header-spase"></div>
-      <div class="media__none"></div>
-      <SectionPortfolioList />
-      <div class=""></div>
+    <div class="header-spase"></div>
+    <SectionDock />
+    <!-- <SectionCertificates /> -->
+    <div class=""></div>
   </LayoutPage>
+  <div class="flex"></div>
   <FooterMain />
 </template>
 

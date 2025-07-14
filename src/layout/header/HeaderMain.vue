@@ -105,6 +105,17 @@ const route = useRoute()
                   Портфолио
                 </RouterLink>
               </MenuItem>
+              <MenuItem v-slot="{ active }">
+                <RouterLink
+                  :to="{ name: 'dock' }"
+                  :class="[
+                    'block w-full text-left px-4 py-2 rounded-md',
+                    active ? 'bg-gray-100' : '',
+                  ]"
+                >
+                  Техническая документация
+                </RouterLink>
+              </MenuItem>
             </MenuItems>
           </Transition>
         </Menu>

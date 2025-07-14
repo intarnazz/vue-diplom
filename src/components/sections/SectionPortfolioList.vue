@@ -80,31 +80,55 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section class="portfolio wh">
-    <LayoutWrapper>
-      <div class="portfolio__title box-x">
-        <h2>Портфолио наших проектов</h2>
-        <div class="flex"></div>
+  <section class="text-white box-y pr gap2">
+    <div class="relative h-[300px]">
+      <img
+        src="@/assets/img/nuddle-1fHL0gz5IDg-unsplash.jpg"
+        alt="О компании"
+        class="absolute img__top inset-0 w-full h-full object-cover z-0"
+      />
+      <div class="bg-gradient-to-t from-black to-transparent pa wh"></div>
+      <LayoutWrapper class="h box-x">
+        <h1 class="bottom-8 left-8 text-white text-4xl font-bold z-10 drop-shadow-md">
+          Портфолио наших проектов
+        </h1>
+      </LayoutWrapper>
+    </div>
+    <LayoutWrapper class="box-y gap2">
+      <div class="absolute">
+        <img src="@/assets/img/Rectangle 153.png" class="opacity-50" alt="" />
       </div>
-      <div v-if="!isLoding" class="portfolio__list">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <RouterLink
+          v-for="portfolio in portfolioList"
+          :key="portfolio.id"
           :to="{ name: 'portfolio-id', params: { id: portfolio.id, name: portfolio.title } }"
-          v-for="(portfolio, id) in portfolioList"
-          :key="id"
-          class="portfolio__item pr"
+          class="group relative overflow-hidden rounded-2xl shadow-lg hover:scale-[1.01] transition-transform"
         >
-          <div class="pa box-y">
-            <div class="flex"></div>
-            <div class="box-x">
-              <h3>{{ portfolio.title }}</h3>
+          <ComponentImg
+            class="absolute inset-0 w-full h-full object-cover brightness-50 group-hover:brightness-75 transition-all duration-500"
+            :id="portfolio.image_id"
+            :alt="portfolio.title"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent z-10"
+          ></div>
+
+          <div class="relative z-20 p-6 flex flex-col justify-end h-full">
+            <h3 class="text-2xl font-bold tracking-tight mb-2">{{ portfolio.title }}</h3>
+            <p class="text-sm text-white/80 line-clamp-4">{{ portfolio.description }}</p>
+            <div class="mt-4 text-xs text-white/60">
+              <p v-if="portfolio.client" class="truncate">Клиент: {{ portfolio.client }}</p>
+              <p v-if="portfolio.completed_at">
+                Завершено: {{ new Date(portfolio.completed_at).toLocaleDateString() }}
+              </p>
             </div>
           </div>
-          <ComponentImg class="img" :id="portfolio.image_id" :alt="portfolio.title" />
         </RouterLink>
-
-        <!-- Сентинел для IntersectionObserver -->
-        <div ref="sentinel" class="observer-sentinel" />
       </div>
+
+      <!-- Sentinel для подгрузки -->
+      <div ref="sentinel" class="h-4"></div>
     </LayoutWrapper>
   </section>
 </template>
