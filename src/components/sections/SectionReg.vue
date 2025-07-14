@@ -5,7 +5,7 @@ import FormReg from '@/components/form/FormReg.vue'
 
 <template>
   <ComponentOpener>
-    <section class="reg wh box-x">
+    <section class="reg w box-x h-screen">
       <div class="wh flex9 flex media">
         <img class="img" src="@/assets/img/reg-bg.webp" alt="reg-bg" />
       </div>

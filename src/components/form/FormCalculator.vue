@@ -46,33 +46,42 @@ const formattedPrice = computed(() => price.value.toLocaleString('ru-RU'))
     <div class="box-y gap2 wh">
       <div class="box-y">
         <!-- Тип фасадного покрытия -->
-        <div class="form__box">
-          <select v-model="selectedCoating" class="" id="coating" name="coating">
-            <option v-for="(coating, index) in coatings" :key="index" :value="coating">
-              {{ coating.name }}
-            </option>
-          </select>
+        <div class="box-y">
+          <label for=""> Тип фасадного покрытия</label>
+          <div class="form__box">
+            <select v-model="selectedCoating" class="" id="coating" name="coating">
+              <option v-for="(coating, index) in coatings" :key="index" :value="coating">
+                {{ coating.name }}
+              </option>
+            </select>
+          </div>
         </div>
 
         <!-- Площадь фасада -->
-        <div class="form__box">
-          <input
-            v-model.number="area"
-            class=""
-            id="area"
-            name="area"
-            type="number"
-            placeholder="ПЛОЩАДЬ ФАСАДА (м²)"
-          />
+        <div class="box-y">
+          <label for=""> Площадь фасада (м²)</label>
+          <div class="form__box">
+            <input
+              v-model.number="area"
+              class=""
+              id="area"
+              name="area"
+              type="number"
+              placeholder="ПЛОЩАДЬ ФАСАДА (м²)"
+            />
+          </div>
         </div>
 
         <!-- Утеплитель -->
-        <div class="form__box">
-          <select v-model="selectedInsulation" class="" id="insulation" name="insulation">
-            <option v-for="(insul, index) in insulationOptions" :key="index" :value="insul">
-              {{ insul.name }}
-            </option>
-          </select>
+        <div class="box-y">
+          <label for=""> Утеплитель</label>
+          <div class="form__box">
+            <select v-model="selectedInsulation" class="" id="insulation" name="insulation">
+              <option v-for="(insul, index) in insulationOptions" :key="index" :value="insul">
+                {{ insul.name }}
+              </option>
+            </select>
+          </div>
         </div>
       </div>
 

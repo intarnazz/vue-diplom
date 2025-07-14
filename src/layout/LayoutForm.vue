@@ -89,7 +89,10 @@ watch(
     font-weight: 400
     background: #02838D
     padding: 1rem
+    box-shadow: 0 0 0 0 hsla(0,0%,0%,.6)
     &:hover
+      margin: 0 0 0 0
+      box-shadow: 0 0 0 0 #04838E
       background-color: #02838D
 
 .success

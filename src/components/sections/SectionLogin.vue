@@ -5,7 +5,7 @@ import FormLogin from '@/components/form/FormLogin.vue'
 
 <template>
   <ComponentOpener>
-    <section class="login wh box-x">
+    <section class="login w box-x  h-screen">
       <div class="wh flex9 flex media">
         <img class="img" src="@/assets/img/login-bg.webp" alt="login-bg" />
       </div>

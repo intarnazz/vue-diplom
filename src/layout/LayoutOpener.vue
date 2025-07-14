@@ -11,9 +11,9 @@ $headerCalc: calc( 100dvh )
 $menuCalc: calc( 100dvh - $menu )
 .opener
   min-height: $headerCalc
-  height: $headerCalc
+  // height: $headerCalc
 @media screen and (max-width: 910px)
   .opener
     min-height: $menuCalc
-    height: $menuCalc
+    // height: $menuCalc
 </style>

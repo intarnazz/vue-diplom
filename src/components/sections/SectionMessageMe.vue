@@ -3,7 +3,7 @@ import FormGuestQuery from '@/components/form/FormGuestQuery.vue'
 </script>
 
 <template>
-  <section class="login wh box-x">
+  <section class="login w box-x h-screen">
     <div class="wh flex9 flex media">
       <img class="img" src="@/assets/img/prateek-katyal-bQIgHc6AHUI-unsplash.webp" alt="login-bg" />
     </div>

@@ -87,7 +87,7 @@ async function chat_init(e) {
       <ComponentChatListItem
         @click="((chat_id = chat.id), emit('chat_id', chat.id))"
         @eve-chat="(e) => chat_init(e)"
-        v-for="(chat, key) in chatListSort"
+        v-for="chat in chatListSort"
         :key="chat.id"
         :chat="chat"
         :chat_id="chat_id"

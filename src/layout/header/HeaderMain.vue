@@ -2,7 +2,10 @@
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import ComponentLogo from '@/components/ComponentLogo.vue'
 import { RouterLink, useRoute } from 'vue-router'
+import { auth } from '@/api/api.js'
+import { User } from '@/storage/user.js'
 
+const user = User()
 const route = useRoute()
 
 // const menuItems = ref([
@@ -33,7 +36,10 @@ const route = useRoute()
       <nav
         class="inline-flex items-center rounded-xl bg-white/90 shadow-lg px-6 py-4 gap-6 pointer-events-auto"
       >
-        <RouterLink :to="{ name: 'message-me' }" class="text-black hover:underline">
+        <RouterLink v-if="user.get.value" :to="{ name: 'chat' }" class="text-black hover:underline">
+          мои чаты
+        </RouterLink>
+        <RouterLink v-else :to="{ name: 'message-me' }" class="text-black hover:underline">
           Message me
         </RouterLink>
 
@@ -125,8 +131,25 @@ const route = useRoute()
       <div
         class="inline-flex items-center rounded-xl bg-white/90 shadow-lg px-6 py-4 gap-4 pointer-events-auto"
       >
-        <RouterLink :to="{ name: 'login' }" class="text-black hover:underline"> Log in </RouterLink>
         <RouterLink
+          v-if="user.get.value"
+          :to="{ name: 'profile' }"
+          class="text-black hover:underline"
+        >
+          мой профиль
+        </RouterLink>
+        <RouterLink v-else :to="{ name: 'login' }" class="text-black hover:underline">
+          Log in
+        </RouterLink>
+        <button
+          v-if="user.get.value"
+          @click="auth.logout"
+          class="px-4 py-2 rounded-md bg-black text-white hover:bg-gray-800"
+        >
+          Выйти
+        </button>
+        <RouterLink
+          v-else
           :to="{ name: 'reg' }"
           class="px-4 py-2 rounded-md bg-black text-white hover:bg-gray-800"
         >

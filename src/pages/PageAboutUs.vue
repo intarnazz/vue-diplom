@@ -2,14 +2,14 @@
 import FooterMain from '@/layout/footer/FooterMain.vue'
 import LayoutPage from '@/layout/LayoutPage.vue'
 import SectionAboutUs from '@/components/sections/aboutUs/AboutUsMain.vue'
-// import SectionCertificates from '@/components/sections/SectionCertificates.vue'
+import SectionCertificates from '@/components/sections/SectionCertificates.vue'
 </script>
 
 <template>
   <LayoutPage class="main">
     <div class="header-spase"></div>
     <SectionAboutUs />
-    <!-- <SectionCertificates /> -->
+    <SectionCertificates />
     <div class=""></div>
   </LayoutPage>
   <div class="flex"></div>

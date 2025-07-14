@@ -12,7 +12,7 @@ import SectionOutLink from '@/components/sections/index/IndexOutLink.vue'
     <SectionBaner />
     <SectionCalculator />
     <SectionAboutUs />
-    <SectionOutLink />
+    <SectionOutLink class="pr bs" />
   </LayoutPage>
   <FooterMain />
 </template>
