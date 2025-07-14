@@ -1,7 +1,6 @@
 <script setup>
 import FooterMain from '@/layout/footer/FooterMain.vue'
 import LayoutPage from '@/layout/LayoutPage.vue'
-import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import SectionAboutUs from '@/components/sections/aboutUs/AboutUsMain.vue'
 // import SectionCertificates from '@/components/sections/SectionCertificates.vue'
 </script>
@@ -9,10 +8,8 @@ import SectionAboutUs from '@/components/sections/aboutUs/AboutUsMain.vue'
 <template>
   <LayoutPage class="main">
     <div class="header-spase"></div>
-    <LayoutWrapper class="box-y gap2">
-      <SectionAboutUs />
-      <!-- <SectionCertificates /> -->
-    </LayoutWrapper>
+    <SectionAboutUs />
+    <!-- <SectionCertificates /> -->
     <div class=""></div>
   </LayoutPage>
   <div class="flex"></div>
