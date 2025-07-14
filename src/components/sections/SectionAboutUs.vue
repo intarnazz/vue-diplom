@@ -1,154 +1,133 @@
 <script setup></script>
 
 <template>
-  <section class="w-full">
-    <!-- Hero image + title -->
-    <div class="relative h-[300px] pr">
-      <!-- Изображение на заднем плане -->
+  <section class="w-full box-y gap2">
+    <!-- Hero -->
+    <div class="relative h-[300px]">
       <img
-        src="@/assets/img/about-us image.webp"
-        alt="About Us"
-        class="absolute inset-0 w-full h-full object-cover z-0 img pa"
+        src="@/assets/img/dfy--_rVqLaOGV4-unsplash.jpg"
+        alt="О компании"
+        class="absolute inset-0 w-full h-full object-cover z-0"
       />
-      <!-- Текст -->
-      <h1 class="my-[5rem] mx-[2rem] bottom-6 left-6 text-white text-4xl font-bold z-20 pr">
+      <div class="bg-gradient-to-t from-black to-transparent pa wh"></div>
+      <h1 class="absolute bottom-8 left-8 text-white text-4xl font-bold z-10 drop-shadow-md">
         О компании
       </h1>
     </div>
 
-    <!-- Intro section -->
-    <div class="relative px-6 py-12 bg-white">
-      <div
-        class="absolute top-0 left-0 w-40 h-40 bg-yellow-400 rounded-full opacity-90 -z-10 translate-x-10 translate-y-10"
-      />
-      <h2 class="text-3xl font-bold mb-4">
-        Больше удовольствия<br />
-        Для всех — <br />
-        Вперёд в будущее!
-      </h2>
-      <p class="max-w-2xl text-gray-700 leading-relaxed">
-        Наша компания занимается проектированием и производством фасадных решений любой сложности.
-        Мы предлагаем надёжные и эстетически выверенные решения, разработанные с учётом всех
-        современных стандартов качества. Работаем быстро, точно и без лишних затрат.
-      </p>
-    </div>
-
-    <!-- Benefits grid -->
-    <div class="bg-gray-50 py-16 px-6 grid gap-10 lg:grid-cols-3">
-      <div class="space-y-2">
-        <h3 class="text-xl font-semibold">1. Гибкая система цен</h3>
-        <p class="text-gray-700">
-          Мы подскажем, как оптимизировать затраты без ущерба надёжности конструкции и внешнему
-          виду.
-        </p>
-        <span class="text-sm text-blue-500 cursor-pointer">Пример расчета работ</span>
+    <!-- More Fun Section -->
+    <div class="relative bg-white">
+      <div class="absolute">
+        <img src="@/assets/img/Rectangle 153.png" class="opacity-50" alt="" />
       </div>
+      <div class="relative z-10">
+        <h2 class="text-4xl font-extrabold leading-tight mb-6 text-[#202040]">
+          Комплексные<br />
+          Системы<br />
+          Монтажа
+        </h2>
 
-      <div class="space-y-2">
-        <h3 class="text-xl font-semibold">2. Проектирование</h3>
-        <p class="text-gray-700">
-          Разработаем рабочую проектную документацию для фасадных систем любой сложности.
-        </p>
-      </div>
+        <div class="w box-x">
+          <div class="flex"></div>
+          <p class="text-gray-700 w-[90%] text-base leading-relaxed">
+            Мы — команда профессионалов, специализирующаяся на проектировании, производстве и
+            монтаже навесных вентилируемых фасадов. С 2010 года реализуем проекты различной
+            сложности по всей России.
+            <br /><br />
 
-      <div class="space-y-2">
-        <h3 class="text-xl font-semibold">3. Современное оборудование</h3>
-        <p class="text-gray-700">Собственное производство, полностью обновлённое в 2022 году.</p>
-        <span class="text-sm text-blue-500 cursor-pointer">Видео с производства</span>
-      </div>
+            <strong>1. Гибкая система ценообразования:</strong> Предлагаем индивидуальные условия
+            для каждого проекта. Помогаем с оптимизацией бюджета без потери качества. <br /><br />
 
-      <div class="space-y-2">
-        <h3 class="text-xl font-semibold">4. Срочные задачи</h3>
-        <p class="text-gray-700">
-          Производство, проектный отдел и логистика — всё в одном месте. Минимум рисков, максимум
-          скорости.
-        </p>
-        <span class="text-sm text-blue-500 cursor-pointer">Пример рабочего проекта</span>
-      </div>
+            <strong>2. Сильный проектный отдел:</strong> Разрабатываем полные комплекты проектной
+            документации для фасадных решений. Работаем с BIM, CAD, Revit. <br /><br />
 
-      <div class="space-y-2">
-        <h3 class="text-xl font-semibold">5. Точность до миллиметра</h3>
-        <p class="text-gray-700">
-          Изделия обрабатываются на станках с ЧПУ — исключены неточности форм и размеров.
-        </p>
-      </div>
+            <strong>3. Точное производство:</strong> Используем современное оборудование с ЧПУ.
+            Производственные линии обновлены в 2022 году. Качество соответствует ГОСТ и
+            международным стандартам. <br /><br />
 
-      <div class="space-y-2">
-        <h3 class="text-xl font-semibold">6. Минимальная партия от 1 м²</h3>
-        <p class="text-gray-700">
-          Производим от 1 изделия — идеальное решение для нестандартных задач.
-        </p>
-        <span class="text-sm text-blue-500 cursor-pointer">Пример фасада</span>
-      </div>
+            <strong>4. Оперативность:</strong> Выполняем срочные заказы. За счёт собственного
+            производства, логистики и проектирования не зависим от подрядчиков. <br /><br />
 
-      <div class="space-y-2">
-        <h3 class="text-xl font-semibold">7. Оптимизация стоимости</h3>
-        <p class="text-gray-700">Проектировщики сокращают отходы на 30% при раскрое материалов.</p>
-        <span class="text-sm text-blue-500 cursor-pointer">Усреднённый расчёт монтажа</span>
-      </div>
-    </div>
+            <strong>5. Минимальные партии:</strong> Возможность изготовления от 1 м². Работаем как с
+            крупными, так и с частными заказчиками. <br /><br />
 
-    <!-- Company facts -->
-    <div class="bg-white py-16 text-center">
-      <h2 class="text-2xl font-bold mb-8">О компании в цифрах</h2>
-      <div class="flex flex-wrap justify-center gap-10">
-        <div class="text-center">
-          <div class="text-4xl font-bold text-blue-600">2010</div>
-          <div class="text-gray-600">Год основания</div>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl font-bold text-blue-600">30+</div>
-          <div class="text-gray-600">Специалистов</div>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl font-bold text-blue-600">1 млн м²</div>
-          <div class="text-gray-600">Площадь фасадов</div>
+            <strong>6. Минимум отходов — максимум эффективности:</strong> Наши инженеры подбирают
+            оптимальные схемы раскроя и узлов — это позволяет сократить отходы до 30%.
+          </p>
         </div>
       </div>
     </div>
 
-    <!-- Certificates -->
-    <div class="bg-gray-100 py-16 px-6">
-      <h2 class="text-2xl font-bold mb-8 text-center">Сертификаты</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-        <img
-          v-for="n in 5"
-          :key="n"
-          :src="'@/assets/img/about-us image.webp'"
-          alt="Сертификат"
-          class="rounded shadow-md object-cover w-full h-48"
-        />
+    <!-- Who are we? -->
+    <div class="relative bg-white">
+      <div class="absolute right-0">
+        <img class="opacity-50" src="@/assets/img/Rectangle 154.png" alt="" />
+      </div>
+      <div class="relative z-10">
+        <h2 class="text-4xl font-extrabold leading-tight mb-6 text-[#202040]">
+          О нас<br />
+          в деталях
+        </h2>
+
+        <div class="w box-x">
+          <div class="flex"></div>
+          <p class="text-gray-700 w-[90%] text-base leading-relaxed">
+            За годы работы мы успешно реализовали сотни проектов — от частных домов до крупных
+            коммерческих и промышленных объектов. Мы гордимся доверием наших партнёров и репутацией
+            ответственного подрядчика.
+            <br /><br />
+
+            Наши основные преимущества:
+            <br /><br />
+
+            <strong>✔ Собственное производство:</strong> Это позволяет контролировать качество на
+            каждом этапе. <br /><br />
+
+            <strong>✔ Комплексный подход:</strong> Проектируем, поставляем и монтируем. Один
+            подрядчик — меньше рисков. <br /><br />
+
+            <strong>✔ Команда:</strong> В штате — инженеры, архитекторы, технологи, монтажники и
+            логисты с многолетним опытом. <br /><br />
+
+            <strong>✔ Прозрачность:</strong> Открытая система расчётов, договорные сроки и
+            гарантийные обязательства.
+          </p>
+        </div>
       </div>
     </div>
 
-    <!-- Contact form -->
-    <div class="py-16 px-6 bg-white">
-      <h2 class="text-2xl font-bold mb-4">Связаться с нами</h2>
-      <p class="mb-6 text-gray-600">
-        Оставьте свои контакты, чтобы обсудить проект или задать вопрос. Мы свяжемся с вами в
-        течение рабочего дня.
-      </p>
-
-      <form class="grid gap-4 max-w-xl">
-        <input type="text" placeholder="Ваше имя" class="border p-3 rounded" />
-        <input type="tel" placeholder="+7 (999) 999-99-99" class="border p-3 rounded" />
-        <input type="text" placeholder="Компания" class="border p-3 rounded" />
-
-        <label class="flex items-center space-x-2 text-sm text-gray-600">
-          <input type="checkbox" class="accent-blue-500" />
-          <span>Я согласен с политикой обработки персональных данных</span>
-        </label>
-        <label class="flex items-center space-x-2 text-sm text-gray-600">
-          <input type="checkbox" class="accent-blue-500" />
-          <span>Я согласен с политикой конфиденциальности</span>
-        </label>
-
-        <button type="submit" class="bg-blue-600 text-white py-3 px-6 rounded hover:bg-blue-700">
-          Отправить
-        </button>
-      </form>
-
-      <p class="mt-6 text-sm text-gray-500">Минимальный заказ от 100 м²</p>
+    <!-- Сертификаты -->
+    <div class="bg-white px-6 py-20">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-10">Сертификаты</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <img
+            src="@/assets/img/Frame_9.png.webp"
+            alt="Сертификат 1"
+            class="w-full rounded shadow"
+          />
+          <img
+            src="@/assets/img/Frame_10.png.webp"
+            alt="Сертификат 2"
+            class="w-full rounded shadow"
+          />
+          <img
+            src="@/assets/img/Frame_11.png.webp"
+            alt="Сертификат 3"
+            class="w-full rounded shadow"
+          />
+          <img
+            src="@/assets/img/Frame_12.png.webp"
+            alt="Сертификат 4"
+            class="w-full rounded shadow"
+          />
+          <img
+            src="@/assets/img/Frame_13.png.webp"
+            alt="Сертификат 5"
+            class="w-full rounded shadow"
+          />
+        </div>
+      </div>
     </div>
   </section>
 </template>

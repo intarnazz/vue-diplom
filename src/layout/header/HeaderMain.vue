@@ -16,30 +16,30 @@ const route = useRoute()
 //   'Get benefits & perks',
 // ])
 </script>
-
 <template>
   <header class="sticky top-0 w-full z-50 pointer-events-none">
-    <div class="flex justify-end px-6 py-4 space-x-4">
+    <div class="flex justify-end px-6 py-4 gap-4">
       <RouterLink
         v-if="route.name !== 'home'"
         :to="{ name: 'home' }"
-        class="inline-flex items-center bg-white bg-opacity-90 rounded-xl shadow-lg px-6 py-4 space-x-6 pointer-events-auto"
+        class="inline-flex items-center rounded-xl bg-white/90 shadow-lg px-6 py-4 gap-6 pointer-events-auto"
       >
         <ComponentLogo />
       </RouterLink>
 
       <div class="flex"></div>
+
       <!-- Левый контейнер: "О компании" + "Message me" -->
       <nav
-        class="inline-flex items-center bg-white bg-opacity-90 rounded-xl shadow-lg px-6 py-4 space-x-6 pointer-events-auto"
+        class="inline-flex items-center rounded-xl bg-white/90 shadow-lg px-6 py-4 gap-6 pointer-events-auto"
       >
-        <RouterLink :to="{ name: 'message-me' }" class="hover:underline text-black">
+        <RouterLink :to="{ name: 'message-me' }" class="text-black hover:underline">
           Message me
         </RouterLink>
 
         <!-- Dropdown "О компании" -->
         <Menu as="div" class="relative">
-          <MenuButton class="flex items-center space-x-1 hover:underline text-black">
+          <MenuButton class="flex items-center gap-1 text-black hover:underline">
             <span>О компании</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
               <path
@@ -51,15 +51,15 @@ const route = useRoute()
             </svg>
           </MenuButton>
           <Transition
-            enter="transition duration-100 ease-out"
-            enter-from="transform scale-95 opacity-0"
-            enter-to="transform scale-100 opacity-100"
-            leave="transition duration-75 ease-in"
-            leave-from="transform scale-100 opacity-100"
-            leave-to="transform scale-95 opacity-0"
+            enter="transition ease-out duration-100"
+            enter-from="opacity-0 scale-95"
+            enter-to="opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leave-from="opacity-100 scale-100"
+            leave-to="opacity-0 scale-95"
           >
             <MenuItems
-              class="absolute left-0 mt-8 w-56 origin-top-left rounded-xl bg-white text-black shadow-lg ring-1 ring-black/5 p-2 space-y-1 z-50 pointer-events-auto"
+              class="absolute left-0 mt-8 w-56 origin-top-left rounded-xl bg-white text-black shadow-lg ring-1 ring-black/5 p-2 flex flex-col gap-1 z-50 pointer-events-auto"
             >
               <MenuItem v-slot="{ active }">
                 <RouterLink
@@ -112,7 +112,7 @@ const route = useRoute()
 
       <!-- Правый контейнер: Log in / Sign up -->
       <div
-        class="inline-flex items-center bg-white bg-opacity-90 rounded-xl shadow-lg px-6 py-4 space-x-4 pointer-events-auto"
+        class="inline-flex items-center rounded-xl bg-white/90 shadow-lg px-6 py-4 gap-4 pointer-events-auto"
       >
         <RouterLink :to="{ name: 'login' }" class="text-black hover:underline"> Log in </RouterLink>
         <RouterLink

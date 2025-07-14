@@ -3,7 +3,7 @@ import FooterMain from '@/layout/footer/FooterMain.vue'
 import LayoutPage from '@/layout/LayoutPage.vue'
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import SectionAboutUs from '@/components/sections/SectionAboutUs.vue'
-import SectionCertificates from '@/components/sections/SectionCertificates.vue'
+// import SectionCertificates from '@/components/sections/SectionCertificates.vue'
 </script>
 
 <template>
@@ -11,7 +11,7 @@ import SectionCertificates from '@/components/sections/SectionCertificates.vue'
     <div class="header-spase"></div>
     <LayoutWrapper class="box-y gap2">
       <SectionAboutUs />
-      <SectionCertificates />
+      <!-- <SectionCertificates /> -->
     </LayoutWrapper>
     <div class=""></div>
   </LayoutPage>
