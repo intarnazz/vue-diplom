@@ -2,7 +2,7 @@
 import FooterMain from '@/layout/footer/FooterMain.vue'
 import LayoutPage from '@/layout/LayoutPage.vue'
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
-import SectionAboutUs from '@/components/sections/SectionAboutUs.vue'
+import SectionAboutUs from '@/components/sections/aboutUs/AboutUsMain.vue'
 // import SectionCertificates from '@/components/sections/SectionCertificates.vue'
 </script>
 
