@@ -58,10 +58,8 @@ const licks = ref([
       </ul>
     </aside>
     <iframe
-      class="map"
+      class="map shadow-xl/30"
       src="https://yandex.ru/map-widget/v1/?um=constructor%3A2ae3f67321f7550843ef568969a6ce60d52a488b98d9b237c5488d763513bfde&amp;source=constructor"
-      width="500"
-      height="400"
       frameborder="0"
     ></iframe>
   </section>
@@ -73,7 +71,7 @@ const licks = ref([
   margin: 2rem 0
 .map
   width: 100%
-  height: calc( 100dvh - 87px )
+  height: calc( 100dvh - $header )
 .contact
   white-space: nowrap
   overflow: hidden

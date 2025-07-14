@@ -8,6 +8,7 @@ import SectionContactUs from '@/components/sections/SectionContactUs.vue'
 <template>
   <LayoutPage class="main">
     <LayoutOpener>
+      <div class="header-spase"></div>
       <SectionContactUs class="wh" />
     </LayoutOpener>
   </LayoutPage>
