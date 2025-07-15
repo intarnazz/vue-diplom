@@ -36,11 +36,56 @@ const route = useRoute()
       <nav
         class="inline-flex items-center rounded-xl bg-white/90 shadow-lg px-6 py-4 gap-6 pointer-events-auto"
       >
-        <RouterLink v-if="user.get.value" :to="{ name: 'chat' }" class="text-black hover:underline">
-          мои чаты
-        </RouterLink>
+        <Menu v-if="user.get.value" as="div" class="relative">
+          <MenuButton class="flex items-center gap-1 text-black hover:underline">
+            <span>Напишите нам</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="1.5"
+                d="M5.172 8 8 10.828 10.83 8"
+              ></path>
+            </svg>
+          </MenuButton>
+          <Transition
+            enter="transition ease-out duration-100"
+            enter-from="opacity-0 scale-95"
+            enter-to="opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leave-from="opacity-100 scale-100"
+            leave-to="opacity-0 scale-95"
+          >
+            <MenuItems
+              class="absolute left-0 mt-8 w-56 origin-top-left rounded-xl bg-white text-black shadow-lg ring-1 ring-black/5 p-2 flex flex-col gap-1 z-50 pointer-events-auto"
+            >
+              <MenuItem v-slot="{ active }">
+                <RouterLink
+                  :to="{ name: 'chat' }"
+                  :class="[
+                    'block w-full text-left px-4 py-2 rounded-md',
+                    active ? 'bg-gray-100' : '',
+                  ]"
+                >
+                  Чат с админом
+                </RouterLink>
+              </MenuItem>
+              <MenuItem v-slot="{ active }">
+                <RouterLink
+                  :to="{ name: 'message-me' }"
+                  :class="[
+                    'block w-full text-left px-4 py-2 rounded-md',
+                    active ? 'bg-gray-100' : '',
+                  ]"
+                >
+                  Написать как гость
+                </RouterLink>
+              </MenuItem>
+            </MenuItems>
+          </Transition>
+        </Menu>
         <RouterLink v-else :to="{ name: 'message-me' }" class="text-black hover:underline">
-          Message me
+          Напишите нам
         </RouterLink>
 
         <!-- Dropdown "О компании" -->
