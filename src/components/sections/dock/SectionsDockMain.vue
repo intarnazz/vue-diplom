@@ -70,8 +70,10 @@ import { RouterLink } from 'vue-router'
         <p class="text-sm text-gray-700">
           Общий раздел по фасадной и кровельной облицовке листовыми металлическими материалами.
         </p>
-        <a href="#" class="inline-block mt-3 text-sm text-purple-600 hover:underline font-medium"
-          >Подробнее →</a
+        <RouterLink
+          :to="{ name: 'd.mps' }"
+          class="inline-block mt-3 text-sm text-purple-600 hover:underline font-medium"
+          >Подробнее →</RouterLink
         >
       </div>
     </div>

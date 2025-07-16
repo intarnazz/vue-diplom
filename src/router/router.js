@@ -15,6 +15,7 @@ import PageDocumentation from '@/pages/PageDocumentation.vue'
 import PageDockVF from '@/pages/dock/PageDockVF.vue'
 import PageDockTSPVP from '@/pages/dock/PageDockTSPVP.vue'
 import PageDockSPPSS from '@/pages/dock/PageDockSPPSS.vue'
+import PageDockMPS from '@/pages/dock/PageDockMPS.vue'
 const user = User()
 
 const dock = () => {
@@ -40,6 +41,11 @@ const dock = () => {
       path: `${prefix}/sendvich-paneli-poelementnoj-sborki-spps`,
       name: 'd.sppss',
       component: PageDockSPPSS,
+    },
+    {
+      path: `${prefix}/metallocherepica-proflist-sajding`,
+      name: 'd.mps',
+      component: PageDockMPS,
     },
   ]
 }
