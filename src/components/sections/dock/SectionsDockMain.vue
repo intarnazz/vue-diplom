@@ -53,8 +53,10 @@ import { RouterLink } from 'vue-router'
         <p class="text-sm text-gray-700">
           Техническая документация по СППС с различными видами облицовки.
         </p>
-        <a href="#" class="inline-block mt-3 text-sm text-yellow-600 hover:underline font-medium"
-          >Подробнее →</a
+        <RouterLink
+          :to="{ name: 'd.sppss' }"
+          class="inline-block mt-3 text-sm text-yellow-600 hover:underline font-medium"
+          >Подробнее →</RouterLink
         >
       </div>
 

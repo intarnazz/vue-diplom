@@ -12,8 +12,9 @@ import PagePortfolio from '@/pages/PagePortfolio.vue'
 import PageCalculator from '@/pages/PageCalculator.vue'
 import PageMessageMe from '@/pages/PageMessageMe.vue'
 import PageDocumentation from '@/pages/PageDocumentation.vue'
-import DockVentiliruemyeFasady from '@/pages/dock/PageDockVentiliruemyeFasady.vue'
-import PageDockTreSendvichPaneliVataPenopol from '@/pages/dock/PageDockTreSendvichPaneliVataPenopol.vue'
+import PageDockVF from '@/pages/dock/PageDockVF.vue'
+import PageDockTSPVP from '@/pages/dock/PageDockTSPVP.vue'
+import PageDockSPPSS from '@/pages/dock/PageDockSPPSS.vue'
 const user = User()
 
 const dock = () => {
@@ -28,12 +29,17 @@ const dock = () => {
     {
       path: `${prefix}/ventiliruemye-fasady`,
       name: 'd.vf',
-      component: DockVentiliruemyeFasady,
+      component: PageDockVF,
     },
     {
       path: `${prefix}/tre-sendvich-paneli-vata-penopol`,
       name: 'd.tspvp',
-      component: PageDockTreSendvichPaneliVataPenopol,
+      component: PageDockTSPVP,
+    },
+    {
+      path: `${prefix}/sendvich-paneli-poelementnoj-sborki-spps`,
+      name: 'd.sppss',
+      component: PageDockSPPSS,
     },
   ]
 }

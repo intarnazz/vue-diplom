@@ -1,13 +1,13 @@
 <script setup>
 import FooterMain from '@/layout/footer/FooterMain.vue'
 import LayoutPage from '@/layout/LayoutPage.vue'
-import DockVentiliruemyeFasady from '@/components/sections/dock/SectionsDockVentiliruemyeFasady.vue'
+import SectionsDockTSPVP from '@/components/sections/dock/SectionsDockTSPVP.vue'
 </script>
 
 <template>
   <LayoutPage class="main">
     <div class="header-spase"></div>
-    <DockVentiliruemyeFasady />
+    <SectionsDockTSPVP />
     <div class=""></div>
   </LayoutPage>
   <div class="flex"></div>
