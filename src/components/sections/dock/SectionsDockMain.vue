@@ -22,7 +22,7 @@ import { RouterLink } from 'vue-router'
           фасадных систем "ВФ МП" для облицовки фасадов и утепления стен снаружи.
         </p>
         <RouterLink
-          :to="{ name: 'd.v-f' }"
+          :to="{ name: 'd.vf' }"
           class="inline-block mt-3 text-sm text-blue-600 hover:underline font-medium"
           >Подробнее →</RouterLink
         >
@@ -36,8 +36,10 @@ import { RouterLink } from 'vue-router'
         <p class="text-sm text-gray-700">
           Документация и сертификаты для проектирования и монтажа панелей с минеральной ватой и ПИР.
         </p>
-        <a href="#" class="inline-block mt-3 text-sm text-green-600 hover:underline font-medium"
-          >Подробнее →</a
+        <RouterLink
+          :to="{ name: 'd.tspvp' }"
+          class="inline-block mt-3 text-sm text-green-600 hover:underline font-medium"
+          >Подробнее →</RouterLink
         >
       </div>
 

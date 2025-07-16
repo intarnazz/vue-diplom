@@ -13,9 +13,11 @@ import PageCalculator from '@/pages/PageCalculator.vue'
 import PageMessageMe from '@/pages/PageMessageMe.vue'
 import PageDocumentation from '@/pages/PageDocumentation.vue'
 import DockVentiliruemyeFasady from '@/pages/dock/PageDockVentiliruemyeFasady.vue'
+import PageDockTreSendvichPaneliVataPenopol from '@/pages/dock/PageDockTreSendvichPaneliVataPenopol.vue'
 const user = User()
 
-const dock = () => {  // module
+const dock = () => {
+  // module
   const prefix = '/technical-documentation'
   return [
     {
@@ -25,8 +27,13 @@ const dock = () => {  // module
     },
     {
       path: `${prefix}/ventiliruemye-fasady`,
-      name: 'd.v-f',
+      name: 'd.vf',
       component: DockVentiliruemyeFasady,
+    },
+    {
+      path: `${prefix}/tre-sendvich-paneli-vata-penopol`,
+      name: 'd.tspvp',
+      component: PageDockTreSendvichPaneliVataPenopol,
     },
   ]
 }
