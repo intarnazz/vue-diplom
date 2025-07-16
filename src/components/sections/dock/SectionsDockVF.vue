@@ -6,7 +6,13 @@
     <div class="border-b border-gray-200 pb-4 mb-8">
       <h1 class="text-4xl font-extrabold text-gray-900">Вентилируемые фасады</h1>
       <p class="text-sm text-gray-500 mt-1">
-        Главная / Техническая документация / Вентилируемые фасады
+        <RouterLink :to="{ name: 'home' }"> Главная </RouterLink>
+
+        /
+
+        <RouterLink :to="{ name: 'dock' }"> Техническая документация </RouterLink>
+
+        / Вентилируемые фасады
       </p>
     </div>
 

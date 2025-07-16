@@ -7,7 +7,12 @@ import { RouterLink } from 'vue-router'
     <!-- Title and Header -->
     <div class="border-b border-gray-200 pb-4 mb-8">
       <h1 class="text-4xl font-extrabold text-gray-900">Техническая документация</h1>
-      <p class="text-sm text-gray-500 mt-1">Главная / Техническая документация</p>
+      <p class="text-sm text-gray-500 mt-1">
+        <RouterLink :to="{ name: 'home' }"> Главная </RouterLink>
+
+        /
+        <RouterLink :to="{ name: 'dock' }"> Техническая документация </RouterLink>
+      </p>
     </div>
 
     <!-- Document Sections -->
