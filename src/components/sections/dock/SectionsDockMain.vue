@@ -1,0 +1,77 @@
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
+
+<template>
+  <div class="max-w-6xl mx-auto px-4 py-8 bg-white text-gray-800">
+    <!-- Title and Header -->
+    <div class="border-b border-gray-200 pb-4 mb-8">
+      <h1 class="text-4xl font-extrabold text-gray-900">Техническая документация</h1>
+      <p class="text-sm text-gray-500 mt-1">Главная / Техническая документация</p>
+    </div>
+
+    <!-- Document Sections -->
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- Вентилируемые фасады -->
+      <div
+        class="rounded-2xl shadow-md bg-gradient-to-br from-blue-50 to-white p-6 border border-blue-100"
+      >
+        <h2 class="text-xl font-semibold text-blue-700 mb-2">Вентилируемые фасады</h2>
+        <p class="text-sm text-gray-700">
+          Раздел содержит материалы для проектирования и рабочие чертежи конструкции навесных
+          фасадных систем "ВФ МП" для облицовки фасадов и утепления стен снаружи.
+        </p>
+        <RouterLink
+          :to="{ name: 'd.v-f' }"
+          class="inline-block mt-3 text-sm text-blue-600 hover:underline font-medium"
+          >Подробнее →</RouterLink
+        >
+      </div>
+
+      <!-- Сэндвич-панели -->
+      <div
+        class="rounded-2xl shadow-md bg-gradient-to-br from-green-50 to-white p-6 border border-green-100"
+      >
+        <h2 class="text-xl font-semibold text-green-700 mb-2">Трехслойные сэндвич-панели</h2>
+        <p class="text-sm text-gray-700">
+          Документация и сертификаты для проектирования и монтажа панелей с минеральной ватой и ПИР.
+        </p>
+        <a href="#" class="inline-block mt-3 text-sm text-green-600 hover:underline font-medium"
+          >Подробнее →</a
+        >
+      </div>
+
+      <!-- СППС -->
+      <div
+        class="rounded-2xl shadow-md bg-gradient-to-br from-yellow-50 to-white p-6 border border-yellow-100"
+      >
+        <h2 class="text-xl font-semibold text-yellow-700 mb-2">
+          Сэндвич-панели поэлементной сборки (СППС)
+        </h2>
+        <p class="text-sm text-gray-700">
+          Техническая документация по СППС с различными видами облицовки.
+        </p>
+        <a href="#" class="inline-block mt-3 text-sm text-yellow-600 hover:underline font-medium"
+          >Подробнее →</a
+        >
+      </div>
+
+      <!-- Металлочерепица и профлист -->
+      <div
+        class="rounded-2xl shadow-md bg-gradient-to-br from-purple-50 to-white p-6 border border-purple-100"
+      >
+        <h2 class="text-xl font-semibold text-purple-700 mb-2">
+          Металлочерепица, профлист, металлический сайдинг
+        </h2>
+        <p class="text-sm text-gray-700">
+          Общий раздел по фасадной и кровельной облицовке листовыми металлическими материалами.
+        </p>
+        <a href="#" class="inline-block mt-3 text-sm text-purple-600 hover:underline font-medium"
+          >Подробнее →</a
+        >
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped></style>

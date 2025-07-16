@@ -1,14 +1,13 @@
 <script setup>
 import FooterMain from '@/layout/footer/FooterMain.vue'
 import LayoutPage from '@/layout/LayoutPage.vue'
-import DockMain from '@/components/sections/dock/SectionsDockMain.vue'
+import DockVentiliruemyeFasady from '@/components/sections/dock/SectionsDockVentiliruemyeFasady.vue'
 </script>
 
 <template>
   <LayoutPage class="main">
     <div class="header-spase"></div>
-    <DockMain />
-    <!-- <SectionCertificates /> -->
+    <DockVentiliruemyeFasady />
     <div class=""></div>
   </LayoutPage>
   <div class="flex"></div>

@@ -12,7 +12,24 @@ import PagePortfolio from '@/pages/PagePortfolio.vue'
 import PageCalculator from '@/pages/PageCalculator.vue'
 import PageMessageMe from '@/pages/PageMessageMe.vue'
 import PageDocumentation from '@/pages/PageDocumentation.vue'
+import DockVentiliruemyeFasady from '@/pages/dock/PageDockVentiliruemyeFasady.vue'
 const user = User()
+
+const dock = () => {  // module
+  const prefix = '/technical-documentation'
+  return [
+    {
+      path: prefix,
+      name: 'dock',
+      component: PageDocumentation,
+    },
+    {
+      path: `${prefix}/ventiliruemye-fasady`,
+      name: 'd.v-f',
+      component: DockVentiliruemyeFasady,
+    },
+  ]
+}
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,11 +39,7 @@ const router = createRouter({
       name: 'home',
       component: PageHome,
     },
-    {
-      path: '/technical-documentation',
-      name: 'dock',
-      component: PageDocumentation,
-    },
+    ...dock(),
     {
       path: '/message-me',
       name: 'message-me',
