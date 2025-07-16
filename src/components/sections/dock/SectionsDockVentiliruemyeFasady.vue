@@ -37,7 +37,7 @@
           Система вентилируемого фасада ВФ МП ФЦ, НК, КП
         </h2>
         <a
-          href="https://drive.google.com/file/d/1HNPOHa_GKvAs4zXvXVgyDgbg0zRkhWRv/view"
+          href="https://drive.google.com/file/d/1pof3bBc_yJDhCyfmOBiN9MKEWsTdbAxC/view"
           target="_blank"
           rel="noopener"
           class="inline-block mt-3 text-sm text-blue-600 hover:underline font-medium"
@@ -54,7 +54,7 @@
           Система вентилируемого фасада ВФ МП М
         </h2>
         <a
-          href="https://drive.google.com/file/d/1HNPOHa_GKvAs4zXvXVgyDgbg0zRkhWRv/view"
+          href="https://drive.google.com/file/d/16haUqITLaD1Fom3VSWzsil_YBYwG_L_Q/view"
           target="_blank"
           rel="noopener"
           class="inline-block mt-3 text-sm text-blue-600 hover:underline font-medium"
@@ -69,7 +69,7 @@
       >
         <h2 class="text-xl font-semibold text-blue-700 mb-2">ППР: монтаж кассет МП1005 и МП2005</h2>
         <a
-          href="https://drive.google.com/file/d/1HNPOHa_GKvAs4zXvXVgyDgbg0zRkhWRv/view"
+          href="https://drive.google.com/file/d/19RCplssoznz9cb3MPLvYt190rLzXz_h6/view"
           target="_blank"
           rel="noopener"
           class="inline-block mt-3 text-sm text-blue-600 hover:underline font-medium"
@@ -86,7 +86,7 @@
           ППР: облицовка сайдингом, профлистом, панелями
         </h2>
         <a
-          href="https://drive.google.com/file/d/1HNPOHa_GKvAs4zXvXVgyDgbg0zRkhWRv/view"
+          href="https://drive.google.com/file/d/1YDJANSd-CCsDs3TFgXyAXgfleJbRziD9/view"
           target="_blank"
           rel="noopener"
           class="inline-block mt-3 text-sm text-blue-600 hover:underline font-medium"
@@ -101,7 +101,7 @@
       >
         <h2 class="text-xl font-semibold text-blue-700 mb-2">ППР: облицовка керамогранитом</h2>
         <a
-          href="https://drive.google.com/file/d/1HNPOHa_GKvAs4zXvXVgyDgbg0zRkhWRv/view"
+          href="https://drive.google.com/file/d/128rME_zibEgDzdWv3ZzGiG1jI-cjdhvp/view"
           target="_blank"
           rel="noopener"
           class="inline-block mt-3 text-sm text-blue-600 hover:underline font-medium"
@@ -116,7 +116,7 @@
       >
         <h2 class="text-xl font-semibold text-gray-800 mb-2">Вентилируемые фасады. Прочее</h2>
         <a
-          href="https://drive.google.com/file/d/1HNPOHa_GKvAs4zXvXVgyDgbg0zRkhWRv/view"
+          href="https://disk.yandex.ru/d/xg7oK7ESHIzOcg"
           target="_blank"
           rel="noopener"
           class="inline-block mt-3 text-sm text-gray-700 hover:underline font-medium"
