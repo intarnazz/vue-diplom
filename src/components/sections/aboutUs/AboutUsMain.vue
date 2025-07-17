@@ -101,6 +101,83 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
         </div>
       </div>
     </LayoutWrapper>
+
+    <!-- Clients / Partners -->
+    <div class="py-16 bg-[#f9f9fb]">
+      <LayoutWrapper>
+        <h2 class="text-3xl font-bold text-[#202040] mb-8">Нам доверяют</h2>
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center justify-items-center"
+        >
+          <div class="pr wh">
+            <img class="w" src="@/assets/img/client logo/Frame_34-1.png.webp" alt="" />
+          </div>
+          <div class="pr wh">
+            <img class="w" src="@/assets/img/client logo/Frame_34.png.webp" alt="" />
+          </div>
+          <div class="pr wh">
+            <img class="w" src="@/assets/img/client logo/SEV DARK.png" alt="" />
+          </div>
+          <div class="pr wh">
+            <img class="w" src="@/assets/img/client logo/Frame_35.png.webp" alt="" />
+          </div>
+          <div class="pr wh">
+            <img class="w" src="@/assets/img/client logo/Frame_36-1.png.webp" alt="" />
+          </div>
+          <div class="pr wh">
+            <img class="w" src="@/assets/img/client logo/Frame_36.png.webp" alt="" />
+          </div>
+          <div class="pr wh">
+            <img class="w" src="@/assets/img/client logo/RC DARK.png" alt="" />
+          </div>
+          <div class="pr wh">
+            <img class="w" src="@/assets/img/client logo/Frame_37.png.webp" alt="" />
+          </div>
+          <div class="pr wh">
+            <img class="w" src="@/assets/img/client logo/Frame_38-1.png.webp" alt="" />
+          </div>
+          <div class="pr wh">
+            <img class="w" src="@/assets/img/client logo/Frame_38.png.webp" alt="" />
+          </div>
+          <div class="pr wh">
+            <img class="w" src="@/assets/img/client logo/Frame_39-1.png.webp" alt="" />
+          </div>
+          <div class="pr wh">
+            <img class="w" src="@/assets/img/client logo/Frame_39.png.webp" alt="" />
+          </div>
+        </div>
+      </LayoutWrapper>
+    </div>
+
+    <!-- Mission and Values -->
+    <div class="py-20 bg-white">
+      <LayoutWrapper>
+        <div class="grid md:grid-cols-2 gap-12">
+          <div>
+            <h2 class="text-3xl font-bold text-[#202040] mb-6">Наша миссия</h2>
+            <p class="text-gray-700 leading-relaxed text-base">
+              Мы стремимся формировать современную и надёжную архитектурную среду, используя
+              передовые технологии и индивидуальный подход. Наша цель — создавать фасадные решения,
+              которые сочетают в себе эстетику, функциональность и долговечность.
+            </p>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-[#202040] mb-6">Наши ценности</h2>
+            <ul class="space-y-4 text-gray-700 text-base">
+              <li><strong>• Качество:</strong> Без компромиссов — от сырья до монтажа.</li>
+              <li>
+                <strong>• Надёжность:</strong> Честные сроки, прозрачные договоры, чёткие гарантии.
+              </li>
+              <li>
+                <strong>• Инновации:</strong> Используем современные материалы, технологии и
+                цифровые инструменты.
+              </li>
+              <li><strong>• Командность:</strong> Доверие и уважение — основа нашей культуры.</li>
+            </ul>
+          </div>
+        </div>
+      </LayoutWrapper>
+    </div>
   </section>
 </template>
 
