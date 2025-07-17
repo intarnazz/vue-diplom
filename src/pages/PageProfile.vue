@@ -10,9 +10,9 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
+  <div class="header-spase"></div>
   <LayoutPage class="main">
     <LayoutOpener class="box-y gap2">
-      <div class="header-spase"></div>
       <SectionUserInfo />
       <LayoutWrapper class="box-x top">
         <RouterLink :to="{ name: 'chat' }">

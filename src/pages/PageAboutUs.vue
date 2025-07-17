@@ -1,14 +1,22 @@
 <script setup>
 import FooterMain from '@/layout/footer/FooterMain.vue'
 import LayoutPage from '@/layout/LayoutPage.vue'
-import SectionAboutUs from '@/components/sections/aboutUs/AboutUsMain.vue'
-import SectionCertificates from '@/components/sections/SectionCertificates.vue'
+import SectionCertificates from '@/components/sections/aboutUs/AboutUsCertificates.vue'
+import AboutUsHeader from '@/components/sections/aboutUs/AboutUsHeader.vue'
+import AboutUsKSM from '@/components/sections/aboutUs/AboutUsKSM.vue'
+import AboutUsWhoAreWe from '@/components/sections/aboutUs/AboutUsWhoAreWe.vue'
+import AboutUsClients from '@/components/sections/aboutUs/AboutUsClients.vue'
+import AboutUsMissionValues from '@/components/sections/aboutUs/AboutUsMissionValues.vue'
 </script>
 
 <template>
-  <LayoutPage class="main">
-    <div class="header-spase"></div>
-    <SectionAboutUs />
+  <div class="header-spase"></div>
+  <LayoutPage class="main box-y gap4">
+    <AboutUsHeader />
+    <AboutUsKSM />
+    <AboutUsWhoAreWe />
+    <AboutUsClients />
+    <AboutUsMissionValues />
     <SectionCertificates />
     <div class=""></div>
   </LayoutPage>

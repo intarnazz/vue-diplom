@@ -6,9 +6,9 @@ import SectionContactUs from '@/components/sections/contactUs/ContactUsMain.vue'
 </script>
 
 <template>
+  <div class="header-spase"></div>
   <LayoutPage class="main">
     <LayoutOpener>
-      <div class="header-spase"></div>
       <SectionContactUs class="wh" />
     </LayoutOpener>
   </LayoutPage>

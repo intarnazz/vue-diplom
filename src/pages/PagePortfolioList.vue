@@ -5,8 +5,8 @@ import SectionPortfolioList from '@/components/sections/SectionPortfolioList.vue
 </script>
 
 <template>
+  <div class="header-spase"></div>
   <LayoutPage class="main">
-      <div class="header-spase"></div>
       <div class="media__none"></div>
       <SectionPortfolioList />
       <div class=""></div>

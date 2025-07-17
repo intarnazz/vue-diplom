@@ -6,9 +6,9 @@ import ComponentOpener from '@/layout/LayoutOpener.vue'
 </script>
 
 <template>
+  <div class="header-spase"></div>
   <LayoutPage class="main">
     <ComponentOpener class="box-y gap2">
-      <div class="header-spase"></div>
       <div class="media__none"></div>
       <SectionCalculator />
       <div class="flex"></div>

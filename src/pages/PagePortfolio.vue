@@ -8,9 +8,9 @@ const props = defineProps(['id'])
 </script>
 
 <template>
+  <div class="header-spase"></div>
   <LayoutPage class="main">
     <ComponentOpener class="box-y gap2">
-      <div class="header-spase"></div>
       <div class="media__none"></div>
       <SectionPortfolio :id="props.id" />
       <div class="flex"></div>

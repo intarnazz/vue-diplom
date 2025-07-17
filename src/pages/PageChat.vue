@@ -9,9 +9,9 @@ const chat_id = ref(0)
 </script>
 
 <template>
+  <div class="header-spase"></div>
   <LayoutPage class="main">
     <SectionOpener style="overflow: hidden" class="box-y top w section-opener">
-      <div class="header-spase"></div>
       <div class="box-x wh">
         <SectionChatList
           @chat_id="(e) => (chat_id = e)"
