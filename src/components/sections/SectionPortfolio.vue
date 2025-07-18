@@ -21,20 +21,25 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="text-black">
+  <section class="bg-white text-black py-12">
     <LayoutWrapper v-if="!isLoding && portfolio">
-      <RouterLink
-        :to="{ name: 'portfolio' }"
-        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-      >
-        Назад в портфолио
-      </RouterLink>
-      <div class="box-y gap2">
+      <div class="mb-6">
+        <RouterLink
+          :to="{ name: 'portfolio' }"
+          class="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:underline"
+        >
+          ← Назад в портфолио
+        </RouterLink>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         <!-- Изображение -->
-        <div class="rounded-xl overflow-hidden shadow-lg">
+        <div
+          class="w-full aspect-video overflow-hidden rounded-2xl shadow-lg border border-gray-100"
+        >
           <ComponentImg
             :id="portfolio.image_id"
-            class="w-full h-auto object-cover"
+            class="w-full h-full object-cover"
             :alt="portfolio.title"
           />
         </div>
@@ -42,33 +47,45 @@ onMounted(async () => {
         <!-- Контент -->
         <div class="space-y-8">
           <div>
-            <h1 class="bg-yellow-100 text-3xl sm:text-4xl font-bold tracking-tight">
+            <h1 class="text-4xl font-bold tracking-tight text-gray-900">
               {{ portfolio.title }}
             </h1>
           </div>
 
           <div v-if="portfolio.description">
-            <h2 class="text-base font-semibold text-black/60 mb-1">Описание</h2>
-            <p class="text-black/90 leading-relaxed whitespace-pre-wrap">
-              {{ portfolio.description }}
-            </p>
+            <div class="space-y-1">
+              <h2 class="text-sm font-semibold text-gray-500 uppercase">Описание</h2>
+              <p class="text-base text-gray-700 whitespace-pre-wrap leading-relaxed">
+                {{ portfolio.description }}
+              </p>
+            </div>
           </div>
 
           <div v-if="portfolio.client">
-            <h2 class="text-base font-semibold text-black/60 mb-1">Клиент</h2>
-            <p class="text-black/80">{{ portfolio.client }}</p>
+            <div class="space-y-1">
+              <h2 class="text-sm font-semibold text-gray-500 uppercase">Клиент</h2>
+              <p class="text-base text-gray-800">
+                {{ portfolio.client }}
+              </p>
+            </div>
           </div>
 
           <div v-if="portfolio.completed_at">
-            <h2 class="text-base font-semibold text-black/60 mb-1">Завершено</h2>
-            <p class="text-black/80">
-              {{ new Date(portfolio.completed_at).toLocaleDateString() }}
-            </p>
+            <div class="space-y-1">
+              <h2 class="text-sm font-semibold text-gray-500 uppercase">Завершено</h2>
+              <p class="text-base text-gray-800">
+                {{ new Date(portfolio.completed_at).toLocaleDateString() }}
+              </p>
+            </div>
           </div>
 
           <div v-if="portfolio.notes">
-            <h2 class="text-base font-semibold text-black/60 mb-1">Заметки</h2>
-            <p class="text-black/70 whitespace-pre-wrap">{{ portfolio.notes }}</p>
+            <div class="space-y-1">
+              <h2 class="text-sm font-semibold text-gray-500 uppercase">Заметки</h2>
+              <p class="text-base text-gray-700 whitespace-pre-wrap leading-relaxed">
+                {{ portfolio.notes }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
