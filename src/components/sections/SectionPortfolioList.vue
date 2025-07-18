@@ -83,9 +83,9 @@ onUnmounted(() => {
   <section class="text-white box-y pr gap2">
     <div class="relative h-[300px]">
       <img
-        src="@/assets/img/nuddle-1fHL0gz5IDg-unsplash.jpg"
+        src="@/assets/img/mche-lee-ACt11upLUhE-unsplash.jpg"
         alt="О компании"
-        class="absolute img__top inset-0 w-full h-full object-cover z-0"
+        class="absolute img inset-0 w-full h-full object-cover z-0"
       />
       <div class="bg-gradient-to-t from-black to-transparent pa wh"></div>
       <LayoutWrapper class="h box-x">
