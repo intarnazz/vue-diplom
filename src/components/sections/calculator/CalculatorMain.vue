@@ -1,16 +1,17 @@
 <script setup>
-import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import FormCalculator from '@/components/form/FormCalculator.vue'
 </script>
 
 <template>
-  <section class="claculator">
-    <LayoutWrapper class="box-x" v-if="!isLoding">
-      <div class="flex media"></div>
-      <FormCalculator />
-      <div class="flex media"></div>
-    </LayoutWrapper>
-  </section>
+  <h2>Калькулятор стоимости</h2>
+  <p>
+    Используйте наш калькулятор, чтобы быстро рассчитать предварительную стоимость услуг. Просто
+    заполните форму, и вы сразу увидите результат.
+  </p>
+  <div class="box-x">
+    <FormCalculator />
+    <div class="flex media"></div>
+  </div>
 </template>
 
 <style lang="sass" scoped></style>
