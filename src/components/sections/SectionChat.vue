@@ -82,7 +82,31 @@ watch(() => messages, down, { deep: true })
 
 <template>
   <section class="chat wh">
+    <!-- <div class="bg-white pa text-black p-6 rounded-2xl shadow-xl text-center max-w-md w-full"></div> -->
+
     <img class="img pa" src="@/assets/img/cyg23qqdamt41.webp" alt="reg-bg" />
+
+    <div
+      v-if="!props.id"
+      class="fixed top-1/3 left-4/7 -translate-x-1/2 w-full max-w-md px-4 pointer-events-none"
+    >
+      <div
+        class="pointer-events-auto relative bg-[#fefadc] border-[3px] border-black text-black rounded-[1.25rem] shadow-[6px_6px_0_0_#000] px-6 py-5 font-sans"
+        style="rotate: -1.5deg"
+      >
+        <!-- Заголовок -->
+        <h2 class="text-xl font-bold tracking-tight leading-tight">💬 Тут можно написать админу</h2>
+
+        <!-- Тело -->
+        <p class="mt-2 text-sm leading-snug text-zinc-800">Мы отвечаем честно и быстро.</p>
+
+        <!-- Подпись как на записке -->
+        <div class="mt-4 text-[11px] italic text-zinc-500 text-right">
+          p.s. handwritten on NerdOS™ paper
+        </div>
+      </div>
+    </div>
+
     <div class="chat_wrapper pr box-y wh p2 gap2">
       <div class="flex"></div>
       <div ref="chat" class="chat__list wh box-y pa" v-if="user">
