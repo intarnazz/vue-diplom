@@ -8,7 +8,7 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
       <!-- More Fun Section -->
       <div class="relative bg-white">
         <div class="absolute">
-          <img src="@/assets/img/Rectangle 153.png" class="opacity-50" alt="" />
+          <img src="@/assets/icons/Rectangle 153.svg" class="opacity-50" alt="" />
         </div>
         <div class="relative z-10">
           <h2 class="text-4xl font-extrabold leading-tight mb-6 text-[#202040]">
