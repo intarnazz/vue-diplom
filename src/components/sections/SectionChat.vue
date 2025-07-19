@@ -70,7 +70,7 @@ watch(() => messages, down, { deep: true })
 </script>
 
 <template>
-  <section class="chat pr wh">
+  <section class="chat wh">
     <img class="img pa" src="@/assets/img/cyg23qqdamt41.webp" alt="reg-bg" />
     <div class="chat_wrapper pr box-y wh p2 gap2">
       <div class="flex"></div>
@@ -102,7 +102,6 @@ watch(() => messages, down, { deep: true })
 <style lang="sass" scoped>
 .chat
   font-size: 1.3rem
-  background-color: #000
   & form
     position: relative
   &__list

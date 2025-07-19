@@ -9,16 +9,22 @@ const chat_id = ref(0)
 </script>
 
 <template>
-  <div class="header-spase"></div>
   <LayoutPage class="main">
     <SectionOpener style="overflow: hidden" class="box-y top w section-opener">
       <div class="box-x wh">
-        <SectionChatList
-          @chat_id="(e) => (chat_id = e)"
+        <div
           :class="chat_id !== 0 ? 'cansel media' : ''"
-          class="wh"
           style="flex: 1; box-shadow: 0 0 15px -5px #000"
-        />
+          class="box-y wh pr"
+        >
+          <div class="header-spase"></div>
+          <SectionChatList
+            @chat_id="(e) => (chat_id = e)"
+            :class="chat_id !== 0 ? 'cansel media' : ''"
+            class="wh"
+            style="flex: 1"
+          />
+        </div>
         <SectionChat
           :class="chat_id === 0 ? 'cansel media' : ''"
           @cansel="() => (chat_id = 0)"
@@ -32,6 +38,8 @@ const chat_id = ref(0)
 </template>
 
 <style lang="sass" scoped>
+.main
+  background-color: #000
 .section-opener
   height: $headerProperty
 </style>

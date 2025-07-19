@@ -9,6 +9,7 @@ const isLoding = ref(true)
 const chatList = ref([])
 const chat_id = ref(0)
 const user = ref(null)
+const chatListRef = ref(null)
 
 const limitLocal = ref(10)
 const offset = ref(0)
@@ -52,15 +53,25 @@ async function init() {
   isLoding.value = false
 }
 
+// Обработчик scroll-события
+function onScroll() {
+  chatListRef.value.style.willChange = 'scroll-position'
+  requestAnimationFrame(() => {
+    chatListRef.value.scrollTop = chatListRef.value.scrollTop
+  })
+}
+
 onMounted(async () => {
   await _init_user()
   await init()
+  if (chatListRef.value) chatListRef.value.addEventListener('scroll', onScroll)
   window.Echo.private(`user.${user.value.id}.new-chat-create`).listen('NewChatCreate', (e) =>
     new_chat_init(e),
   )
 })
 
 onUnmounted(() => {
+  if (chatListRef.value) chatListRef.value.removeEventListener('scroll', onScroll)
   window.Echo.leave(`user.${user.value.id}.new-chat-create`)
 })
 
@@ -82,7 +93,7 @@ async function chat_init(e) {
 </script>
 
 <template>
-  <section class="chat-list">
+  <section ref="chatListRef" class="chat-list pr">
     <div class="box-y">
       <ComponentChatListItem
         @click="((chat_id = chat.id), emit('chat_id', chat.id))"
@@ -113,7 +124,13 @@ async function chat_init(e) {
 
 <style lang="sass" scoped>
 .chat-list
-  overflow: scroll
+  z-index: 1
+  background-color: #fff
+  will-change: auto;
+  transform: none;
+  filter: none;
+  contain: layout style
+  overflow-y: scroll
   & button
     border: 1px solid $th
     border-top: none
