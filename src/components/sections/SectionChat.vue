@@ -1,6 +1,6 @@
 <script setup>
 import { message as m, auth } from '@/api/api.js'
-import { nextTick, onMounted, ref, watch } from 'vue'
+import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import ComponentMessage from '@/components/ComponentMessage.vue'
 
 const props = defineProps(['id'])
@@ -39,10 +39,21 @@ async function init() {
   }
 }
 
+function handleKeyDown(e) {
+  if (e.key === 'Escape') {
+    emit('cansel')
+  }
+}
+
 onMounted(async () => {
   const res = await auth.user()
   if (res.success) user.value = res.data
+  window.addEventListener('keydown', handleKeyDown)
   await init()
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeyDown)
 })
 
 async function send() {

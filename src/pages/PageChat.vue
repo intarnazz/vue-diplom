@@ -19,6 +19,7 @@ const chat_id = ref(0)
         >
           <div class="header-spase"></div>
           <SectionChatList
+            :chat_id="chat_id"
             @chat_id="(e) => (chat_id = e)"
             :class="chat_id !== 0 ? 'cansel media' : ''"
             class="wh"

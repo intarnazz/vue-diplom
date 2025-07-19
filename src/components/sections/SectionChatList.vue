@@ -4,16 +4,16 @@ import { chat as ch, auth } from '@/api/api.js'
 import ComponentChatListItem from '@/components/ComponentChatListItem.vue'
 
 const emit = defineEmits(['chat_id'])
-const props = defineProps(['limit'])
+const props = defineProps(['limit', 'chat_id'])
 const isLoding = ref(true)
 const chatList = ref([])
-const chat_id = ref(0)
 const user = ref(null)
 const chatListRef = ref(null)
-
 const limitLocal = ref(10)
 const offset = ref(0)
 const totalCount = ref(null)
+
+const chat_id = computed(() => props.chat_id || 0)
 
 const chatListSort = computed(() =>
   chatList.value.length
