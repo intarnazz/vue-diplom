@@ -35,16 +35,6 @@ function date(s) {
 <template>
   <LayoutWrapper>
     <section v-if="!isLoding" class="">
-      <!-- Techy corner marks -->
-      <div class="absolute top-0 left-0 w-8 h-8 border-t-[3px] border-l-[3px] border-black"></div>
-      <div class="absolute top-0 right-0 w-8 h-8 border-t-[3px] border-r-[3px] border-black"></div>
-      <div
-        class="absolute bottom-0 left-0 w-8 h-8 border-b-[3px] border-l-[3px] border-black"
-      ></div>
-      <div
-        class="absolute bottom-0 right-0 w-8 h-8 border-b-[3px] border-r-[3px] border-black"
-      ></div>
-
       <!-- Nerd Header -->
       <div class="flex items-center justify-between mb-6">
         <h1 class="text-4xl font-bold tracking-widest uppercase">Профиль KSM</h1>
