@@ -31,9 +31,9 @@ export class Auth {
   }
 
   async logout() {
-    const res = await this.#Post('logout')
     user.unset()
     location.reload()
+    const res = await this.#Post('logout')
     return res
   }
 
