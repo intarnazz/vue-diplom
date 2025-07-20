@@ -21,39 +21,48 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="box-y chat" :class="chat_id === chat.id ? 'chat__focus' : ''">
-    <div class="box-y gap5">
-      <div class="box-y gap25">
-        <div class="box-x chat__item">
-          <h3>
-            {{ chat.user.email }}
-          </h3>
-          <p class="chat__item-data" :class="chat_id === chat.id ? 'chat__focus' : ''">
-            {{ date(chat.updated_at) }}
-          </p>
-          <p
-            v-if="chat.viewedMessage.countNotViewed"
-            class="chat__item-status flex"
-            :class="`${chat_id === chat.id ? 'chat__focus' : ''}
-            chat__item-status--${chat.viewedMessage.countNotViewed}
-            `"
-          >
-            {{ chat.viewedMessage.countNotViewed }}
-          </p>
-          <div v-else class="flex"></div>
-        </div>
-        <p class="chat__item-phone" :class="chat_id === chat.id ? 'chat__focus' : ''">
-          {{ chat.user.phone }}
+  <div
+    class="p-4 border-b border-zinc-200 transition cursor-pointer"
+    :class="{
+      'bg-cyan-700 text-white': chat_id === chat.id,
+      'hover:bg-zinc-50 bg-white text-black': chat_id !== chat.id,
+    }"
+  >
+    <!-- ВЕРХ: Email + время + badge -->
+    <div class="flex justify-between items-center">
+      <h3 class="font-semibold text-sm truncate max-w-[60%]">
+        {{ chat.user.email }}
+      </h3>
+
+      <div class="flex items-center gap-3">
+        <p class="text-xs" :class="chat_id === chat.id ? 'text-white/70' : 'text-zinc-400'">
+          {{ date(chat.updated_at) }}
+        </p>
+
+        <p
+          v-if="chat.viewedMessage.countNotViewed"
+          class="px-2 h-6 min-w-6 rounded-full text-xs text-white bg-green-500 flex items-center justify-center shadow"
+          :class="chat_id === chat.id ? 'text-white bg-white/20' : 'bg-green-500 text-white'"
+          style="font-weight: 500; font-size: 13px"
+        >
+          {{ chat.viewedMessage.countNotViewed }}
         </p>
       </div>
-      <p
-        v-if="chat.latest_message"
-        :class="chat_id === chat.id ? 'chat__focus' : ''"
-        class="chat__item-message"
-      >
-        {{ chat.latest_message.content }}
-      </p>
     </div>
+
+    <!-- ТЕЛЕФОН -->
+    <p class="text-xs mt-1" :class="chat_id === chat.id ? 'text-cyan-200' : 'text-cyan-600'">
+      {{ chat.user.phone }}
+    </p>
+
+    <!-- ПОСЛЕДНЕЕ СООБЩЕНИЕ -->
+    <p
+      v-if="chat.latest_message"
+      class="text-sm mt-2 truncate"
+      :class="chat_id === chat.id ? 'text-white/80' : 'text-zinc-600'"
+    >
+      {{ chat.latest_message.content }}
+    </p>
   </div>
 </template>
 

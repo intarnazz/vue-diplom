@@ -45,14 +45,25 @@ function handleKeyDown(e) {
   }
 }
 
+// Обработчик scroll-события
+function onScroll() {
+  chat.value.style.willChange = 'scroll-position'
+  requestAnimationFrame(() => {
+    chat.value.scrollTop = chat.value.scrollTop
+  })
+}
+
 onMounted(async () => {
   const res = await auth.user()
   if (res.success) user.value = res.data
   window.addEventListener('keydown', handleKeyDown)
   await init()
+  if (chat.value) chat.value.addEventListener('scroll', onScroll)
 })
 
 onUnmounted(() => {
+  if (chat.value) chat.value.removeEventListener('scroll', onScroll)
+
   window.removeEventListener('keydown', handleKeyDown)
 })
 
@@ -142,6 +153,11 @@ watch(() => messages, down, { deep: true })
   &__list
     overflow-y: scroll
     padding: 0 2rem 1rem
+    will-change: auto;
+    transform: none;
+    filter: none;
+    contain: layout style
+    overflow-y: scroll
   & img
     opacity: 30%
   &__message-bar-wrapper
