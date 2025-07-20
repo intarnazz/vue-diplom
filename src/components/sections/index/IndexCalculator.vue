@@ -4,9 +4,9 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <section class="calculator box-y pr cf gap2">
+  <section class="calculator box-y  pr cf gap2">
     <img class="img pa wh" src="@/assets/img/claculator bg.webp" alt="Калькулятор фона" />
-    <LayoutWrapper class="box-x gap2 pr calculator__wrapper">
+    <LayoutWrapper class="box-x p media gap2 pr calculator__wrapper">
       <div class="box-y gap flex">
         <h2>Рассчитайте стоимость фасадного проекта за 2 минуты</h2>
         <p>

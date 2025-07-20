@@ -50,10 +50,10 @@ const fill = computed(() => props.fill || '#02838D')
   &_b
     height: 2rem
     width: auto
-@media screen and (max-width: 910px)
-  .logo
-    &_b
-      display: none
-    &_m
-      display: block
+// @media screen and (max-width: 910px)
+//   .logo
+//     &_b
+//       display: none
+//     &_m
+//       display: block
 </style>

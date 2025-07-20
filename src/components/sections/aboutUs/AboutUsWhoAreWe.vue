@@ -3,7 +3,7 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 </script>
 
 <template>
-  <section class="who-are-we w-full box-y gap2">
+  <section class="who-are-we w-full box-y gap2 p">
     <LayoutWrapper>
       <!-- Who are we? -->
       <div class="relative bg-white">

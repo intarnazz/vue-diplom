@@ -13,7 +13,11 @@ import { RouterLink } from 'vue-router'
       <div class="box-y flex">
         <div class="box-x">
           <div class="flex"></div>
-          <img class="baner__logo" src="@/assets/icons/logo/logo B fff.svg" alt="logo" />
+          <img
+            class="baner__logo media-1290 cansel"
+            src="@/assets/icons/logo/logo B fff.svg"
+            alt="logo"
+          />
           <div class="flex"></div>
         </div>
         <div class="box-x">
@@ -56,7 +60,7 @@ import { RouterLink } from 'vue-router'
   background-color: #000
   z-index: 1
   height: 100dvh
-  max-height: 1080px
+  max-height: 100dvh
   border-bottom: 13px solid #04838E;
   box-shadow: 0 0 50px 0 #000
   &__logo
@@ -72,4 +76,21 @@ import { RouterLink } from 'vue-router'
       #000 94%
     )
     opacity: 77%
+
+@media screen and (max-width: 480px)
+  .baner
+    height: 270px
+    &__logo
+      width: 382px
+    &__content
+      color: #fff
+    &__linear
+      background: linear-gradient(
+        to bottom,
+        #000 0%,
+        #00000000 25%,
+        #00000000 82%,
+        #000 94%
+      )
+      opacity: 77%
 </style>

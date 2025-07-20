@@ -5,7 +5,7 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 <template>
   <section class="out-link wh">
     <LayoutWrapper class="box-y gap2">
-      <div class="box-x gap2">
+      <div class="box-x p media gap2">
         <div class="box-y flex gap">
           <h2 class="a">
             <RouterLink to="/portfolio">Наши проекты</RouterLink>
@@ -31,7 +31,7 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
         src="@/assets/img/steve-dimatteo-gObie1HkQV4-unsplash.webp"
         alt="Фасадный объект"
       />
-      <div class="box-y flex gap">
+      <div class="box-y p flex gap">
         <h2 class="a">
           <RouterLink to="/contact-us">Связаться с нами</RouterLink>
         </h2>

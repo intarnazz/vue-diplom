@@ -1,9 +1,10 @@
 <script setup>
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { portfolio as p } from '@/api/api.js'
+import { RouterLink } from 'vue-router'
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import ComponentImg from '@/components/ComponentImg.vue'
-import { RouterLink } from 'vue-router'
+import LayoutPageTitle from '@/layout/LayoutPageTitle.vue'
 
 const props = defineProps(['limit'])
 const isLoding = ref(true)
@@ -81,43 +82,58 @@ onUnmounted(() => {
 
 <template>
   <section class="text-white box-y pr gap2">
-    <div class="relative h-[300px]">
-      <img
-        src="@/assets/img/mche-lee-ACt11upLUhE-unsplash.jpg"
-        alt="О компании"
-        class="absolute img inset-0 w-full h-full object-cover z-0"
-      />
-      <div class="bg-gradient-to-t from-black to-transparent pa wh"></div>
-      <LayoutWrapper class="h box-x">
-        <h1 class="bottom-8 left-8 text-white text-4xl font-bold z-10 drop-shadow-md">
+    <LayoutPageTitle>
+      <template #image>
+        <img
+          src="@/assets/img/mche-lee-ACt11upLUhE-unsplash.jpg"
+          alt="О компании"
+          class="absolute img inset-0 w-full h-full object-cover z-0"
+        />
+      </template>
+      <template #default>
+        <h2 class="bottom-8 left-8 text-white text-4xl font-bold z-10 drop-shadow-md">
           Портфолио наших проектов
-        </h1>
-      </LayoutWrapper>
-    </div>
-    <LayoutWrapper class="box-y gap2">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <RouterLink
-          v-for="portfolio in portfolioList"
-          :key="portfolio.id"
-          :to="{ name: 'portfolio-id', params: { id: portfolio.id, name: portfolio.title } }"
-          class="group relative overflow-hidden rounded-2xl shadow-lg hover:scale-[1.01] transition-transform"
-        >
-          <ComponentImg
-            class="absolute inset-0 w-full h-full object-cover brightness-50 group-hover:brightness-75 transition-all duration-500"
-            :id="portfolio.image_id"
-            :alt="portfolio.title"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent z-10"
-          ></div>
+        </h2>
+      </template>
+    </LayoutPageTitle>
 
-          <div class="relative z-20 p-6 flex flex-col justify-end h-full">
-            <h3 class="text-2xl font-bold tracking-tight mb-2">{{ portfolio.title }}</h3>
-            <p class="text-sm text-white/80 line-clamp-4">{{ portfolio.description }}</p>
-            <div class="mt-4 text-xs text-white/60">
-              <p v-if="portfolio.client" class="truncate">Клиент: {{ portfolio.client }}</p>
-              <p v-if="portfolio.completed_at">
-                Завершено: {{ new Date(portfolio.completed_at).toLocaleDateString() }}
+    <!-- Каталог -->
+    <LayoutWrapper>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <RouterLink
+          v-for="item in portfolioList"
+          :key="item.id"
+          :to="{ name: 'portfolio-id', params: { id: item.id, name: item.title } }"
+          class="group bg-[#f9f8f7] border border-zinc-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition duration-200 flex flex-col"
+        >
+          <!-- Изображение -->
+          <div class="aspect-[4/3] overflow-hidden">
+            <ComponentImg
+              :id="item.image_id"
+              :alt="item.title"
+              class="w-full h-full object-cover transition duration-300 group-hover:scale-[1.02]"
+            />
+          </div>
+
+          <!-- Контент -->
+          <div class="p-5 flex flex-col gap-2 text-zinc-800">
+            <h3 class="text-[17px] font-semibold leading-tight tracking-tight">
+              {{ item.title }}
+            </h3>
+
+            <p class="text-[14px] text-zinc-600 leading-snug line-clamp-3">
+              {{ item.description }}
+            </p>
+
+            <div class="pt-3 text-xs text-zinc-500 border-t border-dashed border-zinc-200 mt-auto">
+              <p v-if="item.client" class="mt-1">
+                Клиент: <span class="text-zinc-700">{{ item.client }}</span>
+              </p>
+              <p v-if="item.completed_at">
+                Завершено:
+                <span class="text-zinc-700">{{
+                  new Date(item.completed_at).toLocaleDateString()
+                }}</span>
               </p>
             </div>
           </div>
@@ -125,7 +141,7 @@ onUnmounted(() => {
       </div>
 
       <!-- Sentinel для подгрузки -->
-      <div ref="sentinel" class="h-4"></div>
+      <div ref="sentinel" class="h-8"></div>
     </LayoutWrapper>
   </section>
 </template>

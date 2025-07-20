@@ -23,9 +23,9 @@ const route = useRoute()
   <header class="sticky top-0 w-full z-50 pointer-events-none">
     <div class="flex justify-end px-6 py-4 gap-4">
       <RouterLink
-        v-if="route.name !== 'home'"
         :to="{ name: 'home' }"
-        class="inline-flex items-center rounded-xl bg-white/90 shadow-lg px-6 py-4 gap-6 pointer-events-auto"
+        :class="{ dn: route.name == 'home' }"
+        class="media-1290 open inline-flex items-center rounded-xl bg-white/90 shadow-lg px-6 py-4 gap-6 pointer-events-auto"
       >
         <ComponentLogo />
       </RouterLink>
@@ -207,5 +207,6 @@ const route = useRoute()
 
 <style lang="sass" scoped>
 header
+  height: $header
   margin-bottom: -$header
 </style>

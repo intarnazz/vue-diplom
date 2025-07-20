@@ -14,11 +14,11 @@ import { RouterLink } from 'vue-router'
   <LayoutPage class="main">
     <LayoutOpener class="box-y gap2">
       <SectionUserInfo />
-      <LayoutWrapper class="box-x top">
+      <LayoutWrapper class="box-x media top">
         <RouterLink :to="{ name: 'chat' }">
           <SectionChatList limit="5" />
         </RouterLink>
-        <div class="">
+        <div class="p">
           <FormUserMessage />
         </div>
       </LayoutWrapper>

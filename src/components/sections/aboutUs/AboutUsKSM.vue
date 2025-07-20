@@ -3,7 +3,7 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 </script>
 
 <template>
-  <section class="ksm-section w-full box-y gap2">
+  <section class="ksm-section w-full box-y gap2 p">
     <LayoutWrapper>
       <!-- More Fun Section -->
       <div class="relative bg-white">

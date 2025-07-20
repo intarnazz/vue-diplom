@@ -1,5 +1,6 @@
 <script setup>
 import HeaderMain from '@/layout/header/HeaderMain.vue'
+import HeaderWhopper from '@/layout/header/HeaderWhopper.vue'
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { watchEffect } from 'vue'
@@ -19,7 +20,8 @@ const search = ref('')
 </script>
 
 <template>
-  <HeaderMain @search="(value) => (search = value)" />
+  <HeaderMain class="media-480 cansel" @search="(value) => (search = value)" />
+  <HeaderWhopper class="media-480 open" @search="(value) => (search = value)" />
   <RouterView :search="search" />
 </template>
 

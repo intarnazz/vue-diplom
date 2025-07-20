@@ -3,7 +3,7 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 </script>
 
 <template>
-  <section class="mission-values w-full box-y gap2">
+  <section class="mission-values w-full box-y gap2 p">
     <div class="py-20 bg-white">
       <LayoutWrapper>
         <div class="grid md:grid-cols-2 gap-12">

@@ -2,7 +2,7 @@
 
 <template>
   <section class="about-us w cf">
-    <div class="box-x about-us__item pr w">
+    <div class="box-x media about-us__item pr w">
       <div class="flex pr h">
         <img
           class="img img__top pa"
@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <div class="box-x about-us__item pr w left">
+    <div class="box-x media about-us__item pr w left">
       <div class="flex pr h">
         <img
           class="img pa"
@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    <div class="box-x about-us__item pr w">
+    <div class="box-x media about-us__item pr w">
       <div class="flex pr h">
         <img
           class="img pa"

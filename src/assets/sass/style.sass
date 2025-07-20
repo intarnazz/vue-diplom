@@ -97,8 +97,6 @@ html
   &__top
     object-position: top
 
-.p
-  padding: .5rem 1rem
 .p2
   padding: 2rem
 .p3
@@ -225,7 +223,7 @@ select
     width: auto
     height: auto
   &:hover
-    margin: 0 0 -2px 0
+    margin: 2px 0 -2px 0
     box-shadow: 0 0px 20px 0 #04838E
   &_off
     &:hover
@@ -253,9 +251,19 @@ select
 .media__flex
   transition: .3s
 
+.dn
+  display: none
+
 @media screen and (max-width: 1600px)
   html
     font-size: 13px
+
+@media screen and (max-width: 1290px)
+  .media-1290
+    &.cansel
+      display: none
+    &.open
+      display: flex
 
 @media screen and (max-width: 1070px)
   html
@@ -277,21 +285,35 @@ select
     font-size: 11px
 
 @media screen and (max-width: 666px)
+  .p
+    padding: 2rem 1rem !important
+  .p5
+    padding: 1rem !important
   .media__flex
     flex: 0
   .media
     &.flex
       flex: 0
     &.box-x
-      flex-direction: column
+      flex-direction: column !important
+      align-items: stretch
     &.box-y
-      flex-direction: row
+      flex-direction: row !important
     &.img
       position: static
 
 @media screen and (max-width: 513px)
   html
     font-size: 9px
+
+@media screen and (max-width: 480px)
+  .header-spase
+    height: $menu
+  .media-480
+    &.cansel
+      display: none
+    &.open
+      display: flex
 
 @media screen and (max-width: 330px)
   html

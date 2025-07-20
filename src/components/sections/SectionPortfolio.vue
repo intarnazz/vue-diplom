@@ -26,7 +26,7 @@ onMounted(async () => {
       <div class="mb-6">
         <RouterLink
           :to="{ name: 'portfolio' }"
-          class="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:underline"
+          class="p inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:underline"
         >
           ← Назад в портфолио
         </RouterLink>
@@ -45,7 +45,7 @@ onMounted(async () => {
         </div>
 
         <!-- Контент -->
-        <div class="space-y-8">
+        <div class="space-y-8 p">
           <div>
             <h1 class="text-4xl font-bold tracking-tight text-gray-900">
               {{ portfolio.title }}
