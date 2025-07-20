@@ -21,7 +21,7 @@ window.Echo = new Echo({
   cluster: 'mt1',
   forceTLS: false,
   disableStats: true,
-  authEndpoint: 'http://127.0.0.1:8000/api/broadcasting/auth',
+  authEndpoint: `${import.meta.env.VITE_API_URL}broadcasting/auth`,
   auth: {
     headers: {
       Authorization: 'Bearer ' + user.get.value,
