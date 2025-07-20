@@ -32,6 +32,7 @@ onUnmounted(() => {
             {{ date(chat.updated_at) }}
           </p>
           <p
+            v-if="chat.viewedMessage.countNotViewed"
             class="chat__item-status flex"
             :class="`${chat_id === chat.id ? 'chat__focus' : ''}
             chat__item-status--${chat.viewedMessage.countNotViewed}
@@ -39,6 +40,7 @@ onUnmounted(() => {
           >
             {{ chat.viewedMessage.countNotViewed }}
           </p>
+          <div v-else class="flex"></div>
         </div>
         <p class="chat__item-phone" :class="chat_id === chat.id ? 'chat__focus' : ''">
           {{ chat.user.phone }}
@@ -76,7 +78,7 @@ onUnmounted(() => {
   &__item-data
     color: #888
   &__item
-    &> *:not(:first-child)::before
+    &>  p:not(:first-child)::before
       content: '•'
       margin: .25rem;
   &:last-child
