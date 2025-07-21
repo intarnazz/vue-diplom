@@ -1,5 +1,7 @@
 import { User } from '@/storage/user.js'
+import { Auth } from '../auth.js'
 const user = User()
+const auth = new Auth()
 
 const API_URL = import.meta.env.VITE_API_URL
 
@@ -13,7 +15,10 @@ export async function Post(url = '', body = {}) {
     },
     body: JSON.stringify(body),
   })
-    .then((response) => response.json())
+    .then((response) => {
+      if (response.status === 401) auth.logout()
+      else return response.json()
+    })
     .then((json) => {
       return json
     })
