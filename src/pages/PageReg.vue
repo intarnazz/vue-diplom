@@ -9,7 +9,7 @@ import Layout9By16 from '@/layout/Layout9By16.vue'
   <LayoutPage class="main">
     <Layout9By16>
       <template #image>
-        <img class="img" src="@/assets/img/reg-bg.webp" alt="reg-bg" />
+        <img class="img" src="@/assets/img/anna-hu-eV7XjLdWN7o-unsplash.webp" alt="reg-bg" />
       </template>
       <template #default>
         <SectionReg />
