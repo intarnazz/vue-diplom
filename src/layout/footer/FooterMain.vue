@@ -87,9 +87,7 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
       </div>
 
       <div class="text-center mt-10 text-xs text-gray-400">
-        &copy; {{ new Date().getFullYear() }} ООО "Комплексные
-Системы
-Монтажа". Все права защищены.
+        &copy; {{ new Date().getFullYear() }} ООО "КСМ". Все права защищены.
       </div>
     </LayoutWrapper>
   </footer>

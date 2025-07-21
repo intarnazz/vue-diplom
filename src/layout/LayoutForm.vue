@@ -21,11 +21,18 @@ watch(
 
 <template>
   <div class="flex box-y gap2 form__wrapper w">
+    <div class=""></div>
     <div class="box-y gap">
-      <h2 v-if="props.message && !isOk" class="form__error p" :class="{ success: success }">
+      <h2
+        v-if="props.message && !isOk && !errors"
+        class="form__error p"
+        :class="{ success: success }"
+      >
         {{ message }}
       </h2>
-      <h2 v-else-if="isLoding && !isOk && loding" class="form__error p isLoding">isLoding...</h2>
+      <h2 v-else-if="isLoding && !isOk && loding && !errors" class="form__error p isLoding">
+        Загрузка...
+      </h2>
       <template v-if="props.message && !isOk">
         <p class="form__error" v-for="(error, key) in props.errors" :key="key">{{ error[0] }}</p>
       </template>
