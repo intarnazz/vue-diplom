@@ -1,9 +1,7 @@
 import os
 from PIL import Image
 
-# Поддерживаемые форматы (Pillow)
 SUPPORTED_FORMATS = (".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".tif", ".gif", ".heic")
-
 
 def convert_images_to_webp(directory):
     for filename in os.listdir(directory):
@@ -16,11 +14,15 @@ def convert_images_to_webp(directory):
 
         try:
             with Image.open(input_path) as img:
-                img.convert("RGB").save(output_path, "webp", quality=85, method=6)
+                if img.mode in ("RGBA", "LA") or (img.mode == "P" and 'transparency' in img.info):
+                    img = img.convert("RGBA")
+                else:
+                    img = img.convert("RGB")
+
+                img.save(output_path, "webp", quality=85, method=6)
                 print(f"[✓] {filename} → {output_filename}")
         except Exception as e:
             print(f"[✗] Ошибка при обработке {filename}: {e}")
 
-
 if __name__ == "__main__":
-    convert_images_to_webp(".")  # Работает в текущей папке
+    convert_images_to_webp(".")
