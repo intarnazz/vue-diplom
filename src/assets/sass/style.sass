@@ -227,7 +227,8 @@ select
     box-shadow: 0 0px 20px 0 #04838E
   &_off
     &:hover
-      background-color: $wight
+      margin: 0
+      box-shadow: 0
       transform: scale(1)
 
 .hover
@@ -296,7 +297,8 @@ select
       flex: 0
     &.box-x
       flex-direction: column !important
-      align-items: stretch
+      &.top
+        align-items: stretch
     &.box-y
       flex-direction: row !important
     &.img

@@ -39,14 +39,14 @@ const toggleMenu = () => (isOpen.value = !isOpen.value)
         <!-- Заголовок -->
         <h2 class="text-xl font-bold tracking-wider uppercase">KSM</h2>
 
-        <ul class="space-y-4">
+        <u1l class="space-y-4">
           <li><RouterLink @click="toggleMenu" :to="{ name: 'home' }">🏠 Главная</RouterLink></li>
           <li>
             <RouterLink @click="toggleMenu" :to="{ name: 'dock' }">📚 Документация</RouterLink>
           </li>
           <li>
             <RouterLink @click="toggleMenu" :to="{ name: 'message-me' }"
-              >✉️ Написать мне</RouterLink
+              >✉️ Написать как гость</RouterLink
             >
           </li>
           <li>
@@ -72,7 +72,7 @@ const toggleMenu = () => (isOpen.value = !isOpen.value)
               <RouterLink @click="toggleMenu" :to="{ name: 'reg' }">📝 Регистрация</RouterLink>
             </li>
           </template>
-        </ul>
+        </u1l>
 
         <div class="mt-auto text-[10px] text-zinc-400">KSM</div>
       </nav>

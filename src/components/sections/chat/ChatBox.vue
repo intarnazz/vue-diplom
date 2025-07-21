@@ -141,7 +141,9 @@ watch(() => messages, down, { deep: true })
         </form>
       </div>
     </div>
-    <button @click="emit('cansel')" class="button button_off pa media">Нзад</button>
+    <button @click="emit('cansel')" class="button button_off absolute top-[5rem] left-[1rem] media">
+      Нзад
+    </button>
   </section>
 </template>
 
