@@ -4,30 +4,11 @@ import '@/assets/css/nprogress.css'
 import '@/assets/sass/style.sass'
 import '@/assets/css/tailwind.css'
 import { createApp } from 'vue'
-import { User } from '@/storage/user.js'
 import App from '@/App.vue'
 import router from '@/router/router.js'
-import Echo from 'laravel-echo'
-import Pusher from 'pusher-js'
+import { WebSocket } from '@/web-socket/web-socket.js'
 
-const user = User()
-window.Pusher = Pusher
-
-window.Echo = new Echo({
-  broadcaster: 'pusher',
-  key: import.meta.env.VITE_APP_WEBSOCKETS_KEY,
-  wsHost: import.meta.env.VITE_APP_WEBSOCKETS_SERVER,
-  wsPort: 6001,
-  cluster: 'mt1',
-  forceTLS: false,
-  disableStats: true,
-  authEndpoint: `${import.meta.env.VITE_API_URL}broadcasting/auth`,
-  auth: {
-    headers: {
-      Authorization: 'Bearer ' + user.get.value,
-    },
-  },
-})
+const webSocket = new WebSocket()
 
 createApp(App).use(router).mount('#app')
 

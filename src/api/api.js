@@ -1,5 +1,5 @@
 // api.js
-import { RESTAPI } from './restApi.js'
+import { RESTAPI } from './RESTAPI.js'
 import { Image } from './image.js'
 import { Auth } from './auth.js'
 
