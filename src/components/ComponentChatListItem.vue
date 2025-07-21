@@ -29,12 +29,12 @@ onUnmounted(() => {
     }"
   >
     <!-- ВЕРХ: Email + время + badge -->
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center chat__item">
       <h3 class="font-semibold text-sm truncate max-w-[60%]">
         {{ chat.user.email }}
       </h3>
 
-      <div class="flex items-center gap-3">
+      <div class="flex items-center">
         <p class="text-xs" :class="chat_id === chat.id ? 'text-white/70' : 'text-zinc-400'">
           {{ date(chat.updated_at) }}
         </p>
@@ -87,7 +87,7 @@ onUnmounted(() => {
   &__item-data
     color: #888
   &__item
-    &>  p:not(:first-child)::before
+    &>  :not(:first-child)::before
       content: '•'
       margin: .25rem;
   &:last-child

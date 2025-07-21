@@ -1,7 +1,7 @@
 <script setup>
 import FooterMain from '@/layout/footer/FooterMain.vue'
 import LayoutPage from '@/layout/LayoutPage.vue'
-import SectionPortfolioList from '@/components/sections/SectionPortfolioList.vue'
+import SectionPortfolioList from '@/components/sections/portfolioCatalog/PortfolioCatalogMain.vue'
 </script>
 
 <template>

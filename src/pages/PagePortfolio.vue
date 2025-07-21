@@ -1,7 +1,7 @@
 <script setup>
 import FooterMain from '@/layout/footer/FooterMain.vue'
 import LayoutPage from '@/layout/LayoutPage.vue'
-import SectionPortfolio from '@/components/sections/SectionPortfolio.vue'
+import SectionPortfolio from '@/components/sections/portfolio/PortfolioMain.vue'
 import ComponentOpener from '@/layout/LayoutOpener.vue'
 
 const props = defineProps(['id'])

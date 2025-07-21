@@ -2,8 +2,8 @@
 import FooterMain from '@/layout/footer/FooterMain.vue'
 import LayoutPage from '@/layout/LayoutPage.vue'
 import SectionOpener from '@/layout/LayoutOpener.vue'
-import SectionChat from '@/components/sections/SectionChat.vue'
-import SectionChatList from '@/components/sections/SectionChatList.vue'
+import SectionChat from '@/components/sections/chat/ChatBox.vue'
+import SectionChatList from '@/components/sections/chat/ChatList.vue'
 import { ref } from 'vue'
 const chat_id = ref(0)
 </script>

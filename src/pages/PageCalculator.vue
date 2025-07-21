@@ -2,7 +2,7 @@
 import FooterMain from '@/layout/footer/FooterMain.vue'
 import LayoutPage from '@/layout/LayoutPage.vue'
 import Layout9By16 from '@/layout/Layout9By16.vue'
-import SectionCalculator from '@/components/sections/calculator/CalculatorMain.vue'
+import SectionCalculator from '@/components/sections/SectionCalculator.vue'
 </script>
 
 <template>
