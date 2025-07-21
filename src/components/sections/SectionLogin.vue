@@ -5,14 +5,14 @@ import FormLogin from '@/components/form/FormLogin.vue'
 <template>
   <h2>Авторизация</h2>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora dolores voluptatem expedita!
-    Provident odio possimus unde labore hic nisi optio nesciunt alias! Est accusamus quaerat soluta
-    consectetur aperiam fugiat laboriosam.
+    Введите свои данные для входа в личный кабинет. Если у вас еще нет аккаунта, зарегистрируйтесь,
+    чтобы получить полный доступ ко всем функциям сайта.
   </p>
   <div class="box-x">
     <FormLogin />
     <div class="flex media"></div>
   </div>
+  <div class="flex"></div>
 </template>
 
 <style lang="sass" scoped></style>

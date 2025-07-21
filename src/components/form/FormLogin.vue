@@ -26,6 +26,7 @@ async function submit() {
   <FormMain @submit="submit" :message="message" :errors="errors">
     <div class="box-x media down flex wh">
       <div class="box-y wh flex">
+        <!-- Email -->
         <div class="form__box">
           <input
             v-model="email"
@@ -34,9 +35,11 @@ async function submit() {
             id="email"
             name="email"
             type="text"
-            placeholder="email..."
+            placeholder="Введите e-mail"
           />
         </div>
+
+        <!-- Пароль -->
         <div class="form__box">
           <input
             v-model="password"
@@ -45,13 +48,14 @@ async function submit() {
             id="password"
             name="password"
             type="password"
-            placeholder="password..."
+            placeholder="Введите пароль"
           />
         </div>
       </div>
+
       <div class="box-y h">
         <div class="flex"></div>
-        <button type="submit" class="button">ВОЙТИ</button>
+        <button type="submit" class="button">Войти</button>
       </div>
     </div>
   </FormMain>

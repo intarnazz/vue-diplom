@@ -12,6 +12,8 @@ import FormCalculator from '@/components/form/FormCalculator.vue'
     <FormCalculator />
     <div class="flex media"></div>
   </div>
+  <div class="flex"></div>
+
 </template>
 
 <style lang="sass" scoped></style>

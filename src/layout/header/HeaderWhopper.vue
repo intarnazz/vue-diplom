@@ -37,7 +37,7 @@ const toggleMenu = () => (isOpen.value = !isOpen.value)
         style="rotate: -0.4deg"
       >
         <!-- Заголовок -->
-        <h2 class="text-xl font-bold tracking-wider uppercase">nerdos</h2>
+        <h2 class="text-xl font-bold tracking-wider uppercase">KSM</h2>
 
         <ul class="space-y-4">
           <li><RouterLink @click="toggleMenu" :to="{ name: 'home' }">🏠 Главная</RouterLink></li>
@@ -74,7 +74,7 @@ const toggleMenu = () => (isOpen.value = !isOpen.value)
           </template>
         </ul>
 
-        <div class="mt-auto text-[10px] text-zinc-400">v0.42 nerdcore</div>
+        <div class="mt-auto text-[10px] text-zinc-400">KSM</div>
       </nav>
     </transition>
   </div>

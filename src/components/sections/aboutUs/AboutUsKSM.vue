@@ -8,7 +8,11 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
       <!-- More Fun Section -->
       <div class="relative bg-white">
         <div class="absolute">
-          <img src="@/assets/icons/Rectangle 153.svg" class="opacity-50" alt="" />
+          <img
+            src="@/assets/icons/Rectangle 153.svg"
+            class="opacity-50"
+            alt="Фоновая графика — декоративный элемент"
+          />
         </div>
         <div class="relative z-10">
           <h2 class="text-4xl font-extrabold leading-tight mb-6 text-[#202040]">
@@ -42,7 +46,7 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
               с крупными, так и с частными заказчиками. <br /><br />
 
               <strong>6. Минимум отходов — максимум эффективности:</strong> Наши инженеры подбирают
-              оптимальные схемы раскроя и узлов — это позволяет сократить отходы до 30%.
+              оптимальные схемы раскроя и узлов. Это позволяет сократить отходы до 30%.
             </p>
           </div>
         </div>

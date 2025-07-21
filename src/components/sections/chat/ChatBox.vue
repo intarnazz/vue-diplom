@@ -95,11 +95,11 @@ watch(() => messages, down, { deep: true })
   <section class="chat wh">
     <!-- <div class="bg-white pa text-black p-6 rounded-2xl shadow-xl text-center max-w-md w-full"></div> -->
 
-    <img class="img pa" src="@/assets/img/cyg23qqdamt41.webp" alt="reg-bg" />
+    <img class="img pa" src="@/assets/img/cyg23qqdamt41.webp" alt="Фоновое изображение" />
 
     <div
       v-if="!props.id"
-      class="fixed top-1/3 left-4/7 -translate-x-1/2 w-full max-w-md px-4 pointer-events-none"
+      class="absolute top-1/3 left-4/7 -translate-x-1/2 w-full max-w-md px-4 pointer-events-none"
     >
       <div
         class="pointer-events-auto relative bg-[#fefadc] border-[3px] border-black text-black rounded-[1.25rem] shadow-[6px_6px_0_0_#000] px-6 py-5 font-sans"
@@ -113,7 +113,7 @@ watch(() => messages, down, { deep: true })
 
         <!-- Подпись как на записке -->
         <div class="mt-4 text-[11px] italic text-zinc-500 text-right">
-          p.s. handwritten on NerdOS™ paper
+          ответим в течении 5 минут
         </div>
       </div>
     </div>

@@ -35,7 +35,7 @@ function date(s) {
 <template>
   <LayoutWrapper>
     <section v-if="!isLoding" class="p">
-      <!-- Nerd Header -->
+      <!-- Заголовок профиля -->
       <div class="flex items-center justify-between mb-6">
         <h1 class="text-4xl font-bold tracking-widest uppercase">Профиль KSM</h1>
         <span class="bg-black text-white text-xs px-3 py-1 rounded-full">{{
@@ -43,17 +43,17 @@ function date(s) {
         }}</span>
       </div>
 
-      <!-- User data block -->
+      <!-- Блок данных пользователя -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
         <div class="space-y-2">
           <div class="flex items-center gap-2">
             <span class="text-zinc-600">👤</span>
-            <span class="font-semibold tracking-wider uppercase">Name:</span>
+            <span class="font-semibold tracking-wider">Имя:</span>
             <span class="ml-auto">{{ user.name }}</span>
           </div>
           <div class="flex items-center gap-2">
             <span class="text-zinc-600">🏢</span>
-            <span class="font-semibold tracking-wider uppercase">Company:</span>
+            <span class="font-semibold tracking-wider">Компания:</span>
             <span class="ml-auto">{{ user.company }}</span>
           </div>
         </div>
@@ -61,24 +61,28 @@ function date(s) {
         <div class="space-y-2">
           <div class="flex items-center gap-2">
             <span class="text-zinc-600">✉️</span>
-            <span class="font-semibold tracking-wider uppercase">Email:</span>
+            <span class="font-semibold tracking-wider">Email:</span>
             <span class="ml-auto">{{ user.email }}</span>
           </div>
           <div class="flex items-center gap-2">
             <span class="text-zinc-600">📞</span>
-            <span class="font-semibold tracking-wider uppercase">Phone:</span>
+            <span class="font-semibold tracking-wider">Телефон:</span>
             <span class="ml-auto">{{ user.phone }}</span>
           </div>
         </div>
       </div>
 
-      <!-- Footer touch -->
+      <!-- Подвал -->
       <div class="mt-10 flex justify-between items-center border-t border-black pt-4">
-        <span class="text-xs italic opacity-70">powered by ZIP 🐒</span>
+        <span class="text-xs italic opacity-70">
+          
+
+          Спасибо, что с нами
+        </span>
         <button
           class="px-4 py-1 border-2 border-black bg-black text-white rounded-lg hover:bg-white hover:text-black transition"
         >
-          Edit ✎
+          Редактировать ✎
         </button>
       </div>
     </section>

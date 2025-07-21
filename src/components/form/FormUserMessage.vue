@@ -43,7 +43,9 @@ async function submit() {
   >
     <div class="box-y gap flex wh">
       <h2>Отправить запрос</h2>
+
       <div class="box-y flex">
+        <!-- Сообщение -->
         <div class="form__box flex">
           <textarea
             v-model="content"
@@ -51,13 +53,13 @@ async function submit() {
             :class="{ 'bg-error': errors?.content }"
             id="content"
             name="content"
-            type="text"
-            placeholder="content..."
+            placeholder="Введите сообщение..."
           />
         </div>
       </div>
+
       <div class="box-y">
-        <button type="submit" class="button">ОТПРАВИТЬ</button>
+        <button type="submit" class="button">Отправить</button>
       </div>
     </div>
   </FormMain>

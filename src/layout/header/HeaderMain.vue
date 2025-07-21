@@ -184,7 +184,7 @@ const route = useRoute()
           мой профиль
         </RouterLink>
         <RouterLink v-else :to="{ name: 'login' }" class="text-black hover:underline">
-          Log in
+          Войти
         </RouterLink>
         <button
           v-if="user.get.value"
@@ -198,7 +198,7 @@ const route = useRoute()
           :to="{ name: 'reg' }"
           class="px-4 py-2 rounded-md bg-black text-white hover:bg-gray-800"
         >
-          Sign up
+          Регистрация
         </RouterLink>
       </div>
     </div>

@@ -30,7 +30,7 @@ createApp(App).use(router).mount('#app')
 // [X] - чаты скрол x y
 
 // [X] - адаптив
-// [ ] - seo
+// [X] - seo
 
 // [ ] - контакты
 // [ ] - user форма смены данных

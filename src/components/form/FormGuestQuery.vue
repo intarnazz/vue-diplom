@@ -43,7 +43,9 @@ async function submit() {
   >
     <div class="box-y gap flex wh">
       <h2>Отправить запрос</h2>
+
       <div class="box-y flex">
+        <!-- Имя -->
         <div class="form__box">
           <input
             v-model="name"
@@ -52,9 +54,11 @@ async function submit() {
             id="name"
             name="name"
             type="text"
-            placeholder="name..."
+            placeholder="Ваше имя"
           />
         </div>
+
+        <!-- Email -->
         <div class="form__box">
           <input
             v-model="email"
@@ -63,9 +67,11 @@ async function submit() {
             id="email"
             name="email"
             type="email"
-            placeholder="email..."
+            placeholder="Ваш e-mail"
           />
         </div>
+
+        <!-- Телефон -->
         <div class="form__box">
           <input
             v-model="phone"
@@ -74,9 +80,11 @@ async function submit() {
             id="phone"
             name="phone"
             type="text"
-            placeholder="phone..."
+            placeholder="Ваш телефон"
           />
         </div>
+
+        <!-- Компания -->
         <div class="form__box">
           <input
             v-model="company"
@@ -85,9 +93,11 @@ async function submit() {
             id="company"
             name="company"
             type="text"
-            placeholder="company..."
+            placeholder="Название компании"
           />
         </div>
+
+        <!-- Краткое описание -->
         <div class="form__box">
           <input
             v-model="description"
@@ -96,23 +106,26 @@ async function submit() {
             id="description"
             name="description"
             type="text"
-            placeholder="description..."
+            placeholder="Краткое описание запроса"
           />
         </div>
+
+        <!-- Сообщение -->
         <div class="form__box flex">
           <textarea
             v-model="content"
-            class="flex wh"
+            class="flex wh h-[500px]"
             :class="{ 'bg-error': errors?.content }"
             id="content"
             name="content"
-            type="text"
-            placeholder="content..."
+            placeholder="Подробности запроса..."
           />
         </div>
       </div>
+
+      <!-- Кнопка отправки -->
       <div class="box-y">
-        <button type="submit" class="button">ОТПРАВИТЬ</button>
+        <button type="submit" class="button">Отправить</button>
       </div>
     </div>
   </FormMain>

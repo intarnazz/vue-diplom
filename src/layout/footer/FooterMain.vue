@@ -1,63 +1,97 @@
 <script setup>
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
-import ComponentLogo from '@/components/ComponentLogo.vue'
 </script>
 
 <template>
-  <footer class="footer box-y gap2">
-    <LayoutWrapper class="box-y gap">
-      <ComponentLogo fill="#fff" />
-      <RouterLink :to="{ name: 'contact-us' }"> Наши офисы </RouterLink>
-      <RouterLink :to="{ name: 'message-me' }"> Напишите нам сообщение </RouterLink>
-      <RouterLink :to="{ name: 'login' }"> Войти </RouterLink>
-      <RouterLink :to="{ name: 'reg' }"> Регистрация </RouterLink>
-      <RouterLink :to="{ name: 'chat' }"> Мои чаты </RouterLink>
-      <RouterLink :to="{ name: 'profile' }"> Profile </RouterLink>
-      <RouterLink :to="{ name: 'home' }"> Главная </RouterLink>
-      <RouterLink :to="{ name: 'portfolio' }"> Портфолио </RouterLink>
-      <RouterLink :to="{ name: 'about-us' }"> О нас </RouterLink>
-      <RouterLink :to="{ name: 'calculator' }"> Калькулятор </RouterLink>
-      <RouterLink :to="{ name: 'contact-us' }"> Контакты </RouterLink>
-    </LayoutWrapper>
+  <footer class="bg-black text-white p4">
+    <LayoutWrapper>
+      <div class="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-sm">
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Компания</h3>
+          <ul class="space-y-2">
+            <li><RouterLink to="/" class="hover:underline">Главная</RouterLink></li>
+            <li>
+              <RouterLink :to="{ name: 'about-us' }" class="hover:underline">О нас</RouterLink>
+            </li>
+            <li>
+              <RouterLink :to="{ name: 'contact-us' }" class="hover:underline"
+                >Наши офисы</RouterLink
+              >
+            </li>
+          </ul>
+        </div>
 
-    <div class="footer__grid">
-      <div class="pr wh">
-        <img class="w" src="@/assets/img/client logo/Frame_34-1.png.webp" alt="" />
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Техническая документация</h3>
+          <ul class="space-y-2">
+            <li>
+              <RouterLink :to="{ name: 'dock' }" class="hover:underline"
+                >Общая документация</RouterLink
+              >
+            </li>
+            <li>
+              <RouterLink :to="{ name: 'd.vf' }" class="hover:underline"
+                >Вентилируемые фасады</RouterLink
+              >
+            </li>
+            <li>
+              <RouterLink :to="{ name: 'd.tspvp' }" class="hover:underline"
+                >Сэндвич-панели (вата/пенопласт)</RouterLink
+              >
+            </li>
+            <li>
+              <RouterLink :to="{ name: 'd.sppss' }" class="hover:underline">Сборка СППС</RouterLink>
+            </li>
+            <li>
+              <RouterLink :to="{ name: 'd.mps' }" class="hover:underline"
+                >Металлочерепица и сайдинг</RouterLink
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Услуги</h3>
+          <ul class="space-y-2">
+            <li>
+              <RouterLink :to="{ name: 'calculator' }" class="hover:underline"
+                >Калькулятор</RouterLink
+              >
+            </li>
+            <li>
+              <RouterLink :to="{ name: 'portfolio' }" class="hover:underline">Портфолио</RouterLink>
+            </li>
+            <li>
+              <RouterLink :to="{ name: 'message-me' }" class="hover:underline"
+                >Оставить сообщение</RouterLink
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Аккаунт</h3>
+          <ul class="space-y-2">
+            <li><RouterLink :to="{ name: 'login' }" class="hover:underline">Войти</RouterLink></li>
+            <li>
+              <RouterLink :to="{ name: 'reg' }" class="hover:underline">Регистрация</RouterLink>
+            </li>
+            <li>
+              <RouterLink :to="{ name: 'profile' }" class="hover:underline">Профиль</RouterLink>
+            </li>
+            <li>
+              <RouterLink :to="{ name: 'chat' }" class="hover:underline">Чат с нами</RouterLink>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="pr wh">
-        <img class="w" src="@/assets/img/client logo/Frame_34.png.webp" alt="" />
+
+      <div class="text-center mt-10 text-xs text-gray-400">
+        &copy; {{ new Date().getFullYear() }} ООО "Комплексные
+Системы
+Монтажа". Все права защищены.
       </div>
-      <div class="pr wh">
-        <img class="w" src="@/assets/img/client logo/Frame_35-1.png 1.png" alt="" />
-      </div>
-      <div class="pr wh">
-        <img class="w" src="@/assets/img/client logo/Frame_35.png.webp" alt="" />
-      </div>
-      <div class="pr wh">
-        <img class="w" src="@/assets/img/client logo/Frame_36-1.png.webp" alt="" />
-      </div>
-      <div class="pr wh">
-        <img class="w" src="@/assets/img/client logo/Frame_36.png.webp" alt="" />
-      </div>
-      <div class="pr wh">
-        <img class="w" src="@/assets/img/client logo/Frame_37-1.png 1.png" alt="" />
-      </div>
-      <div class="pr wh">
-        <img class="w" src="@/assets/img/client logo/Frame_37.png.webp" alt="" />
-      </div>
-      <div class="pr wh">
-        <img class="w" src="@/assets/img/client logo/Frame_38-1.png.webp" alt="" />
-      </div>
-      <div class="pr wh">
-        <img class="w" src="@/assets/img/client logo/Frame_38.png.webp" alt="" />
-      </div>
-      <div class="pr wh">
-        <img class="w" src="@/assets/img/client logo/Frame_39-1.png.webp" alt="" />
-      </div>
-      <div class="pr wh">
-        <img class="w" src="@/assets/img/client logo/Frame_39.png.webp" alt="" />
-      </div>
-    </div>
+    </LayoutWrapper>
   </footer>
 </template>
 

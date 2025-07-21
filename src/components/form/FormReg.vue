@@ -32,6 +32,7 @@ async function submit() {
   <FormMain @submit="submit" :message="message" :errors="errors">
     <div class="box-x media down flex wh">
       <div class="box-y wh flex">
+        <!-- Email -->
         <div class="form__box">
           <input
             v-model="email"
@@ -40,9 +41,11 @@ async function submit() {
             id="email"
             name="email"
             type="email"
-            placeholder="email..."
+            placeholder="Введите e-mail"
           />
         </div>
+
+        <!-- Имя -->
         <div class="form__box">
           <input
             v-model="name"
@@ -50,10 +53,12 @@ async function submit() {
             :class="{ 'bg-error': errors?.name }"
             id="name"
             name="name"
-            type="name"
-            placeholder="name..."
+            type="text"
+            placeholder="Введите имя"
           />
         </div>
+
+        <!-- Телефон -->
         <div class="form__box">
           <input
             v-model="phone"
@@ -61,10 +66,12 @@ async function submit() {
             :class="{ 'bg-error': errors?.phone }"
             id="phone"
             name="phone"
-            type="phone"
-            placeholder="phone..."
+            type="tel"
+            placeholder="Введите номер телефона"
           />
         </div>
+
+        <!-- Компания -->
         <div class="form__box">
           <input
             v-model="company"
@@ -72,10 +79,12 @@ async function submit() {
             :class="{ 'bg-error': errors?.company }"
             id="company"
             name="company"
-            type="company"
-            placeholder="company..."
+            type="text"
+            placeholder="Название компании"
           />
         </div>
+
+        <!-- Пароль -->
         <div class="form__box">
           <input
             v-model="password"
@@ -84,13 +93,14 @@ async function submit() {
             id="password"
             name="password"
             type="password"
-            placeholder="password..."
+            placeholder="Придумайте пароль"
           />
         </div>
       </div>
+
       <div class="box-y h">
         <div class="flex"></div>
-        <button type="submit" class="button">РЕГИСТРАЦИЯ</button>
+        <button type="submit" class="button">Зарегистрироваться</button>
       </div>
     </div>
   </FormMain>

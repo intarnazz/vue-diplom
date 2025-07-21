@@ -31,12 +31,7 @@ watch(
       </template>
 
       <div v-if="props.message && !isOk" class="box-x">
-        <button
-          @click="() => (isOk = true)"
-          class="button__form"
-        >
-          Ok
-        </button>
+        <button @click="() => (isOk = true)" class="button__form">Ok</button>
       </div>
     </div>
     <form

@@ -47,7 +47,7 @@ const formattedPrice = computed(() => price.value.toLocaleString('ru-RU'))
       <div class="box-y">
         <!-- Тип фасадного покрытия -->
         <div class="box-y">
-          <label for=""> Тип фасадного покрытия</label>
+          <label for="coating">Тип фасадного покрытия</label>
           <div class="form__box">
             <select v-model="selectedCoating" class="" id="coating" name="coating">
               <option v-for="(coating, index) in coatings" :key="index" :value="coating">
@@ -59,7 +59,7 @@ const formattedPrice = computed(() => price.value.toLocaleString('ru-RU'))
 
         <!-- Площадь фасада -->
         <div class="box-y">
-          <label for=""> Площадь фасада (м²)</label>
+          <label for="area">Площадь фасада (м²)</label>
           <div class="form__box">
             <input
               v-model.number="area"
@@ -67,14 +67,14 @@ const formattedPrice = computed(() => price.value.toLocaleString('ru-RU'))
               id="area"
               name="area"
               type="number"
-              placeholder="ПЛОЩАДЬ ФАСАДА (м²)"
+              placeholder="Введите площадь фасада (м²)"
             />
           </div>
         </div>
 
         <!-- Утеплитель -->
         <div class="box-y">
-          <label for=""> Утеплитель</label>
+          <label for="insulation">Тип утеплителя</label>
           <div class="form__box">
             <select v-model="selectedInsulation" class="" id="insulation" name="insulation">
               <option v-for="(insul, index) in insulationOptions" :key="index" :value="insul">
@@ -85,9 +85,10 @@ const formattedPrice = computed(() => price.value.toLocaleString('ru-RU'))
         </div>
       </div>
 
+      <!-- Остекление -->
       <div class="gap box-y">
-        <p>ОСТЕКЛЕНИЕ > 40%:</p>
-        <div class="">
+        <p>Остекление более 40%:</p>
+        <div>
           <label>
             <input type="radio" name="glazing" value="yes" v-model="glazing" />
             Да
@@ -99,12 +100,13 @@ const formattedPrice = computed(() => price.value.toLocaleString('ru-RU'))
         </div>
       </div>
 
+      <!-- Итог и кнопка -->
       <div class="box-y gap h">
-        <div class="">
+        <div>
           <h3>{{ formattedPrice }} ₽</h3>
         </div>
-        <p>* предварительная стоимость с учетом НДС. Стоимость указана за материалы + работы</p>
-        <button type="submit" class="button">РАССЧИТАТЬ</button>
+        <p>* Предварительная стоимость с учётом НДС. Включает материалы и работы.</p>
+        <button type="submit" class="button">Рассчитать</button>
       </div>
     </div>
   </FormMain>

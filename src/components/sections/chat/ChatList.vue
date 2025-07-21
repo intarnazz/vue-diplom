@@ -109,16 +109,18 @@ async function chat_init(e) {
       <div class="box-y gap5">
         <div class="box-y gap25">
           <div class="box-x chat__item">
-            <h3>isLoding...</h3>
-            <p class="chat__item-data">isLoding...</p>
-            <p class="chat__item-status flex">isLoding...</p>
+            <h3>Загрузка...</h3>
+            <p class="chat__item-data">Данные загружаются</p>
+            <p class="chat__item-status flex">Статус обновляется</p>
           </div>
-          <p class="chat__item-phone">isLoding...</p>
+          <p class="chat__item-phone">Телефон загружается</p>
         </div>
-        <p class="chat__item-message">isLoding...</p>
+        <p class="chat__item-message">Сообщения загружаются</p>
       </div>
     </div>
-    <button v-if="canLoding" @click="() => init()" class="box-y chat flex w">Ещё чаты</button>
+    <button v-if="canLoding" @click="() => init()" class="box-y chat flex w">
+      Показать ещё чаты
+    </button>
     <div class="box-y"></div>
   </section>
 </template>

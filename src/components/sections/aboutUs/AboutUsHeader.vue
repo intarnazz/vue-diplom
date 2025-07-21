@@ -7,7 +7,7 @@ import LayoutPageTitle from '@/layout/LayoutPageTitle.vue'
     <template #image>
       <img
         src="@/assets/img/dfy--_rVqLaOGV4-unsplash.jpg"
-        alt="О компании"
+        alt="Фасад современного здания — изображение для страницы «О компании»"
         class="absolute inset-0 w-full h-full object-cover z-0"
       />
     </template>

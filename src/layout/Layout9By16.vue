@@ -11,7 +11,6 @@ import ComponentOpener from '@/layout/LayoutOpener.vue'
       <div class="login__wrapper wh box-y gap p5 flex16 flex">
         <div class="header-spase"></div>
         <slot name="default"></slot>
-        <div class="flex"></div>
       </div>
     </section>
   </ComponentOpener>
