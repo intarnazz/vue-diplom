@@ -25,7 +25,7 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
             />
           </div>
           <div class="pr wh">
-            <img class="w" src="@/assets/img/client logo/SEV DARK.png" alt="Логотип компании SEV" />
+            <img class="w" src="@/assets/img/client logo/SEV DARK.webp" alt="Логотип компании SEV" />
           </div>
           <div class="pr wh">
             <img
@@ -49,7 +49,7 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
             />
           </div>
           <div class="pr wh">
-            <img class="w" src="@/assets/img/client logo/RC DARK.png" alt="Логотип компании RC" />
+            <img class="w" src="@/assets/img/client logo/RC DARK.webp" alt="Логотип компании RC" />
           </div>
           <div class="pr wh">
             <img

@@ -9,7 +9,7 @@ import SectionCalculator from '@/components/sections/SectionCalculator.vue'
   <LayoutPage class="main">
     <Layout9By16>
       <template #image>
-        <img class="img pa" src="@/assets/img/chen-heng-oZ9PjgK8IGI-unsplash.jpg" alt="login-bg" />
+        <img class="img pa" src="@/assets/img/chen-heng-oZ9PjgK8IGI-unsplash.webp" alt="login-bg" />
       </template>
       <template #default>
         <SectionCalculator />
