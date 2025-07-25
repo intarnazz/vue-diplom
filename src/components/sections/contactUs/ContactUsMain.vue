@@ -9,12 +9,6 @@ import whatsapp from '@/assets/icons/link/whatsapp.svg'
 
 const licks = ref([
   {
-    img: phone,
-    name: 'Телефон',
-    text: '+7 (900) 789-22-44',
-    href: 'tel:+79007892244',
-  },
-  {
     img: mail,
     name: 'Почта',
     text: 'ksm@mail.ru',
@@ -26,12 +20,12 @@ const licks = ref([
     text: 'КСМ',
     href: 'https://vk.com/ksm',
   },
-  {
-    img: whatsapp,
-    name: 'whatsapp',
-    text: 'напишите нам в WhatsApp',
-    href: 'https://wa.me/79007892244',
-  },
+  // {
+  //   img: whatsapp,
+  //   name: 'whatsapp',
+  //   text: 'напишите нам в WhatsApp',
+  //   href: 'https://wa.me/79007892244',
+  // },
   // {
   //   img: instagram,
   //   name: 'Instagram',

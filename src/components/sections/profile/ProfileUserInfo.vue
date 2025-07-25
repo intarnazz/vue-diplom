@@ -72,18 +72,8 @@ function date(s) {
         </div>
       </div>
 
-      <!-- Подвал -->
       <div class="mt-10 flex justify-between items-center border-t border-black pt-4">
-        <span class="text-xs italic opacity-70">
-          
 
-          Спасибо, что с нами
-        </span>
-        <button
-          class="px-4 py-1 border-2 border-black bg-black text-white rounded-lg hover:bg-white hover:text-black transition"
-        >
-          Редактировать ✎
-        </button>
       </div>
     </section>
   </LayoutWrapper>
