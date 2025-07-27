@@ -1,12 +1,11 @@
 <script setup>
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import ComponentLogo from '@/components/ComponentLogo.vue'
-import { RouterLink, useRoute } from 'vue-router'
+import { RouterLink } from 'vue-router'
 import { auth } from '@/api/api.js'
 import { User } from '@/storage/user.js'
 
 const user = User()
-const route = useRoute()
 
 // const menuItems = ref([
 //   'Share your files',
@@ -20,22 +19,15 @@ const route = useRoute()
 // ])
 </script>
 <template>
-  <header class="sticky top-0 w-full z-50 pointer-events-none">
-    <div class="flex justify-end px-6 py-4 gap-4">
-      <RouterLink
-        :to="{ name: 'home' }"
-        :class="{ dn: route.name == 'home' }"
-        class="media-1290 open inline-flex items-center rounded-xl bg-white/90 shadow-lg px-6 py-4 gap-6 pointer-events-auto"
-      >
+  <header class="sticky bg-white top-0 w z-50 box-x shadow-xl">
+    <div class="box-x w gap px-[2rem]">
+      <RouterLink :to="{ name: 'home' }" class="media-1290 open pointer-events-auto">
         <ComponentLogo />
       </RouterLink>
 
       <div class="flex"></div>
 
-      <!-- Левый контейнер: "О компании" + "Message me" -->
-      <nav
-        class="inline-flex items-center rounded-xl bg-white/90 shadow-lg px-6 py-4 gap-6 pointer-events-auto"
-      >
+      <nav class="box-x gap2">
         <Menu v-if="user.get.value" as="div" class="relative">
           <MenuButton class="flex items-center gap-1 text-black hover:underline">
             <span>Напишите нам</span>
@@ -88,10 +80,23 @@ const route = useRoute()
           Напишите нам
         </RouterLink>
 
-        <!-- Dropdown "О компании" -->
+        <!-- Простые ссылки "О компании" -->
+        <RouterLink :to="{ name: 'about-us' }" class="text-black hover:underline">
+          О нас
+        </RouterLink>
+        <RouterLink :to="{ name: 'contact-us' }" class="text-black hover:underline">
+          Контакты
+        </RouterLink>
+        <RouterLink :to="{ name: 'calculator' }" class="text-black hover:underline">
+          Калькулятор
+        </RouterLink>
+        <RouterLink :to="{ name: 'portfolio' }" class="text-black hover:underline">
+          Портфолио
+        </RouterLink>
+        <!-- Меню "Техническая документация" -->
         <Menu as="div" class="relative">
           <MenuButton class="flex items-center gap-1 text-black hover:underline">
-            <span>О компании</span>
+            <span>Документация</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
               <path
                 stroke="currentColor"
@@ -110,52 +115,8 @@ const route = useRoute()
             leave-to="opacity-0 scale-95"
           >
             <MenuItems
-              class="absolute left-0 mt-8 w-56 origin-top-left rounded-xl bg-white text-black shadow-lg ring-1 ring-black/5 p-2 flex flex-col gap-1 z-50 pointer-events-auto"
+              class="absolute right-0 mt-8 w-[300px] origin-top-right rounded-xl bg-white text-black shadow-lg ring-1 ring-black/5 p-2 flex flex-col gap-1 z-50 pointer-events-auto"
             >
-              <MenuItem v-slot="{ active }">
-                <RouterLink
-                  :to="{ name: 'about-us' }"
-                  :class="[
-                    'block w-full text-left px-4 py-2 rounded-md',
-                    active ? 'bg-gray-100' : '',
-                  ]"
-                >
-                  О нас
-                </RouterLink>
-              </MenuItem>
-              <MenuItem v-slot="{ active }">
-                <RouterLink
-                  :to="{ name: 'contact-us' }"
-                  :class="[
-                    'block w-full text-left px-4 py-2 rounded-md',
-                    active ? 'bg-gray-100' : '',
-                  ]"
-                >
-                  Контакты
-                </RouterLink>
-              </MenuItem>
-              <MenuItem v-slot="{ active }">
-                <RouterLink
-                  :to="{ name: 'calculator' }"
-                  :class="[
-                    'block w-full text-left px-4 py-2 rounded-md',
-                    active ? 'bg-gray-100' : '',
-                  ]"
-                >
-                  Калькулятор
-                </RouterLink>
-              </MenuItem>
-              <MenuItem v-slot="{ active }">
-                <RouterLink
-                  :to="{ name: 'portfolio' }"
-                  :class="[
-                    'block w-full text-left px-4 py-2 rounded-md',
-                    active ? 'bg-gray-100' : '',
-                  ]"
-                >
-                  Портфолио
-                </RouterLink>
-              </MenuItem>
               <MenuItem v-slot="{ active }">
                 <RouterLink
                   :to="{ name: 'dock' }"
@@ -164,18 +125,60 @@ const route = useRoute()
                     active ? 'bg-gray-100' : '',
                   ]"
                 >
-                  Техническая документация
+                  Вся документация
+                </RouterLink>
+              </MenuItem>
+              <MenuItem v-slot="{ active }">
+                <RouterLink
+                  :to="{ name: 'd.vf' }"
+                  :class="[
+                    'block w-full text-left px-4 py-2 rounded-md',
+                    active ? 'bg-gray-100' : '',
+                  ]"
+                >
+                  Вентилируемые фасады
+                </RouterLink>
+              </MenuItem>
+              <MenuItem v-slot="{ active }">
+                <RouterLink
+                  :to="{ name: 'd.tspvp' }"
+                  :class="[
+                    'block w-full text-left px-4 py-2 rounded-md',
+                    active ? 'bg-gray-100' : '',
+                  ]"
+                >
+                  Трехслойные сэндвич-панели
+                </RouterLink>
+              </MenuItem>
+              <MenuItem v-slot="{ active }">
+                <RouterLink
+                  :to="{ name: 'd.sppss' }"
+                  :class="[
+                    'block w-full text-left px-4 py-2 rounded-md',
+                    active ? 'bg-gray-100' : '',
+                  ]"
+                >
+                  Сэндвич-панели поэлементной сборки (СППС)
+                </RouterLink>
+              </MenuItem>
+              <MenuItem v-slot="{ active }">
+                <RouterLink
+                  :to="{ name: 'd.mps' }"
+                  :class="[
+                    'block w-full text-left px-4 py-2 rounded-md',
+                    active ? 'bg-gray-100' : '',
+                  ]"
+                >
+                  Металлочерепица, профлист, металлический сайдинг
                 </RouterLink>
               </MenuItem>
             </MenuItems>
           </Transition>
         </Menu>
       </nav>
-
+      |
       <!-- Правый контейнер: Log in / Sign up -->
-      <div
-        class="inline-flex items-center rounded-xl bg-white/90 shadow-lg px-6 py-4 gap-4 pointer-events-auto"
-      >
+      <div class="box-x gap">
         <RouterLink
           v-if="user.get.value"
           :to="{ name: 'profile' }"

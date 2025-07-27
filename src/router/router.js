@@ -28,22 +28,22 @@ const dock = () => {
       component: PageDocumentation,
     },
     {
-      path: `${prefix}/ventiliruemye-fasady`,
+      path: `${prefix}/ventiliruemye-fasady`, // Вентилируемые фасады
       name: 'd.vf',
       component: PageDockVF,
     },
     {
-      path: `${prefix}/tre-sendvich-paneli-vata-penopol`,
+      path: `${prefix}/tre-sendvich-paneli-vata-penopol`, //Трехслойные сэндвич-панели
       name: 'd.tspvp',
       component: PageDockTSPVP,
     },
     {
-      path: `${prefix}/sendvich-paneli-poelementnoj-sborki-spps`,
+      path: `${prefix}/sendvich-paneli-poelementnoj-sborki-spps`, //Сэндвич-панели поэлементной сборки (СППС)
       name: 'd.sppss',
       component: PageDockSPPSS,
     },
     {
-      path: `${prefix}/metallocherepica-proflist-sajding`,
+      path: `${prefix}/metallocherepica-proflist-sajding`, //Металлочерепица, профлист, металлический сайдинг
       name: 'd.mps',
       component: PageDockMPS,
     },
