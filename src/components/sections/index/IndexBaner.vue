@@ -1,5 +1,7 @@
 <script setup>
-import { RouterLink } from 'vue-router'
+// import { RouterLink } from 'vue-router'
+import LayoutWrapper from '@/layout/LayoutWrapper.vue'
+import ComponentTitle from '@/components/ComponentTitle.vue'
 </script>
 
 <template>
@@ -7,25 +9,34 @@ import { RouterLink } from 'vue-router'
     <img class="img slide pa" src="@/assets/img/_Fjord_Plaza_.jpg 1.webp" alt="_Fjord_Plaza_" />
     <img class="img slide pa" src="@/assets/img/IMG_206.jpg.webp" alt="_Fjord_Plaza_" />
     <img class="img slide pa" src="@/assets/img/IMG_9879.jpg 3.webp" alt="IMG_9879.jpg 3" />
-
     <div class="baner__linear pa wh"></div>
-    <div class="baner__content pa wh box-y p2">
-      <div class="box-y flex">
-        <div class="box-x">
-          <div class="flex"></div>
-          <img
-            class="baner__logo media-1290 cansel"
-            src="@/assets/icons/logo/logo B fff.svg"
-            alt="logo"
-          />
-          <div class="flex"></div>
+    <div class="baner__content pa wh z-99">
+      <LayoutWrapper class="wh">
+        <div class="wh pt-[10rem] pb-[2rem] box-y top">
+          <div class="box-y gap down">
+            <ComponentTitle :text="`Комплексные Системы Монтажа фасадов с гарантией качества`" />
+            <h3 class="mr-[-7px] bg-white text-black">
+              Производство, проектирование и монтаж фасадных систем
+            </h3>
+          </div>
+          <div class="flex wh box-y">
+            <div class="flex wh"></div>
+            <div class="box-x">
+              <div class="box-y">
+                <h3 class="rotate-[-2.01deg]">
+                  Экономия до 30% за счёт оптимизации проектных решений
+                </h3>
+                <p class="rotate-[-2.01deg]">
+                  Собственное производство. Современное оборудование. Гарантированное качество.
+                </p>
+              </div>
+              <RouterLink :to="{ name: 'message-me' }" class="button">
+                ОТПРАВИТЬ ЗАЯВКУ
+              </RouterLink>
+            </div>
+          </div>
         </div>
-        <div class="box-x">
-          <div class="flex"></div>
-          <RouterLink :to="{ name: 'message-me' }" class="button"> ОТПРАВИТЬ ЗАЯВКУ </RouterLink>
-          <div class="flex"></div>
-        </div>
-      </div>
+      </LayoutWrapper>
     </div>
   </section>
 </template>
@@ -68,29 +79,10 @@ import { RouterLink } from 'vue-router'
   &__content
     color: #fff
   &__linear
-    background: linear-gradient(
-      to bottom,
-      #000 0%,
-      #00000000 25%,
-      #00000000 82%,
-      #000 94%
-    )
+    background-color: #000
     opacity: 77%
 
 @media screen and (max-width: 480px)
   .baner
     height: 270px
-    &__logo
-      width: 382px
-    &__content
-      color: #fff
-    &__linear
-      background: linear-gradient(
-        to bottom,
-        #000 0%,
-        #00000000 25%,
-        #00000000 82%,
-        #000 94%
-      )
-      opacity: 77%
 </style>
