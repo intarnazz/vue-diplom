@@ -12,6 +12,7 @@ import FormReg from '@/components/form/FormReg.vue'
     <FormReg />
     <div class="flex media"></div>
   </div>
+  <RouterLink :to="{ name: 'login' }" class="a"><h3>Уже есть аккаунт?</h3></RouterLink>
   <div class="flex"></div>
 </template>
 

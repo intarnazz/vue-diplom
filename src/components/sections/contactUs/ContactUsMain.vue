@@ -91,7 +91,7 @@ const licks = ref([
   &__wrapper
     justify-content: flex-start
     gap: 1.6rem
-    padding: 0 4rem 0 2rem
+    padding: 0 4rem 1rem 2rem
     & img
       width: 32px
   &__box-decor

@@ -12,7 +12,7 @@ import ComponentTitle from '@/components/ComponentTitle.vue'
     <div class="baner__linear pa wh"></div>
     <div class="baner__content pa wh z-99">
       <LayoutWrapper class="wh">
-        <div class="wh pt-[10rem] pb-[2rem] box-y top">
+        <div class="wh baner__wrapper pt-[10rem] pb-[2rem] box-y top">
           <div class="box-y gap down">
             <ComponentTitle :text="`Комплексные Системы Монтажа фасадов с гарантией качества`" />
             <h3 class="mr-[-7px] bg-white text-black">
@@ -21,7 +21,7 @@ import ComponentTitle from '@/components/ComponentTitle.vue'
           </div>
           <div class="flex wh box-y">
             <div class="flex wh"></div>
-            <div class="box-x">
+            <div class="box-x media gap2">
               <div class="box-y">
                 <h3 class="rotate-[-2.01deg]">
                   Экономия до 30% за счёт оптимизации проектных решений
@@ -84,5 +84,7 @@ import ComponentTitle from '@/components/ComponentTitle.vue'
 
 @media screen and (max-width: 480px)
   .baner
-    height: 270px
+    &__wrapper
+      padding: 6rem 1rem 1rem
+
 </style>

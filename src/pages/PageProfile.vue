@@ -13,11 +13,11 @@ import { RouterLink } from 'vue-router'
   <LayoutPage class="main">
     <LayoutOpener class="box-y">
       <SectionUserInfo />
-      <LayoutWrapper class="box-y gap2 media">
+      <LayoutWrapper class="box-y gap2">
         <div class="p">
           <FormUserMessage />
         </div>
-        <RouterLink class="a" :to="{ name: 'chat' }">
+        <RouterLink class="a p" :to="{ name: 'chat' }">
           <h2>Ваши чаты</h2>
         </RouterLink>
       </LayoutWrapper>
