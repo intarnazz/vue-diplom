@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import phone from '@/assets/icons/link/phone.svg'
 import mail from '@/assets/icons/link/mail.svg'
 import vk from '@/assets/icons/link/VK.svg'
-import whatsapp from '@/assets/icons/link/whatsapp.svg'
 // import telegram from '@/assets/icons/link/Telegram.svg'
 // import instagram from '@/assets/icons/link/Instagram.svg'
 
@@ -67,9 +66,6 @@ const licks = ref([
 </template>
 
 <style lang="sass" scoped>
-.sans
-  font-size: 2.5rem
-  margin: 2rem 0
 .map
   width: 100%
   height: calc( 100dvh - $header )
@@ -95,7 +91,7 @@ const licks = ref([
   &__wrapper
     justify-content: flex-start
     gap: 1.6rem
-    padding: 0 4rem
+    padding: 0 4rem 0 2rem
     & img
       width: 32px
   &__box-decor
