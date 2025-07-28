@@ -58,7 +58,7 @@ onUnmounted(() => {
     <!-- ПОСЛЕДНЕЕ СООБЩЕНИЕ -->
     <p
       v-if="chat.latest_message"
-      class="text-sm mt-2 truncate"
+      class="text-sm mt-2 truncate max-w-xs"
       :class="chat_id === chat.id ? 'text-white/80' : 'text-zinc-600'"
     >
       {{ chat.latest_message.content }}

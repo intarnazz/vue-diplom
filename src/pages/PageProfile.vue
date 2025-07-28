@@ -4,7 +4,6 @@ import LayoutPage from '@/layout/LayoutPage.vue'
 import LayoutOpener from '@/layout/LayoutOpener.vue'
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import SectionUserInfo from '@/components/sections/profile/ProfileUserInfo.vue'
-import SectionChatList from '@/components/sections/chat/ChatList.vue'
 import FormUserMessage from '@/components/form/FormUserMessage.vue'
 import { RouterLink } from 'vue-router'
 </script>
