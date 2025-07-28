@@ -20,7 +20,7 @@ const user = User()
 </script>
 <template>
   <header class="sticky bg-white top-0 w z-50 box-x shadow-xl">
-    <div class="box-x w gap px-[2rem]">
+    <div class="box-x w gap px-[1rem]">
       <RouterLink :to="{ name: 'home' }" class="media-1290 open pointer-events-auto">
         <ComponentLogo />
       </RouterLink>

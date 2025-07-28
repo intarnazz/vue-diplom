@@ -95,7 +95,11 @@ watch(() => messages, down, { deep: true })
   <section class="chat wh">
     <!-- <div class="bg-white pa text-black p-6 rounded-2xl shadow-xl text-center max-w-md w-full"></div> -->
 
-    <img class="img pa" src="@/assets/img/cyg23qqdamt41.webp" alt="Фоновое изображение" />
+    <img
+      class="img pa opacity-20"
+      src="@/assets/img/cyg23qqdamt41.webp"
+      alt="Фоновое изображение"
+    />
 
     <div
       v-if="!props.id"
@@ -160,8 +164,6 @@ watch(() => messages, down, { deep: true })
     filter: none;
     contain: layout style
     overflow-y: scroll
-  & img
-    opacity: 30%
   &__message-bar-wrapper
     padding: .5rem 1rem
     border-radius: 20px

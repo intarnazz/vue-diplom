@@ -1,10 +1,11 @@
 <script setup>
-const props = defineProps(['text'])
+const props = defineProps(['text', 'isH2'])
 </script>
 
 <template>
   <div class="title box-y">
-    <h1 class="bg-white text-black">{{ props.text }}</h1>
+    <h2 v-if="props.isH2" class="bg-white text-black pl-[1rem]">{{ props.text }}</h2>
+    <h1 v-else class="bg-white text-black">{{ props.text }}</h1>
     <div class="title__underline"></div>
   </div>
 </template>
