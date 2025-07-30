@@ -12,3 +12,5 @@ const webSocket = new WebSocket()
 
 createApp(App).use(router).mount('#app')
 
+// [ ] - page 404
+
