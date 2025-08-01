@@ -1,8 +1,9 @@
+#change-format-of-src-to-webp.py
 import os
 import re
 
-# Папка, с которой начинать обход
-root_dir = "./"  # укажи свой путь к проекту, если нужно
+
+root_dir = "./"  
 
 # Регулярка для замены форматов изображений
 pattern = re.compile(

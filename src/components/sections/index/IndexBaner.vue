@@ -15,7 +15,7 @@ import ComponentTitle from '@/components/ComponentTitle.vue'
         <div class="wh baner__wrapper pt-[10rem] pb-[2rem] box-y top">
           <div class="box-y gap down">
             <ComponentTitle :text="`Комплексные Системы Монтажа фасадов с гарантией качества`" />
-            <h3 class="mr-[-7px] bg-white text-black">
+            <h3 class="mr-[-7px] bg-white text-black m0">
               Производство, проектирование и монтаж фасадных систем
             </h3>
           </div>

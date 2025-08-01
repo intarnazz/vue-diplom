@@ -1,5 +1,5 @@
 // api.js
-import { RESTAPI } from './RESTAPI.js'
+import { RESTAPI } from './restApi.js'
 import { Image } from './image.js'
 import { Auth } from './auth.js'
 
@@ -11,3 +11,4 @@ export const service = RESTAPI.create('service')
 export const guest_query = RESTAPI.create('guest-query')
 export const auth = Auth.create()
 export const image = Image.create()
+

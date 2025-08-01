@@ -20,8 +20,8 @@ const search = ref('')
 </script>
 
 <template>
-  <HeaderMain class="media-480 cansel" @search="(value) => (search = value)" />
-  <HeaderWhopper class="media-480 open" @search="(value) => (search = value)" />
+  <HeaderMain class="media-header cansel" @search="(value) => (search = value)" />
+  <HeaderWhopper class="media-header open" @search="(value) => (search = value)" />
   <RouterView :search="search" />
 </template>
 
