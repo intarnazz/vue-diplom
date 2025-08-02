@@ -16,6 +16,7 @@ import PageDockVF from '@/pages/dock/PageDockVF.vue'
 import PageDockTSPVP from '@/pages/dock/PageDockTSPVP.vue'
 import PageDockSPPSS from '@/pages/dock/PageDockSPPSS.vue'
 import PageDockMPS from '@/pages/dock/PageDockMPS.vue'
+import PageNotFound from '@/pages/PageNotFound.vue'
 const user = User()
 
 const dock = () => {
@@ -125,6 +126,11 @@ const router = createRouter({
           next({ name: 'login' })
         }
       },
+    },
+    {
+      path: '/:pathMatch(.*)*', // универсальный маршрут для 404
+      name: 'not-found',
+      component: PageNotFound,
     },
   ],
   scrollBehavior(to, from, savedPosition) {
