@@ -21,7 +21,6 @@ watch(
 
 <template>
   <div class="flex box-y gap2 form__wrapper w">
-    <div class=""></div>
     <div class="box-y gap">
       <h2
         v-if="props.message && !isOk && !errors"

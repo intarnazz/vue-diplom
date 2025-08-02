@@ -105,6 +105,27 @@ const formattedPrice = computed(() => price.value.toLocaleString('ru-RU'))
         <div>
           <h3>{{ formattedPrice }} ₽</h3>
         </div>
+
+        <div class="">
+          <!-- Email -->
+          <div class="form__box">
+            <input
+              v-model="email"
+              class="flex"
+              :class="{ 'bg-error': errors?.email }"
+              id="email"
+              name="email"
+              type="text"
+              placeholder="Введите e-mail"
+            />
+          </div>
+        </div>
+
+        <label class="flex items-center gap-2">
+          <input type="checkbox" v-model="sendToEmail" />
+          <span>Отправить результаты на почту</span>
+        </label>
+
         <p>* Предварительная стоимость с учётом НДС. Включает материалы и работы.</p>
         <button type="submit" class="button">Рассчитать</button>
       </div>

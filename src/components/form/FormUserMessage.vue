@@ -43,7 +43,6 @@ async function submit() {
   >
     <div class="box-y gap flex wh">
       <h2>Отправить запрос</h2>
-
       <div class="box-y flex">
         <!-- Сообщение -->
         <div class="form__box flex">

@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import phone from '@/assets/icons/link/phone.svg'
 import mail from '@/assets/icons/link/mail.svg'
 import vk from '@/assets/icons/link/VK.svg'
-import whatsapp from '@/assets/icons/link/whatsapp.svg'
 // import telegram from '@/assets/icons/link/Telegram.svg'
 // import instagram from '@/assets/icons/link/Instagram.svg'
 
@@ -12,13 +11,19 @@ const licks = ref([
     img: mail,
     name: 'Почта',
     text: 'ksm@mail.ru',
-    href: 'ksm@mail.ru',
+    href: 'mailto:ksm@mail.ru',
   },
   {
     img: vk,
     name: 'Группа в ВК',
     text: 'КСМ',
     href: 'https://vk.com/ksm',
+  },
+  {
+    img: phone,
+    name: 'Телефон',
+    text: '+7 911 613 71 27',
+    href: 'tel:+79116137127',
   },
   // {
   //   img: whatsapp,
@@ -38,11 +43,12 @@ const licks = ref([
 <template>
   <section class="contact box-x">
     <aside class="box-y contact__wrapper flex">
-      <h2 class="sans">Наши <span style="color: #00774d">контакты</span></h2>
+      <div class=""></div>
+      <h2>Наши <span style="color: #04838e">контакты</span></h2>
       <ul class="box-y">
         <li v-for="(lick, key) in licks" :key="key">
           <a class="box-x contact__item" :href="lick.href" target="_blank">
-            <img :src="lick.img" :alt="lick.name" />
+            <img v-if="lick.img" :src="lick.img" :alt="lick.name" />
             <div class="box-y gap">
               <h3>{{ lick.name }}</h3>
               <p>{{ lick.text }}</p>
@@ -60,9 +66,6 @@ const licks = ref([
 </template>
 
 <style lang="sass" scoped>
-.sans
-  font-size: 2.5rem
-  margin: 2rem 0
 .map
   width: 100%
   height: calc( 100dvh - $header )
@@ -88,7 +91,7 @@ const licks = ref([
   &__wrapper
     justify-content: flex-start
     gap: 1.6rem
-    padding: 0 4rem
+    padding: 0 4rem 1rem 2rem
     & img
       width: 32px
   &__box-decor

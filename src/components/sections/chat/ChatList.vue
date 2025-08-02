@@ -2,6 +2,7 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { chat as ch, auth } from '@/api/api.js'
 import ComponentChatListItem from '@/components/ComponentChatListItem.vue'
+import ComponentTitle from '@/components/ComponentTitle.vue'
 
 const emit = defineEmits(['chat_id'])
 const props = defineProps(['limit', 'chat_id'])
@@ -96,6 +97,7 @@ async function chat_init(e) {
 <template>
   <section ref="chatListRef" class="chat-list pr">
     <div class="box-y">
+      <ComponentTitle :is-h2="true" :text="`Ваши чаты`" />
       <ComponentChatListItem
         @click="((chat_id = chat.id), emit('chat_id', chat.id))"
         @eve-chat="(e) => chat_init(e)"

@@ -12,6 +12,7 @@ import FormLogin from '@/components/form/FormLogin.vue'
     <FormLogin />
     <div class="flex media"></div>
   </div>
+  <RouterLink :to="{ name: 'reg' }" class="a"><h3>Нет аккаунта?</h3></RouterLink>
   <div class="flex"></div>
 </template>
 

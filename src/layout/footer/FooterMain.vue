@@ -1,5 +1,6 @@
 <script setup>
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
+import vkIcon from '@/assets/icons/link/VK.svg' // Добавлено: иконка VK
 </script>
 
 <template>
@@ -10,77 +11,44 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
           <h3 class="text-lg font-semibold mb-4">Компания</h3>
           <ul class="space-y-2">
             <li><RouterLink to="/" class="hover:underline">Главная</RouterLink></li>
-            <li>
-              <RouterLink :to="{ name: 'about-us' }" class="hover:underline">О нас</RouterLink>
-            </li>
-            <li>
-              <RouterLink :to="{ name: 'contact-us' }" class="hover:underline"
-                >Наши офисы</RouterLink
-              >
-            </li>
+            <li><RouterLink :to="{ name: 'about-us' }" class="hover:underline">О нас</RouterLink></li>
+            <li><RouterLink :to="{ name: 'contact-us' }" class="hover:underline">Наши офисы</RouterLink></li>
           </ul>
         </div>
 
         <div>
           <h3 class="text-lg font-semibold mb-4">Техническая документация</h3>
           <ul class="space-y-2">
-            <li>
-              <RouterLink :to="{ name: 'dock' }" class="hover:underline"
-                >Общая документация</RouterLink
-              >
-            </li>
-            <li>
-              <RouterLink :to="{ name: 'd.vf' }" class="hover:underline"
-                >Вентилируемые фасады</RouterLink
-              >
-            </li>
-            <li>
-              <RouterLink :to="{ name: 'd.tspvp' }" class="hover:underline"
-                >Сэндвич-панели (вата/пенопласт)</RouterLink
-              >
-            </li>
-            <li>
-              <RouterLink :to="{ name: 'd.sppss' }" class="hover:underline">Сборка СППС</RouterLink>
-            </li>
-            <li>
-              <RouterLink :to="{ name: 'd.mps' }" class="hover:underline"
-                >Металлочерепица и сайдинг</RouterLink
-              >
-            </li>
+            <li><RouterLink :to="{ name: 'dock' }" class="hover:underline">Общая документация</RouterLink></li>
+            <li><RouterLink :to="{ name: 'd.vf' }" class="hover:underline">Вентилируемые фасады</RouterLink></li>
+            <li><RouterLink :to="{ name: 'd.tspvp' }" class="hover:underline">Сэндвич-панели (вата/пенопласт)</RouterLink></li>
+            <li><RouterLink :to="{ name: 'd.sppss' }" class="hover:underline">Сборка СППС</RouterLink></li>
+            <li><RouterLink :to="{ name: 'd.mps' }" class="hover:underline">Металлочерепица и сайдинг</RouterLink></li>
           </ul>
         </div>
 
         <div>
           <h3 class="text-lg font-semibold mb-4">Услуги</h3>
           <ul class="space-y-2">
-            <li>
-              <RouterLink :to="{ name: 'calculator' }" class="hover:underline"
-                >Калькулятор</RouterLink
-              >
-            </li>
-            <li>
-              <RouterLink :to="{ name: 'portfolio' }" class="hover:underline">Портфолио</RouterLink>
-            </li>
-            <li>
-              <RouterLink :to="{ name: 'message-me' }" class="hover:underline"
-                >Оставить сообщение</RouterLink
-              >
-            </li>
+            <li><RouterLink :to="{ name: 'calculator' }" class="hover:underline">Калькулятор</RouterLink></li>
+            <li><RouterLink :to="{ name: 'portfolio' }" class="hover:underline">Портфолио</RouterLink></li>
+            <li><RouterLink :to="{ name: 'message-me' }" class="hover:underline">Оставить сообщение</RouterLink></li>
           </ul>
         </div>
 
+        <!-- Новый блок с контактами -->
         <div>
-          <h3 class="text-lg font-semibold mb-4">Аккаунт</h3>
+          <h3 class="text-lg font-semibold mb-4">Контакты</h3>
           <ul class="space-y-2">
-            <li><RouterLink :to="{ name: 'login' }" class="hover:underline">Войти</RouterLink></li>
             <li>
-              <RouterLink :to="{ name: 'reg' }" class="hover:underline">Регистрация</RouterLink>
+              <a href="mailto:ksm@mail.ru" class="hover:underline">ksm@mail.ru</a>
             </li>
             <li>
-              <RouterLink :to="{ name: 'profile' }" class="hover:underline">Профиль</RouterLink>
+              <a href="tel:+79116137127" class="hover:underline">+7 911 613 71 27</a>
             </li>
-            <li>
-              <RouterLink :to="{ name: 'chat' }" class="hover:underline">Чат с нами</RouterLink>
+            <li class="flex items-center space-x-2">
+              <img :src="vkIcon" alt="ВК" class="w-4 h-4" />
+              <a href="https://vk.com/ksm" target="_blank" class="hover:underline">Группа ВКонтакте</a>
             </li>
           </ul>
         </div>
@@ -92,6 +60,7 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
     </LayoutWrapper>
   </footer>
 </template>
+
 
 <style lang="sass" scoped>
 a

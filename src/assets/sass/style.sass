@@ -26,14 +26,15 @@ h3
 h1
   margin: 0
   padding: 0
-  font-size: 2.125rem
-  font-weight: bold
+  font-size: 2.875rem
+  font-weight: bolder
+  line-height: 1.1
 h2
   font-size: 2rem
-  font-weight: bold
+  font-weight: bolder
 h3
-  font-size: 1.125rem
-  font-weight: bold
+  font-size: 1.625rem
+  font-weight: bolder
 
 html
   font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
@@ -196,7 +197,7 @@ select
   font-optical-sizing: auto
   font-weight: bolder
   font-style: normal
-  background-color: #04838E
+  background-color: #04838e
   color: #fff
   border-radius: 25px
   border-top-left-radius: 0
@@ -262,6 +263,8 @@ select
 @media screen and (max-width: 1440px)
   .p
     padding: 2rem 1rem !important
+  .m0
+    margin: 0
 
 @media screen and (max-width: 1290px)
   .media-1290
@@ -284,6 +287,15 @@ select
 @media screen and (max-width: 910px)
   .media__none
     display: none
+
+@media screen and (max-width: 885px)
+  .header-spase
+    height: $menu
+  .media-header
+    &.cansel
+      display: none
+    &.open
+      display: flex
 
 @media screen and (max-width: 820px)
   html

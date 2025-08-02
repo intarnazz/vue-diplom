@@ -34,10 +34,10 @@ function date(s) {
 
 <template>
   <LayoutWrapper>
-    <section v-if="!isLoding" class="p">
-      <!-- Заголовок профиля -->
+    <section v-if="!isLoding" class="p box-y gap2">
+      <div class=""></div>
       <div class="flex items-center justify-between mb-6">
-        <h1 class="text-4xl font-bold tracking-widest uppercase">Профиль KSM</h1>
+        <h2 class="text-4xl font-bold tracking-widest uppercase">Профиль KSM</h2>
         <span class="bg-black text-white text-xs px-3 py-1 rounded-full">{{
           date(user.created_at)
         }}</span>
@@ -72,9 +72,7 @@ function date(s) {
         </div>
       </div>
 
-      <div class="mt-10 flex justify-between items-center border-t border-black pt-4">
-
-      </div>
+      <div class="mt-10 flex justify-between items-center border-t border-black pt-4"></div>
     </section>
   </LayoutWrapper>
 </template>

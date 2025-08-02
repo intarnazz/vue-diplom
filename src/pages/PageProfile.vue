@@ -4,7 +4,6 @@ import LayoutPage from '@/layout/LayoutPage.vue'
 import LayoutOpener from '@/layout/LayoutOpener.vue'
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import SectionUserInfo from '@/components/sections/profile/ProfileUserInfo.vue'
-import SectionChatList from '@/components/sections/chat/ChatList.vue'
 import FormUserMessage from '@/components/form/FormUserMessage.vue'
 import { RouterLink } from 'vue-router'
 </script>
@@ -12,15 +11,15 @@ import { RouterLink } from 'vue-router'
 <template>
   <div class="header-spase"></div>
   <LayoutPage class="main">
-    <LayoutOpener class="box-y gap2">
+    <LayoutOpener class="box-y">
       <SectionUserInfo />
-      <LayoutWrapper class="box-x media top">
-        <RouterLink :to="{ name: 'chat' }">
-          <SectionChatList limit="5" />
-        </RouterLink>
+      <LayoutWrapper class="box-y gap2">
         <div class="p">
           <FormUserMessage />
         </div>
+        <RouterLink class="a p" :to="{ name: 'chat' }">
+          <h2>Ваши чаты</h2>
+        </RouterLink>
       </LayoutWrapper>
       <div class="flex"></div>
     </LayoutOpener>

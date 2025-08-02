@@ -1,28 +1,7 @@
-<script setup>
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
-
-const defaultWrapperClass = 'wrapper'
-
-const specialRouteClass = 'special-wrapper'
-
-const route = useRoute()
-
-const wrapperClass = computed(() => {
-  return route.path === '/contact-us' || route.path === '/catalog'
-    ? specialRouteClass
-    : defaultWrapperClass
-})
-
-// watchEffect(() => {
-//   if (route.path === '/special-route') {
-//     //
-//   }
-// })
-</script>
+<script setup></script>
 
 <template>
-  <div :class="`${wrapperClass} default`">
+  <div class="wrapper">
     <slot> </slot>
   </div>
 </template>
