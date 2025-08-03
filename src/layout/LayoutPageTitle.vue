@@ -6,7 +6,7 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
   <header class="header-page-title w-full box-y gap2">
     <div class="relative header-page-title__wrapper">
       <slot class="absolute inset-0 w-full h-full object-cover z-0" name="image"> </slot>
-      <div class="bg-gradient-to-t from-black to-transparent pa wh"></div>
+      <!-- <div class="bg-gradient-to-t from-black to-transparent pa wh"></div> -->
       <LayoutWrapper class="h p box-x">
         <slot name="default"> </slot>
       </LayoutWrapper>

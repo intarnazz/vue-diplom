@@ -1,7 +1,7 @@
 <script setup>
 // import { RouterLink } from 'vue-router'
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
-import ComponentTitle from '@/components/ComponentTitle.vue'
+import ComponentXLTitle from '@/components/ComponentXLTitle.vue'
 </script>
 
 <template>
@@ -13,12 +13,10 @@ import ComponentTitle from '@/components/ComponentTitle.vue'
     <div class="baner__content pa wh z-99">
       <LayoutWrapper class="wh">
         <div class="wh baner__wrapper pt-[10rem] pb-[2rem] box-y top">
-          <div class="box-y gap down">
-            <ComponentTitle :text="`Комплексные Системы Монтажа фасадов с гарантией качества`" />
-            <h3 class="mr-[-7px] bg-white text-black m0">
-              Производство, проектирование и монтаж фасадных систем
-            </h3>
-          </div>
+          <ComponentXLTitle
+            :h1="`Комплексные Системы Монтажа фасадов с гарантией качества`"
+            :h3="`Производство, проектирование и монтаж фасадных систем`"
+          />
           <div class="flex wh box-y">
             <div class="flex wh"></div>
             <div class="box-x media gap2">
@@ -86,5 +84,4 @@ import ComponentTitle from '@/components/ComponentTitle.vue'
   .baner
     &__wrapper
       padding: 6rem 1rem 1rem
-
 </style>

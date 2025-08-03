@@ -97,7 +97,7 @@ async function chat_init(e) {
 <template>
   <section ref="chatListRef" class="chat-list pr">
     <div class="box-y">
-      <ComponentTitle :is-h2="true" :text="`Ваши чаты`" />
+      <ComponentTitle :is-h2="true" :is-p="true" :text="`Ваши чаты`" />
       <ComponentChatListItem
         @click="((chat_id = chat.id), emit('chat_id', chat.id))"
         @eve-chat="(e) => chat_init(e)"

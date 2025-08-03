@@ -2,9 +2,13 @@
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { portfolio as p } from '@/api/api.js'
 import { RouterLink } from 'vue-router'
+import { formatDistance } from 'date-fns'
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import ComponentImg from '@/components/ComponentImg.vue'
 import LayoutPageTitle from '@/layout/LayoutPageTitle.vue'
+import ComponentXLTitle from '@/components/ComponentXLTitle.vue'
+import ComponentTitle from '@/components/ComponentTitle.vue'
+import ru from 'date-fns/locale/ru'
 
 const props = defineProps(['limit'])
 const isLoding = ref(true)
@@ -21,6 +25,26 @@ const offset = computed(() => portfolioList.value.length)
 const limit = computed(() => props.limit || limitLocal.value)
 
 const canLoding = computed(() => totalCount.value === null || offset.value < totalCount.value)
+
+function splitNotes(notes) {
+  if (!notes) return { firstSentence: '', rest: '' }
+  const match = notes.match(/[.!?]\s/)
+  if (match) {
+    const endIndex = match.index + match[0].length - 1
+    const firstSentence = notes.substring(0, endIndex)
+    const rest = notes.substring(endIndex)
+    return { firstSentence, rest }
+  } else {
+    return { firstSentence: notes, rest: '' }
+  }
+}
+
+function formatCompletedAt(dateString) {
+  if (!dateString) return ''
+  const date = new Date(dateString)
+  const now = new Date()
+  return formatDistance(date, now, { locale: ru })
+}
 
 function resetObserver() {
   if (observer && sentinel.value) {
@@ -81,87 +105,91 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section class="text-white box-y pr gap2">
+  <section class="text-white box-y pr gap2 portfolio-catalog">
     <LayoutPageTitle>
       <template #image>
         <img
-          src="@/assets/img/mche-lee-ACt11upLUhE-unsplash.webp"
+          src="@/assets/img/about-us image.png"
           alt="О компании"
           class="absolute img inset-0 w-full h-full object-cover z-0"
         />
       </template>
       <template #default>
-        <h2 class="bottom-8 left-8 text-white text-4xl font-bold z-10 drop-shadow-md">
-          Портфолио наших проектов
-        </h2>
+        <div class="box-y">
+          <div class="flex"></div>
+          <ComponentXLTitle
+            :h1="`Lorem ipsum dolor sit amet, consectetur adipiscing elit.`"
+            :h3="`Lorem ipsum dolor sit amet, consectetur adipiscing elit.`"
+          />
+          <div class="flex"></div>
+        </div>
       </template>
     </LayoutPageTitle>
 
     <!-- Каталог -->
     <LayoutWrapper>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        <RouterLink
-          v-for="item in portfolioList"
-          :key="item.id"
-          :to="{ name: 'portfolio-id', params: { id: item.id, name: item.title } }"
-          class="group bg-[#f9f8f7] border border-zinc-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition duration-200 flex flex-col"
+      <div class="portfolio-catalog__list box-y gap4">
+        <div
+          v-for="portfolio in portfolioList"
+          :key="portfolio.id"
+          class="portfolio-catalog__list-item box-y gap2"
         >
-          <!-- Изображение -->
-          <div class="aspect-[4/3] overflow-hidden">
-            <ComponentImg
-              :id="item.image_id"
-              :alt="item.title"
-              class="w-full h-full object-cover transition duration-300 group-hover:scale-[1.02]"
-            />
-          </div>
-
-          <!-- Контент -->
-          <div class="p-5 flex flex-col gap-2 text-zinc-800">
-            <h3 class="text-[17px] font-semibold leading-tight tracking-tight">
-              {{ item.title }}
-            </h3>
-
-            <p class="text-[14px] text-zinc-600 leading-snug line-clamp-3">
-              {{ item.description }}
-            </p>
-
-            <div class="pt-3 text-xs text-zinc-500 border-t border-dashed border-zinc-200 mt-auto">
-              <p v-if="item.client" class="mt-1">
-                Клиент: <span class="text-zinc-700">{{ item.client }}</span>
-              </p>
-              <p v-if="item.completed_at">
-                Завершено:
-                <span class="text-zinc-700">{{
-                  new Date(item.completed_at).toLocaleDateString()
-                }}</span>
-              </p>
+          <div class="relative">
+            <ComponentImg class="img max-h-[520px]" :id="portfolio.id" :alt="portfolio.title" />
+            <div class="pa box-y gap px-[2rem] py-[2rem]">
+              <div class="box-x">
+                <ComponentTitle :is-h2="true" :text="portfolio.title" />
+                <div class="flex"></div>
+              </div>
+              <div class="box-x">
+                <div class="flex"></div>
+                <p class="bg-white text-black">
+                  {{ portfolio.description }}
+                </p>
+              </div>
             </div>
           </div>
-        </RouterLink>
-      </div>
 
+          <div class="box-x gap4 as text-black">
+            <div class="flex16 box-x gap as">
+              <div class="w-[26px] bg-[#04838E]"></div>
+              <p class="flex">
+                <span class="font-black text-[1.625rem]">{{ splitNotes(portfolio.notes).firstSentence }}</span>
+                <span>{{ splitNotes(portfolio.notes).rest }}</span>
+              </p>
+            </div>
+            <div class="flex9 box-y">
+              <div class="box-y">
+                <div class="box-x gap">
+                  <h3 class="opacity-50">Клиент</h3>
+                  <h3 class="italic">{{ portfolio.client }}</h3>
+                </div>
+                <div class="box-x gap">
+                  <h3 class="opacity-50">Сроки</h3>
+                  <h3 class="italic">{{ formatCompletedAt(portfolio.completed_at) }}</h3>
+                </div>
+              </div>
+              <div class="box-x">
+                <div class="flex"></div>
+
+                <RouterLink
+                  class="a"
+                  :to="{
+                    name: 'portfolio-id',
+                    params: { id: portfolio.id, name: portfolio.title },
+                  }"
+                >
+                  <h3>Подробнее</h3>
+                </RouterLink>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Sentinel для подгрузки -->
       <div ref="sentinel" class="h-8"></div>
     </LayoutWrapper>
   </section>
 </template>
 
-<style lang="sass" scoped>
-.portfolio
-  &__list
-    display: grid
-    grid-template-columns: 1fr 1fr 1fr
-    & h3
-      +bgcf
-      padding: 0 1rem
-  &__title
-    border-bottom: 1px solid $th
-@media screen and (max-width: 650px)
-  .portfolio
-    &__list
-      grid-template-columns: 1fr 1fr
-@media screen and (max-width: 350px)
-  .portfolio
-    &__list
-      grid-template-columns: 1fr
-</style>
+<style lang="sass" scoped></style>
