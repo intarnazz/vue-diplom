@@ -12,7 +12,6 @@ const webSocket = new WebSocket()
 
 createApp(App).use(router).mount('#app')
 
-// [X] - page 404
-// [X] - protfolio
-// [X] - контакты
+// [ ] - Сообщения в топе стрницы
+
 
