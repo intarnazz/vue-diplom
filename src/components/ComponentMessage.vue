@@ -22,21 +22,33 @@ onMounted(() => {
 </script>
 
 <template>
-  <div :class="messageClass" class="chat__message">
-    <div class="box-y">
-      <p v-if="messageClass == 'chat__message_my'" class="text-white opacity-50 text-sm chat__you">
-        Вы:
-      </p>
-      <p v-else class="chat__you text-sm opacity-50">Админ:</p>
-      <p class="">
-        {{ props.message.content }}
-        <span class="text-sm italic opacity-50 pl-4">{{
-          formatDate(props.message.created_at)
-        }}</span>
-      </p>
+  <div class="box-x gap">
+    <div
+      :class="[messageClass, props.message.isSuccess === false ? 'chat__message_error' : '']"
+      class="chat__message"
+    >
+      <div class="box-y">
+        <p
+          v-if="messageClass == 'chat__message_my'"
+          class="text-white opacity-50 text-sm chat__you"
+        >
+          Вы:
+        </p>
+        <p v-else class="chat__you text-sm opacity-50">Админ:</p>
+        <p class="">
+          {{ props.message.content }}
+          <span class="text-sm italic opacity-50 pl-4"
+            >{{ formatDate(props.message.created_at) }}
+          </span>
+        </p>
+      </div>
     </div>
+    <p class="text-white">
+      {{ props.message.isLoding + '' }}
+    </p>
+    <div :class="{ loader: props.message.isLoding }"></div>
+    <div class="flex"></div>
   </div>
-  <div class="flex"></div>
 </template>
 
 <!-- <template>
@@ -54,6 +66,18 @@ onMounted(() => {
 </template> -->
 
 <style lang="sass" scoped>
+.loader
+  width: 16px
+  height: 16px
+  border: 2px solid #ccc
+  border-top: 2px solid #333
+  border-radius: 50%
+  animation: spin 0.8s linear infinite
+
+@keyframes spin
+  to
+    transform: rotate(360deg)
+
 .chat
   &__message
     padding: .1rem 1rem .5rem
@@ -71,4 +95,6 @@ onMounted(() => {
       display: block
       background-color: #04838E
       color: #fff
+    &_error
+      background-color: #f00
 </style>

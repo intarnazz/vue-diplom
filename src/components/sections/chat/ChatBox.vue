@@ -1,15 +1,17 @@
 <script setup>
 import { message as m, auth } from '@/api/api.js'
-import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import ComponentMessage from '@/components/ComponentMessage.vue'
 
 const props = defineProps(['id'])
 const emit = defineEmits(['cansel'])
-const messages = ref([])
+const messagesArr = ref([])
 const isLoding = ref(true)
 const user = ref(null)
 const text = ref('')
 const chat = ref()
+
+const messages = computed(() => messagesArr.value)
 
 async function down() {
   await nextTick()
@@ -17,7 +19,11 @@ async function down() {
 }
 
 function chatMessageSentEve(data) {
-  messages.value.push(data)
+  console.log('chatMessageSentEve')
+
+  const msg = messages.value.find((e) => e.content === data.content && e.isLoding === true)
+  if (msg) msg.isLoding = false
+
   m.get(props.id, {
     limit: '0',
     offset: '0',
@@ -33,7 +39,7 @@ async function init() {
     offset: '0',
   })
   if (res.success) {
-    messages.value = res.data
+    messagesArr.value = res.data
     isLoding.value = false
     window.Echo.private(`chat.${props.id}`).listen('ChatMessageSent', chatMessageSentEve)
   }
@@ -67,15 +73,40 @@ onUnmounted(() => {
   window.removeEventListener('keydown', handleKeyDown)
 })
 
+function _send_error(content) {
+  const msg = messages.value.find((e) => e.content === content && e.isLoding === true)
+  if (msg) (msg.isSuccess = false), (msg.isLoding = false)
+}
+
 async function send() {
-  const res = await m.add({
-    content: text.value,
-    chat_id: props.id,
+  if (!text.value) return
+  const t = text.value
+  text.value = ''
+
+  messages.value.push({
+    content: t,
+    isSuccess: true,
+    isLoding: true,
+    created_at: new Date(),
+    user_id: user.value.id,
   })
-  if (res.success) {
-    text.value = ''
+
+  down()
+
+  try {
+    const res = await m.add({
+      content: t,
+      chat_id: props.id,
+    })
+    if (!res.success) {
+      _send_error(t)
+    }
+  } catch (e) {
+    console.error(e)
+    _send_error(t)
   }
 }
+
 watch(
   () => props.id,
   async (newId, oldId) => {
