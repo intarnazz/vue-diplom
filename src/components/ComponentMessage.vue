@@ -44,7 +44,7 @@ onMounted(() => {
       </div>
     </div>
     <p class="text-white">
-      {{ props.message.isLoding + '' }}
+      <!-- {{ props.message.isLoding + '' }} -->
     </p>
     <div :class="{ loader: props.message.isLoding }"></div>
     <div class="flex"></div>

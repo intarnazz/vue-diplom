@@ -165,6 +165,8 @@ watch(() => messages, down, { deep: true })
         <form @submit.prevent="send" class="chat__message-bar-wrapper box-x">
           <h1>{{ isPageAtTop }}</h1>
           <input
+            max="255"
+            maxlength="255"
             v-model="text"
             placeholder="Сообщение..."
             class="chat__message-bar wh"
