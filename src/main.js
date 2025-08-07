@@ -12,6 +12,7 @@ const webSocket = new WebSocket()
 
 createApp(App).use(router).mount('#app')
 
+// [ ] - бек контакты
 // [ ] - SEO
 
 
