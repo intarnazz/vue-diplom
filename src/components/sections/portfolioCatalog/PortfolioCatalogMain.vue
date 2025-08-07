@@ -154,7 +154,9 @@ onUnmounted(() => {
             <div class="flex16 box-x gap as">
               <div class="w-[26px] bg-[#04838E]"></div>
               <p class="flex box-none">
-                <span class="font-black text-[1.625rem]">{{ splitNotes(portfolio.notes).firstSentence }}</span>
+                <span class="font-black text-[1.625rem]">{{
+                  splitNotes(portfolio.notes).firstSentence
+                }}</span>
                 <span>{{ splitNotes(portfolio.notes).rest }}</span>
               </p>
             </div>

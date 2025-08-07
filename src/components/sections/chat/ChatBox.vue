@@ -11,7 +11,16 @@ const user = ref(null)
 const text = ref('')
 const chat = ref()
 
+const limitLocal = ref(100)
+const totalCount = ref(null)
+const sentinel = ref(null)
+let observer = null
+
 const messages = computed(() => messagesArr.value)
+
+const offset = computed(() => messages.value.length)
+const limit = computed(() => props.limit || limitLocal.value)
+const canLoding = computed(() => totalCount.value === null || offset.value < totalCount.value)
 
 async function down() {
   await nextTick()
@@ -31,18 +40,41 @@ function chatMessageSentEve(data) {
 }
 
 async function init() {
+  if (!canLoding.value) return
   if (!props.id) return
+  const chatScrollHeightOld = chat.value.scrollHeight
+
   window.Echo.leave(`chat.${props.id}`)
   isLoding.value = true
   const res = await m.get(props.id, {
-    limit: '100',
-    offset: '0',
+    limit: limit.value,
+    offset: offset.value,
   })
   if (res.success) {
-    messagesArr.value = res.data
-    isLoding.value = false
     window.Echo.private(`chat.${props.id}`).listen('ChatMessageSent', chatMessageSentEve)
   }
+  if (res.success) {
+    res.data
+      .slice()
+      .reverse()
+      .forEach((e) => {
+        let index
+        index = messagesArr.value.findIndex((i) => i.id === e.id)
+        if (index === -1) messagesArr.value.unshift(e)
+      })
+    totalCount.value = res.pagingInfo.totalCount
+    isLoding.value = false
+    await nextTick()
+    const chatScrollHeightNew = chat.value.scrollHeight
+    const chatScrollHeightDelta = chatScrollHeightNew - chatScrollHeightOld
+    console.log(chatScrollHeightDelta)
+    console.log(chat.value.scrollTop)
+    chat.value.scrollTop = chat.value.scrollTop + chatScrollHeightDelta
+    console.log(chat.value.scrollTop)
+  }
+  nextTick(() => {
+    resetObserver()
+  })
 }
 
 function handleKeyDown(e) {
@@ -60,17 +92,23 @@ function onScroll() {
 }
 
 onMounted(async () => {
+  console.log('onMounted')
   const res = await auth.user()
   if (res.success) user.value = res.data
   window.addEventListener('keydown', handleKeyDown)
   await init()
   if (chat.value) chat.value.addEventListener('scroll', onScroll)
+  await down()
+  setupObserver()
 })
 
 onUnmounted(() => {
   if (chat.value) chat.value.removeEventListener('scroll', onScroll)
-
   window.removeEventListener('keydown', handleKeyDown)
+  if (observer && sentinel.value) {
+    observer.unobserve(sentinel.value)
+    observer.disconnect()
+  }
 })
 
 function _send_error(content) {
@@ -107,19 +145,48 @@ async function send() {
   }
 }
 
+function resetObserver() {
+  if (observer && sentinel.value) {
+    observer.unobserve(sentinel.value)
+    observer.disconnect()
+  }
+  setupObserver()
+}
+
+isLoding.value = false
+// Переинициализировать observer после подгрузки
+nextTick(() => {
+  resetObserver()
+})
+
+function setupObserver() {
+  if (!sentinel.value) return
+  observer = new IntersectionObserver(
+    async ([entry]) => {
+      if (entry.isIntersecting && canLoding.value && !isLoding.value) {
+        await init()
+      }
+    },
+    {
+      root: chat.value,
+      threshold: 1.0,
+    },
+  )
+  observer.observe(sentinel.value)
+}
+
 watch(
   () => props.id,
   async (newId, oldId) => {
     if (oldId) {
       window.Echo.leave(`private-chat.${oldId}`)
     }
-    messages.value = null
+    messagesArr.value = []
+    totalCount.value = null
     await init()
     down()
   },
 )
-
-watch(() => messages, down, { deep: true })
 </script>
 
 <template>
@@ -157,6 +224,8 @@ watch(() => messages, down, { deep: true })
       <div class="flex"></div>
       <div ref="chat" class="chat__list wh box-y pa" v-if="user">
         <div class="flex"></div>
+        <!-- Sentinel для подгрузки -->
+        <div ref="sentinel" class="min-h-[1rem]"></div>
         <div v-for="(message, key) in messages" :key="key" class="box-x">
           <template v-if="message.user_id">
             <ComponentMessage :message="message" :user="user" />
