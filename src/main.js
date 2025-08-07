@@ -12,6 +12,6 @@ const webSocket = new WebSocket()
 
 createApp(App).use(router).mount('#app')
 
-// [ ] - Сообщения в топе стрницы
+// [ ] - SEO
 
 
