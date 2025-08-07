@@ -186,6 +186,7 @@ watch(() => messages, down, { deep: true })
 
 <style lang="sass" scoped>
 .chat
+  padding-top: $header
   font-size: 1.3rem
   & form
     position: relative
