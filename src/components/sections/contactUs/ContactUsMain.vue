@@ -1,43 +1,44 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
+import { contact as c } from '@/api/api.js'
 import phone from '@/assets/icons/link/phone.svg'
 import mail from '@/assets/icons/link/mail.svg'
 import vk from '@/assets/icons/link/VK.svg'
-// import telegram from '@/assets/icons/link/Telegram.svg'
-// import instagram from '@/assets/icons/link/Instagram.svg'
 
-const licks = ref([
-  {
-    img: mail,
-    name: 'Почта',
-    text: 'ksm@mail.ru',
-    href: 'mailto:ksm@mail.ru',
-  },
-  {
-    img: vk,
-    name: 'Группа в ВК',
-    text: 'КСМ',
-    href: 'https://vk.com/ksm',
-  },
-  {
-    img: phone,
-    name: 'Телефон',
-    text: '+7 911 613 71 27',
-    href: 'tel:+79116137127',
-  },
-  // {
-  //   img: whatsapp,
-  //   name: 'whatsapp',
-  //   text: 'напишите нам в WhatsApp',
-  //   href: 'https://wa.me/79007892244',
-  // },
-  // {
-  //   img: instagram,
-  //   name: 'Instagram',
-  //   text: '@NotNot',
-  //   href: 'http://localhost:5173/contact-us'
-  // }
-])
+const isLoding = ref(true)
+const licks = ref(true)
+
+async function init() {
+  isLoding.value = true
+  const res = await c.all()
+  if (!res.success) return
+
+  licks.value = [
+    {
+      img: mail,
+      name: 'Почта',
+      text: res.data.mail.description,
+      href: `mailto:${res.data.mail.linc}`,
+    },
+    {
+      img: vk,
+      name: 'Группа в ВК',
+      text: res.data.vk.description,
+      href: `${res.data.vk.linc}`,
+    },
+    {
+      img: phone,
+      name: 'Телефон',
+      text: res.data.phone.description,
+      href: `tel:${res.data.phone.linc}`,
+    },
+  ]
+  isLoding.value = false
+}
+
+onMounted(async () => {
+  await init()
+})
 </script>
 
 <template>
