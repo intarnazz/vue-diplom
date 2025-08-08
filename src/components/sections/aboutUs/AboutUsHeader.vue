@@ -1,5 +1,6 @@
 <script setup>
 import LayoutPageTitle from '@/layout/LayoutPageTitle.vue'
+import ComponentXLTitle from '@/components/ComponentXLTitle.vue'
 </script>
 
 <template>
@@ -12,7 +13,14 @@ import LayoutPageTitle from '@/layout/LayoutPageTitle.vue'
       />
     </template>
     <template #default>
-      <h2 class="bottom-8 left-8 text-white text-4xl font-bold z-10 drop-shadow-md">О компании</h2>
+      <div class="box-y">
+        <div class="flex"></div>
+        <ComponentXLTitle
+          :h1="`О компании, которой доверяют частные и корпоративные клиенты`"
+          :h3="`Много лет опыта, реализованные проекты и сплочённая команда`"
+        />
+        <div class="flex"></div>
+      </div>
     </template>
   </LayoutPageTitle>
 </template>
