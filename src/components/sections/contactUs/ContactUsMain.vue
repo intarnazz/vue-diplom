@@ -6,31 +6,31 @@ import mail from '@/assets/icons/link/mail.svg'
 import vk from '@/assets/icons/link/VK.svg'
 
 const isLoding = ref(true)
-const licks = ref(true)
+const links = ref(true)
 
 async function init() {
   isLoding.value = true
   const res = await c.all()
   if (!res.success) return
 
-  licks.value = [
+  links.value = [
     {
       img: mail,
       name: 'Почта',
       text: res.data.mail.description,
-      href: `mailto:${res.data.mail.linc}`,
+      href: `mailto:${res.data.mail.link}`,
     },
     {
       img: vk,
       name: 'Группа в ВК',
       text: res.data.vk.description,
-      href: `${res.data.vk.linc}`,
+      href: `${res.data.vk.link}`,
     },
     {
       img: phone,
       name: 'Телефон',
       text: res.data.phone.description,
-      href: `tel:${res.data.phone.linc}`,
+      href: `tel:${res.data.phone.link}`,
     },
   ]
   isLoding.value = false
@@ -47,7 +47,7 @@ onMounted(async () => {
       <div class=""></div>
       <h2>Наши <span style="color: #04838e">контакты</span></h2>
       <ul class="box-y">
-        <li v-for="(lick, key) in licks" :key="key">
+        <li v-for="(lick, key) in links" :key="key">
           <a class="box-x contact__item" :href="lick.href" target="_blank">
             <img v-if="lick.img" :src="lick.img" :alt="lick.name" />
             <div class="box-y gap">
