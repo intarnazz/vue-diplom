@@ -153,11 +153,11 @@ onUnmounted(() => {
             </div>
             <div class="flex9 box-y">
               <div class="box-y gap">
-                <div class="box-x as gap">
+                <div class="box-x media as gap">
                   <h3 class="opacity-50">Клиент</h3>
-                  <h3 class="italic text-right">{{ portfolio.client }}</h3>
+                  <h3 class="italic media text-right">{{ portfolio.client }}</h3>
                 </div>
-                <div class="box-x gap">
+                <div class="box-x media as gap">
                   <h3 class="opacity-50">Сроки</h3>
                   <h3 class="italic">{{ portfolio.completed_at }}</h3>
                 </div>

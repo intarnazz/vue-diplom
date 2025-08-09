@@ -190,12 +190,12 @@ watch(
 </script>
 
 <template>
-  <section class="chat wh">
+  <section class="chat media-header wh">
     <!-- <div class="bg-white pa text-black p-6 rounded-2xl shadow-xl text-center max-w-md w-full"></div> -->
 
     <img
       class="img pa opacity-20"
-      src="@/assets/img/cyg23qqdamt41.webp"
+      src="@/assets/img/ashley-penney-yoG77-WPlpU-unsplash (1).jpg"
       alt="Фоновое изображение"
     />
 
@@ -247,7 +247,10 @@ watch(
         </form>
       </div>
     </div>
-    <button @click="emit('cansel')" class="button button_off absolute top-[5rem] left-[1rem] media">
+    <button
+      @click="emit('cansel')"
+      class="button button_off absolute top-[1rem] right-[1rem] media"
+    >
       Нзад
     </button>
   </section>
@@ -266,7 +269,6 @@ watch(
     transform: none;
     filter: none;
     contain: layout style
-    overflow-y: scroll
   &__message-bar-wrapper
     padding: .5rem 1rem
     border-radius: 20px

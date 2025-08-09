@@ -27,17 +27,26 @@ const toggleMenu = () => (isOpen.value = !isOpen.value)
       v-if="isOpen"
       @click="toggleMenu"
       class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[90]"
+      onwheel="event.preventDefault()"
+      ontouchmove="event.preventDefault()"
+      style="overflow: hidden"
     ></div>
 
     <!-- Меню -->
-    <transition name="slide">
+    <transition
+      class="main"
+      onwheel="event.preventDefault()"
+      ontouchmove="event.preventDefault()"
+      style="overflow: hidden"
+      name="slide"
+    >
       <nav
         v-if="isOpen"
-        class="fixed top-0 left-0 h-full w-[260px] bg-[#fdfcf5] border-r-4 border-black shadow-[8px_0_0_0_black] z-[100] p-6 pt-16 font-mono text-sm flex flex-col gap-6"
+        class="fixed top-0 left-0 h-full w-[260px] bg-[#fdfcf5] border-r-4 border-black shadow-[8px_0_0_0_black] z-[100] p-[1rem] pt-[4rem] flex flex-col gap"
         style="rotate: -0.4deg"
       >
         <!-- Заголовок -->
-        <h2 class="text-xl font-bold tracking-wider uppercase">KSM</h2>
+        <h2 class="font-bold tracking-wider uppercase">KSM</h2>
 
         <u1l class="space-y-4">
           <li><RouterLink @click="toggleMenu" :to="{ name: 'home' }">🏠 Главная</RouterLink></li>
@@ -80,21 +89,24 @@ const toggleMenu = () => (isOpen.value = !isOpen.value)
   </div>
 </template>
 
-<style scoped>
+<style lang="sass" scoped>
+
+.main
+  font-size: 1.5rem
+
 .slide-enter-active,
-.slide-leave-active {
-  transition: transform 0.15s ease-in-out; /* ускорена */
-}
-.slide-enter-from {
-  transform: translateX(-100%);
-}
-.slide-enter-to {
-  transform: translateX(0%);
-}
-.slide-leave-from {
-  transform: translateX(0%);
-}
-.slide-leave-to {
-  transform: translateX(-100%);
-}
+.slide-leave-active
+  transition: transform 0.15s ease-in-out
+
+.slide-enter-from
+  transform: translateX(-100%)
+
+.slide-enter-to
+  transform: translateX(0%)
+
+.slide-leave-from
+  transform: translateX(0%)
+
+.slide-leave-to
+  transform: translateX(-100%)
 </style>

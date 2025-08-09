@@ -22,5 +22,5 @@ import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 @media screen and (max-width: 666px)
   .header-page-title
     &__wrapper
-      height: 100px
+      height: 200px
 </style>

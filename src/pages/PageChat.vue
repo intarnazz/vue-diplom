@@ -1,5 +1,5 @@
 <script setup>
-import FooterMain from '@/layout/footer/FooterMain.vue'
+// import FooterMain from '@/layout/footer/FooterMain.vue'
 import LayoutPage from '@/layout/LayoutPage.vue'
 import SectionOpener from '@/layout/LayoutOpener.vue'
 import SectionChat from '@/components/sections/chat/ChatBox.vue'
@@ -35,7 +35,7 @@ const chat_id = ref(0)
       </div>
     </SectionOpener>
   </LayoutPage>
-  <FooterMain />
+  <!-- <FooterMain /> -->
 </template>
 
 <style lang="sass" scoped>

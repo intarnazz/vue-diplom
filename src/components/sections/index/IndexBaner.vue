@@ -68,8 +68,8 @@ import ComponentXLTitle from '@/components/ComponentXLTitle.vue'
 .baner
   background-color: #000
   z-index: 1
-  height: 100dvh
-  max-height: 100dvh
+  height: 100vh
+  max-height: 100vh
   border-bottom: 13px solid #04838E;
   box-shadow: 0 0 50px 0 #000
   &__logo
@@ -82,6 +82,8 @@ import ComponentXLTitle from '@/components/ComponentXLTitle.vue'
 
 @media screen and (max-width: 480px)
   .baner
+    height: 90vh
+    max-height: 90vh
     &__wrapper
       padding: 6rem 1rem 1rem
 </style>
