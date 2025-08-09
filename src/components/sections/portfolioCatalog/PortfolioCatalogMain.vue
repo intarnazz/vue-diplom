@@ -2,13 +2,11 @@
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { portfolio as p } from '@/api/api.js'
 import { RouterLink } from 'vue-router'
-import { formatDistance } from 'date-fns'
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
 import ComponentImg from '@/components/ComponentImg.vue'
 import LayoutPageTitle from '@/layout/LayoutPageTitle.vue'
 import ComponentXLTitle from '@/components/ComponentXLTitle.vue'
 import ComponentTitle from '@/components/ComponentTitle.vue'
-import ru from 'date-fns/locale/ru'
 
 const props = defineProps(['limit'])
 const isLoding = ref(true)
@@ -37,13 +35,6 @@ function splitNotes(notes) {
   } else {
     return { firstSentence: notes, rest: '' }
   }
-}
-
-function formatCompletedAt(dateString) {
-  if (!dateString) return ''
-  const date = new Date(dateString)
-  const now = new Date()
-  return formatDistance(date, now, { locale: ru })
 }
 
 function resetObserver() {
@@ -109,7 +100,7 @@ onUnmounted(() => {
     <LayoutPageTitle>
       <template #image>
         <img
-          src="@/assets/img/about-us image.png"
+          src="@/assets/img/jorik-kleen-LHexZJI36rY-unsplash.jpg"
           alt="О компании"
           class="absolute img inset-0 w-full h-full object-cover z-0"
         />
@@ -118,8 +109,8 @@ onUnmounted(() => {
         <div class="box-y">
           <div class="flex"></div>
           <ComponentXLTitle
-            :h1="`Lorem ipsum dolor sit amet, consectetur adipiscing elit.`"
-            :h3="`Lorem ipsum dolor sit amet, consectetur adipiscing elit.`"
+            :h1="`Примеры успешно завершённых проектов компании`"
+            :h3="`Реализованные проекты, отражающие качество и профессионализм`"
           />
           <div class="flex"></div>
         </div>
@@ -161,14 +152,14 @@ onUnmounted(() => {
               </p>
             </div>
             <div class="flex9 box-y">
-              <div class="box-y">
-                <div class="box-x gap">
+              <div class="box-y gap">
+                <div class="box-x as gap">
                   <h3 class="opacity-50">Клиент</h3>
-                  <h3 class="italic">{{ portfolio.client }}</h3>
+                  <h3 class="italic text-right">{{ portfolio.client }}</h3>
                 </div>
                 <div class="box-x gap">
                   <h3 class="opacity-50">Сроки</h3>
-                  <h3 class="italic">{{ formatCompletedAt(portfolio.completed_at) }}</h3>
+                  <h3 class="italic">{{ portfolio.completed_at }}</h3>
                 </div>
               </div>
               <div class="box-x">

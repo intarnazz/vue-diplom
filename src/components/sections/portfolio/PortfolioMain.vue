@@ -74,7 +74,7 @@ onMounted(async () => {
             <div class="space-y-1">
               <h2 class="text-sm font-semibold text-gray-500 uppercase">Завершено</h2>
               <p class="text-base text-gray-800">
-                {{ new Date(portfolio.completed_at).toLocaleDateString() }}
+                {{ portfolio.completed_at }}
               </p>
             </div>
           </div>
