@@ -100,7 +100,7 @@ onUnmounted(() => {
     <LayoutPageTitle>
       <template #image>
         <img
-          src="@/assets/img/jorik-kleen-LHexZJI36rY-unsplash.jpg"
+          src="@/assets/img/jorik-kleen-LHexZJI36rY-unsplash.webp"
           alt="О компании"
           class="absolute img inset-0 w-full h-full object-cover z-0"
         />
