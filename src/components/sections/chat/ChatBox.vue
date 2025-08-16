@@ -217,7 +217,7 @@ watch(
 
     <img
       class="img pa opacity-20"
-      src="@/assets/img/ashley-penney-yoG77-WPlpU-unsplash (1).jpg"
+      src="@/assets/img/ashley-penney-yoG77-WPlpU-unsplash (1).webp"
       alt="Фоновое изображение"
     />
 
