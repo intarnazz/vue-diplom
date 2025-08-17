@@ -30,8 +30,13 @@ async function down() {
 function chatMessageSentEve(data) {
   console.log('chatMessageSentEve')
 
-  const msg = messages.value.find((e) => e.content === data.content && e.isLoding === true)
-  if (msg) msg.isLoding = false
+  if (data.user_id !== user.value.id) {
+    messagesArr.value.push(data)
+  } else {
+    const msg = messages.value.find((e) => e.content === data.content && e.isLoding === true)
+    if (msg) msg.isLoding = false
+  }
+  // down()
 
   m.get(props.id, {
     limit: '0',
@@ -187,6 +192,23 @@ watch(
     down()
   },
 )
+
+const isUserAtBottom = () => {
+  if (!chat.value) return false
+  const threshold = 50 // небольшой запас пикселей
+  return chat.value.scrollTop + chat.value.clientHeight >= chat.value.scrollHeight - threshold
+}
+
+watch(
+  () => messages.value.length,
+  () => {
+    if (isUserAtBottom()) {
+      down()
+    }
+  },
+)
+
+//chat.value.scrollTop = chat.value.scrollHeight
 </script>
 
 <template>
@@ -222,15 +244,17 @@ watch(
 
     <div class="chat_wrapper pr box-y wh p2 gap2">
       <div class="flex"></div>
-      <div ref="chat" class="chat__list wh box-y pa" v-if="user">
+      <div ref="chat" class="chat__list wh box-y pa">
         <div class="flex"></div>
         <!-- Sentinel для подгрузки -->
         <div ref="sentinel" class="min-h-[1rem]"></div>
-        <div v-for="(message, key) in messages" :key="key" class="box-x">
-          <template v-if="message.user_id">
-            <ComponentMessage :message="message" :user="user" />
-          </template>
-        </div>
+        <template v-if="user">
+          <div v-for="(message, key) in messages" :key="key" class="box-x">
+            <template v-if="message.user_id">
+              <ComponentMessage :message="message" :user="user" />
+            </template>
+          </div>
+        </template>
         <form @submit.prevent="send" class="chat__message-bar-wrapper box-x">
           <h1>{{ isPageAtTop }}</h1>
           <input
