@@ -2,7 +2,9 @@
 import { onMounted, ref } from 'vue'
 import { contact as c } from '@/api/api.js'
 import LayoutWrapper from '@/layout/LayoutWrapper.vue'
-import vkIcon from '@/assets/icons/link/VK.svg' // Добавлено: иконка VK
+// import vkIcon from '@/assets/icons/link/VK.svg'
+import telegram from '@/assets/icons/link/Telegram.svg'
+import whatsapp from '@/assets/icons/link/whatsapp.svg'
 
 const isLoding = ref(true)
 const links = ref(true)
@@ -22,10 +24,10 @@ onMounted(async () => {
 </script>
 
 <template>
-  <footer class="bg-black text-white p4">
+  <footer class="bg-black p text-white p4">
     <LayoutWrapper>
-      <div class="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-sm">
-        <div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-sm">
+        <div class="flex box-y top-y">
           <h3 class="text-lg font-semibold mb-4">Компания</h3>
           <ul class="space-y-2">
             <li><RouterLink to="/" class="hover:underline">Главная</RouterLink></li>
@@ -40,7 +42,7 @@ onMounted(async () => {
           </ul>
         </div>
 
-        <div>
+        <div class="flex box-y top-y">
           <h3 class="text-lg font-semibold mb-4">Техническая документация</h3>
           <ul class="space-y-2">
             <li>
@@ -69,7 +71,7 @@ onMounted(async () => {
           </ul>
         </div>
 
-        <div>
+        <div class="flex box-y top-y">
           <h3 class="text-lg font-semibold mb-4">Услуги</h3>
           <ul class="space-y-2">
             <li>
@@ -89,22 +91,40 @@ onMounted(async () => {
         </div>
 
         <!-- Новый блок с контактами -->
-        <div>
+        <div class="flex box-y top-y">
           <h3 class="text-lg font-semibold mb-4">Контакты</h3>
           <ul v-if="!isLoding" class="space-y-2">
             <li>
-              <a :href="`mailto:${links.mail.link}`" class="hover:underline">{{
-                links.mail.description
+              <a :href="`mailto:${links.mail_snab.link}`" class="hover:underline">{{
+                links.mail_snab.description
               }}</a>
             </li>
             <li>
-              <a :href="`tel:${links.phone.link}`" class="hover:underline">{{
-                links.phone.description
+              <a :href="`mailto:${links.mail_sale.link}`" class="hover:underline">{{
+                links.mail_sale.description
+              }}</a>
+            </li>
+            <li>
+              <a :href="`tel:${links.phone_sale.link}`" class="hover:underline">{{
+                links.phone_sale.description
+              }}</a>
+            </li>
+            <li>
+              <a :href="`tel:${links.phone_snab.link}`" class="hover:underline">{{
+                links.phone_snab.description
               }}</a>
             </li>
             <li class="flex items-center space-x-2">
-              <img :src="vkIcon" alt="ВК" class="w-4 h-4" />
-              <a :href="links.vk.link" target="_blank" class="hover:underline">Группа ВКонтакте</a>
+              <img :src="telegram" alt="telegram" class="w-4 h-4" />
+              <a :href="links.telegram.link" target="_blank" class="hover:underline">{{
+                links.telegram.description
+              }}</a>
+            </li>
+            <li class="flex items-center space-x-2">
+              <img :src="whatsapp" alt="whatsapp" class="w-4 h-4" />
+              <a :href="links.whatsapp.link" target="_blank" class="hover:underline">{{
+                links.whatsapp.description
+              }}</a>
             </li>
           </ul>
         </div>
