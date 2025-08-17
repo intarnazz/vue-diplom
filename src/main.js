@@ -11,9 +11,3 @@ import { WebSocket } from '@/web-socket/web-socket.js'
 const webSocket = new WebSocket()
 
 createApp(App).use(router).mount('#app')
-
-// [ ] - SEO
-
-// [ ] - Кеширование некоторых каталогов (portfolio, contct)
-
-
